@@ -94,7 +94,7 @@ export default function Index() {
         </div>
         <div id='products' className={`${styles.entrance} ${styles.productsInformations}`}>
           {products.map((e, index) => {
-            return <Product advantages={e.advantages} images={e.images} title={e.title} key={Math.random()} id={index + 1} />
+            return <Product advantages={e.advantages} images={e.images} title={e.title} key={Math.random()+`${e.title}`} id={index + 1} />
           })}
         </div>
         <AboutSection />
@@ -181,7 +181,7 @@ function Product({ id, title, advantages, images }: {
               <h3>Advantages</h3>
               <div className={styles.advantagesWrapper}>
                 {advantages.map(e => {
-                  return <div className={styles.advantage}>
+                  return <div key={e} className={styles.advantage}>
                     <Image src={"/icons/shape.svg"} alt='shape icon' width={15} height={15} />
                     <h3>{e}</h3>
                   </div>
@@ -216,7 +216,7 @@ function Product({ id, title, advantages, images }: {
             }
           }} ref={sliderRef} className={`keen-slider ${styles.slider}`} style={{ height: 500 }}>
             {images.map((e, index) => {
-              return <div className={`keen-slider__slide number-slide${id} ${styles.slide}`}>
+              return <div key={e} className={`keen-slider__slide number-slide${id} ${styles.slide}`}>
                 <Image src={e} width={500} height={650} alt='some image' />
               </div>
             })}
@@ -226,7 +226,7 @@ function Product({ id, title, advantages, images }: {
               {images.slice(0, images.length).map((idx, index) => {
                 return (
                   <button
-                    key={idx}
+                    key={index * Math.random() ** 44}
                     onClick={() => {
                       instanceRef.current?.moveToIdx(index)
                     }}
