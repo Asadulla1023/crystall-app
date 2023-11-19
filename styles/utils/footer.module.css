@@ -1,0 +1,100 @@
+.footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* height: -moz-fit-content; */
+  position: relative;
+  height: fit-content;
+  z-index: 100;
+  background: #fff;
+  padding: 3rem 0;
+}
+
+.footer * {
+  color: #0099b6;
+}
+
+
+.content {
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navigator {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 3rem;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0099b6;
+    width: 80px;
+    border-radius: 100px;
+    height: 80px;
+}
+
+.logo > img {
+    width: 40px;
+    height: auto;
+}
+.navList {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.navList > li > a {
+    font-size: 1.2rem;
+}
+
+.content > a {
+    font-size: 3rem;
+    font-family: "Roboto";
+    margin: auto;
+    position: relative;
+    top: -2rem;
+    width: fit-content;
+    font-weight: 400;
+}
+
+.madeWith {
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.madeWith > h4 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 900px) {
+    .footer {
+        padding: 0 1rem;
+        padding-top: 3rem !important;
+    }
+    .content > a {
+        font-size: 2.5rem;
+    }
+    .madeWith, .navigator {
+        padding: 1%;
+    }
+    .madeWith > h4  {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .content a {
+        top: -1rem;
+    }
+}
