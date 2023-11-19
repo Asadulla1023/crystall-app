@@ -38,6 +38,7 @@
 .navigator {
   margin: auto;
   width: 768px;
+  position: relative;
   background: #18adc9;
   display: flex;
   justify-content: center;
@@ -68,9 +69,6 @@
   align-items: center;
   padding: 10px 60px !important;
   gap: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .navigate > a {
@@ -98,13 +96,69 @@
   }
 }
 
-.menu, .menuOpener {
+.menu,
+.menuOpener {
   visibility: hidden;
   display: none;
 }
 
+.language {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropDownModal {
+  position: absolute;
+  top: 100%;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  height: 40px;
+  align-items: center;
+}
+
+.language > button {
+  -webkit-appearance: button;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 60px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language ul {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 10px;
+  padding: 5px 5px;
+  list-style-type: none;
+  background: #ffffff;
+  z-index: 1000000;
+}
+
+.language ul > li {
+  color: #000;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  z-index: 10000000;
+  transform-origin: -20px 50%;
+}
+
 @media screen and (max-width: 700px) {
-  .menu, .menuOpener {
+  .menu,
+  .menuOpener {
     visibility: visible;
     display: block;
   }

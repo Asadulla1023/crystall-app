@@ -4,7 +4,9 @@ import styles from "@/styles/utils/footer.module.css"
 import Container from '../local/utils/Container'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 const Footer = () => {
+    const t = useTranslations("Footer")
     return (
         <footer className={styles.footer}>
             <Container>
@@ -15,10 +17,10 @@ const Footer = () => {
                         </Link>
                         <ul className={styles.navList}>
                             <li>
-                                <Link href={"#aboutUs"}>Contacts</Link>
+                                <Link href={"#contact"}>{t("contact")}</Link>
                             </li>
                             <li>
-                                <Link href={"#"}>About Us</Link>
+                                <Link href={"#aboutUs"}>{t("about")}</Link>
                             </li>
                         </ul>
                     </div>

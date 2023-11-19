@@ -1,5 +1,33 @@
 {
-    "Index": {
-        "title": "smash smash pass"
+    "Header": {
+        "product": "Mahsulotlar",
+        "about": "Biz Haqimizda",
+        "contact": "Biz bilan bog'lanish"
+    },
+    "Entrance": {
+        "info": "Sun Simurg Crystals MChJ. lazer optikasi uchun chiziqli bo'lmagan optik kristallar bilan ta'minlaydi va lazer tizimini to'ldirish uchun kristalli mahsulotlarni sotib olishga yordam beradi.",
+        "products": "Mahsulotlar:",
+        "others": "Boshqalar"
+    },
+    "Company": {
+        "title": "KOMPANIYA HAQIDA",
+        "description": "Sun Simurg Crystals MChJ. RU bozorida lazer optikasi uchun chiziqli bo'lmagan optik kristallarni etkazib beruvchi birinchi tijorat kompaniyasi. kompaniyamiz boshqa kompaniyalarning kristall o'sishi ishlab chiqarish korxonalari bilan ishonchli hamkorlikka ega, shuningdek, boshqa mamlakatlarda lazer tizimlarini to'ldirish uchun kristall mahsulotlarini sotib olishga yordam beradi. ta'minlangan chiziqli bo'lmagan optik elementlar....",
+        "years": "16+ yil",
+        "works": "QURILISH SANOATIDA XALQARO TAJRIBASI (20 dan ortiq QURILISH LOYIHALARI FOYDALANISHGA BERILGAN)",
+        "activities": "ROSSIYADA FAOLIYATLAR BOSHLANDI",
+        "inrussia": "ROSSIYADAGI OBYEKT",
+        "designed": "LOYIHALANGAN",
+        "construction":"QURILISH ISHLARI OLIB BORILMOQDA",
+        "read": "Ko'proq o'qish"
+    },
+    "Contacts": {
+        "title": "MUTAXASSISLAR BILAN BOG'LANISH",
+        "name": "Ismingiz",
+        "phone": "Telefon raqamingiz",
+        "button": "Jo'natish"
+    },
+    "Footer": {
+        "contact": "Biz bilan bog'lanish",
+        "about": "Biz Haqimizda"
     }
 }

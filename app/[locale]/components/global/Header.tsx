@@ -4,7 +4,9 @@ import styles from "@/styles/utils/header.module.css"
 import Container from '../local/utils/Container'
 import Link from 'next/link'
 import Image from 'next/image'
-import { stagger, useAnimate } from 'framer-motion'
+import { motion, stagger, useAnimate } from 'framer-motion'
+import { usePathname, useRouter } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 function useMenuAnimation(isOpen: boolean) {
     const [scope, animate] = useAnimate();
 
@@ -52,12 +54,15 @@ function useMenuAnimation(isOpen: boolean) {
 }
 
 const Header = () => {
+    const t = useTranslations("Header")
     const [isOpen, setIsOpen] = useState(false);
-
+    const [langugae, setLanguage] = useState(false)
+    const lang = useMenuAnimation(langugae);
     const scope = useMenuAnimation(isOpen);
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
     const [lastScrollPosition, setLastScrollPosition] = useState(0);
     const [nav, setNav] = useState(false);
+    const {push} = useRouter()
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPosition = window.pageYOffset;
@@ -79,14 +84,18 @@ const Header = () => {
     const changeBgHandler = () => {
         if (window.scrollY >= 16) {
             setNav(true);
+            setLanguage(false)
         } else {
+            setLanguage(false)
             setNav(false);
         }
     };
     useEffect(() => {
         window.addEventListener("scroll", changeBgHandler);
-    }, []);
-
+    }, [window]);
+    const pathname = usePathname()
+    const l = pathname.split("/")
+    const [language, setLang] = useState(l[1] === "" ? "Uz" : "En")
     return (
         <div style={
             isHeaderVisible === true
@@ -109,17 +118,58 @@ const Header = () => {
                     <nav className={styles.navigator}>
                         <ul className={styles.navigatorList}>
                             <li className={styles.navigate}>
-                                <Link href={"#products"}><span />Products</Link>
+                                <Link href={"#products"}><span />{t("product")}</Link>
                             </li>
                             <li className={styles.navigate}>
-                                <Link href={"#aboutUs"}>About Us</Link>
+                                <Link href={"#aboutUs"}>{t("about")}</Link>
                             </li>
                             <li className={styles.navigate}>
-                                <Link href={"#contact"}>Contacts</Link>
+                                <Link href={"#contact"}>{t("contact")}</Link>
                             </li>
                             <div className={styles.language}>
-                                <p>EN</p>
-                                <Image src="/icons/chevronDown.svg" alt='chevron down icon' width={20} height={15} />
+                                <nav className={styles.language} ref={lang}>
+                                    <motion.button
+                                        whileTap={{ scale: 0.97 }}
+                                        onClick={() => setLanguage(!langugae)}
+                                    >
+                                        {language}
+                                        <div className={styles.arrow} style={!langugae ?
+                                            {
+                                                transform: "rotate(0)",
+                                                transition: "0.4s",
+                                            }
+                                            :
+                                            {
+                                                transform: "rotate(180deg)",
+                                                transition: "0.4s"
+                                            }}>
+                                            <svg width="15" height="15" viewBox="0 0 20 20">
+                                                <path d="M0 7 L 20 7 L 10 16" />
+                                            </svg>
+                                        </div>
+                                    </motion.button>
+                                    <ul
+                                        className={styles.dropDownModal}
+                                        style={!langugae ? {
+                                            opacity: 0,
+                                            transition: "0.4s",
+                                            height: 0,
+
+                                        } : {
+                                            opacity: 1,
+                                            transition: "0.4s"
+                                        }}
+                                    >
+                                        <li onClick={() => {
+                                            setLang("En")
+                                            push("/en")
+                                        }}>En</li>
+                                        <li onClick={() => {
+                                            setLang("Uz")
+                                            push("/uz")
+                                        }}>Uz</li>
+                                    </ul>
+                                </nav>
                             </div>
                         </ul>
                     </nav>

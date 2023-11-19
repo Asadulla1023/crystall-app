@@ -1,5 +1,33 @@
 {
-    "Index": {
-        "title": "sheeesh mf"
+    "Header": {
+        "product": "Products",
+        "about": "About Us",
+        "contact": "Contacts"
+    },
+    "Entrance": {
+        "info": "Sun Simurg Crystals, LLC. supplies nonlinear optical crystals for laser optics and helps you purchase crystal products to complete your laser system",
+        "products": "Productions:",
+        "others": "Other"
+    },
+    "Company": {
+        "title": "ABOUT COMPANY",
+        "description": "Sun Simurg Crystals, LLC. Is the first commercial company in the RU market supplying nonlinear optical crystals for laser optics. our company has reliable partnerships with crystal growth production facilities of other companies, and also helps to purchase crystal products for completing laser systems in other countries. nonlinear optical elements supplied....",
+        "years": "16+ years",
+        "works": "INTERNATIONAL EXPERIENCE IN THE CONSTRUCTION INDUSTRY (MORE THAN 20 CONSTRUCTION PROJECTS HAVE BEEN COMMISSIONED)",
+        "activities": "ACTIVITIES STARTED IN RUSSIA",
+        "inrussia": "FACILITY IN RUSSIA",
+        "designed": "DESIGNED",
+        "construction":"UNDER CONSTRUCTION",
+        "read": "Read more"
+    },
+    "Contacts": {
+        "title": "CONSULTATION SPECIALISTS",
+        "name": "Your name",
+        "phone": "Phone number",
+        "button": "Submit"
+    },
+    "Footer": {
+        "contact": "Contacts",
+        "about": "About Us"
     }
 }

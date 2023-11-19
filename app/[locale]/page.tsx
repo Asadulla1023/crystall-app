@@ -21,15 +21,18 @@ import { inView } from "framer-motion/dom"
 import { useInView } from 'react-intersection-observer';
 import { easing } from '@/utils/animations';
 import Footer from './components/global/Footer';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 
 export default function Index() {
   // const t = useTranslations('Index');
   const title = useRef(null)
+  const entrance = useTranslations("Entrance")
   const subTitle = useRef(null)
   const { scrollYProgress } = useScroll();
-  const {push} = useRouter()
+  const pathname = usePathname()
+  const l = pathname.split("/")
+  const { push } = useRouter()
   return (
     <>
       <main className={styles.main}>
@@ -59,7 +62,7 @@ export default function Index() {
                   },
                 }}>Sun Semurg</motion.h1>
                 <h3>crystals</h3>
-                <motion.div onClick={()=> {
+                <motion.div onClick={() => {
                   push("#products")
                 }} className={styles.arrowDown}>
                   <Image width={17} height={30} src={"/icons/arrowDown.svg"} alt='arrow down icon' />
@@ -67,12 +70,12 @@ export default function Index() {
               </motion.div>
               <div className={styles.content}>
                 <div className={styles.info}>
-                  <p>Sun Simurg Crystals, LLC. supplies nonlinear optical crystals for laser optics and helps you purchase crystal products to complete your laser system</p>
+                  <p>{entrance("info")}</p>
                 </div>
                 <div className={styles.products}>
                   <ul>
                     <li>
-                      <Link href="#">Productions:</Link>
+                      <Link href="#">{entrance("products")}</Link>
                     </li>
                     <li>
                       <Link href="#">LBO</Link>
@@ -87,7 +90,7 @@ export default function Index() {
                       <Link href="#">KGW/KYW</Link>
                     </li>
                     <li>
-                      <Link href="#">Other</Link>
+                      <Link href="#">{entrance("others")}</Link>
                     </li>
                   </ul>
                 </div>
@@ -96,8 +99,10 @@ export default function Index() {
           </Container>
         </div>
         <div id='products' className={`${styles.entrance} ${styles.productsInformations}`}>
-          {products.map((e, index) => {
-            return <Product advantages={e.advantages} images={e.images} title={e.title} key={Math.random()+`${e.title}`} id={index + 1} />
+          {l[1] == "" ? UZ_PRODUCTS.map((e, index) => {
+            return <Product advantages={e.advantages} images={e.images} title={e.title} key={Math.random() + `${e.title}`} id={index + 1} />
+          }) : products.map((e, index) => {
+            return <Product advantages={e.advantages} images={e.images} title={e.title} key={Math.random() + `${e.title}`} id={index + 1} />
           })}
         </div>
         <AboutSection />
@@ -123,10 +128,8 @@ function Product({ id, title, advantages, images }: {
   useEffect(() => {
     if (inView) {
       controls.start("visible");
-      console.log("visible");
     } else {
       controls.start("hidden");
-      console.log("hidden")
     }
   }, [controls, inView]);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
@@ -147,6 +150,7 @@ function Product({ id, title, advantages, images }: {
 
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
+  const pathname = usePathname()
   return (
     <Container>
       <section
@@ -181,7 +185,7 @@ function Product({ id, title, advantages, images }: {
               <div className={styles.circle}>{id}</div>
             </div>
             <div className={styles.productAdvantages}>
-              <h3>Advantages</h3>
+              <h3>{pathname.split("/")[1] === "" ? "Afzalliklar" : "Advantages"}</h3>
               <div className={styles.advantagesWrapper}>
                 {advantages.map(e => {
                   return <div key={e} className={styles.advantage}>
@@ -313,14 +317,12 @@ const AboutSection = () => {
     triggerOnce: true
   });
   const controls = useAnimation();
-
+  const company = useTranslations("Company")
   useEffect(() => {
     if (inView) {
       controls.start("visible");
-      console.log("visible");
     } else {
       controls.start("hidden");
-      console.log("hidden")
     }
   }, [controls, inView]);
   return (
@@ -349,7 +351,7 @@ const AboutSection = () => {
                   delay: .2
                 }
               },
-            }}>About Company <motion.span initial={"onLoad"} animate="entrance" variants={{
+            }}>{company("title")} <motion.span initial={"onLoad"} animate="entrance" variants={{
               onLoad: {
                 width: 0,
               },
@@ -379,35 +381,26 @@ const AboutSection = () => {
                 <div className={styles.logoDesign}>
                   <h3>LOGO DESIGN</h3>
                 </div>
-                <p>Sun Simurg Crystals, LLC. Is the first commercial company
-                  in the RU market supplying nonlinear optical crystals for
-                  laser optics. our company has reliable partnerships
-                  with crystal growth production facilities of other
-                  companies, and also helps to purchase crystal
-                  products for completing laser systems in other
-                  countries. nonlinear optical elements supplied....
+                <p>{company("description")}
                 </p>
                 <Link className={styles.details} href={"/"}>
-                  Read more
+                  {company("read")}
                   <Image src={"/icons/vector.svg"} width={16} height={16} alt='45 degree icon' />
                 </Link>
               </div>
               <div className={styles.rightSide}>
-                <h3>16+ years</h3>
+                <h3>{company("years")}</h3>
                 <h4>
-                  INTERNATIONAL EXPERIENCE IN THE
-                  CONSTRUCTION INDUSTRY (MORE
-                  THAN 20 CONSTRUCTION PROJECTS
-                  HAVE BEEN COMMISSIONED)
+                  {company("works")}
                 </h4>
                 <h3>2019</h3>
-                <h4>ACtivities started in russia </h4>
+                <h4>{company("activities")}</h4>
                 <h3>
                   4
                 </h3>
-                <h4>Facility in  russia</h4>
-                <h4>2- Designed</h4>
-                <h4>1-under construction</h4>
+                <h4>{company("inrussia")}</h4>
+                <h4>2- {company("designed")}</h4>
+                <h4>1-{company("construction")}</h4>
               </div>
             </div>
           </div>
@@ -422,14 +415,12 @@ const Contact = () => {
     triggerOnce: true
   });
   const controls = useAnimation();
-
+  const contact = useTranslations("Contacts")
   useEffect(() => {
     if (inView) {
       controls.start("visible");
-      console.log("visible");
     } else {
       controls.start("hidden");
-      console.log("hidden")
     }
   }, [controls, inView]);
   return (
@@ -452,13 +443,12 @@ const Contact = () => {
                 <Image src={"/images/alm.png"} width={530} height={300} alt='image' />
               </div>
               <div className={styles.leftSide}>
-                <h3>CONSULTATION
-                  SPECIALISTS
+                <h3>{contact("title")}
                 </h3>
                 <form action="#">
-                  <input type="text" maxLength={25} required placeholder='Your name' />
-                  <input type="text" maxLength={13} required placeholder='Phone number' />
-                  <button className={styles.submit}>Submit</button>
+                  <input type="text" maxLength={25} required placeholder={contact("name")} />
+                  <input type="text" maxLength={13} required placeholder={contact("phone")} />
+                  <button className={styles.submit}>{contact("button")}</button>
                 </form>
               </div>
             </div>
@@ -472,12 +462,25 @@ const Contact = () => {
 const products = [
   {
     title: "POTASSIUM TITANYL PHOSPHATE KTIOPO₄",
-    advantages: ["broad transparency range from 0.160 µm to 2.6 µm (SHG range from 0.55 µm to 2.6 µm)", "typw I and type II non-critical phase-matching (NCPM) over a wide wavelengtht range", "relatively large effective SHG coefficient (about three times larger than that of KDP)", "high damage threshold (> 10 GW/cm² for 10 ns laser at 1.054 µm)", "wide acceptance angle and small walk-off", "high optical quality (homogeneity Δn 10⁴/cm)"],
+    advantages: ["broad transparency range from 0.160 µm to 2.6 µm (SHG range from 0.55 µm to 2.6 µm)", "type I and type II non-critical phase-matching (NCPM) over a wide wavelength range", "relatively large effective SHG coefficient (about three times larger than that of KDP)", "high damage threshold (> 10 GW/cm² for 10 ns laser at 1.054 µm)", "wide acceptance angle and small walk-off", "high optical quality (homogeneity Δn 10⁴/cm)"],
     images: ["/images/blue1.JPG", "/images/blue2.JPG", "/images/blue3.JPG"]
   },
   {
     title: "POTASSIUM TITANYL PHOSPHATE KTIOPO₄",
-    advantages: ["broad transparency range from 0.160 µm to 2.6 µm (SHG range from 0.55 µm to 2.6 µm)", "typw I and type II non-critical phase-matching (NCPM) over a wide wavelengtht range", "relatively large effective SHG coefficient (about three times larger than that of KDP)", "high damage threshold (> 10 GW/cm² for 10 ns laser at 1.054 µm)", "wide acceptance angle and small walk-off", "high optical quality (homogeneity Δn 10⁴/cm)"],
+    advantages: ["broad transparency range from 0.160 µm to 2.6 µm (SHG range from 0.55 µm to 2.6 µm)", "type I and type II non-critical phase-matching (NCPM) over a wide wavelength range", "relatively large effective SHG coefficient (about three times larger than that of KDP)", "high damage threshold (> 10 GW/cm² for 10 ns laser at 1.054 µm)", "wide acceptance angle and small walk-off", "high optical quality (homogeneity Δn 10⁴/cm)"],
     images: ["/images/blue1.JPG", "/images/blue2.JPG"]
   }
+]
+
+const UZ_PRODUCTS = [
+  {
+    title: "POTASSIUM TITANYL PHOSPHATE KTIOPO₄",
+    advantages: ["Keng shaffoflik diapazoni 0,160 µm dan 2,6 µm gacha (SHG diapazoni 0,55 µm dan 2,6 µm gacha)", "keng to'lqin uzunligi diapazonida I va II turdagi kritik bo'lmagan fazalarni moslashtirish (NCPM).", "nisbatan katta samarali SHG koeffitsienti (KDP dan taxminan uch baravar katta)", "yuqori shikastlanish chegarasi (10 ns lazer uchun > 10 GVt/sm², 1,054 µm)", "keng qabul qilish burchagi va kichik yurish", "yuqori optik sifat (bir xillik Δn 10⁴/sm)"],
+    images: ["/images/blue1.JPG", "/images/blue2.JPG", "/images/blue3.JPG"]
+  },
+  {
+    title: "POTASSIUM TITANYL PHOSPHATE KTIOPO₄",
+    advantages: ["Keng shaffoflik diapazoni 0,160 µm dan 2,6 µm gacha (SHG diapazoni 0,55 µm dan 2,6 µm gacha)", "keng to'lqin uzunligi diapazonida I va II turdagi kritik bo'lmagan fazalarni moslashtirish (NCPM).", "nisbatan katta samarali SHG koeffitsienti (KDP dan taxminan uch baravar katta)", "yuqori shikastlanish chegarasi (10 ns lazer uchun > 10 GVt/sm², 1,054 µm)", "keng qabul qilish burchagi va kichik yurish", "yuqori optik sifat (bir xillik Δn 10⁴/sm)"],
+    images: ["/images/blue1.JPG", "/images/blue2.JPG"]
+  },
 ]
