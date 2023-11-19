@@ -62,7 +62,7 @@ const Header = () => {
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
     const [lastScrollPosition, setLastScrollPosition] = useState(0);
     const [nav, setNav] = useState(false);
-    const {push} = useRouter()
+    const { push } = useRouter()
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollPosition = window.pageYOffset;
@@ -174,7 +174,7 @@ const Header = () => {
                         </ul>
                     </nav>
                     <div ref={scope}>
-                        <Menu />
+                        <Menu lang={lang} langugae={langugae} language={language} setLang={setLang} setLanguage={setLanguage} />
                         <MenuToggle toggle={() => setIsOpen(!isOpen)} />
                     </div>
                 </div>
@@ -192,8 +192,16 @@ const Path = (props: any) => (
         {...props}
     />
 );
-
-export function Menu() {
+interface LANG {
+    lang: any
+    langugae: boolean
+    setLanguage: Function
+    language: string
+    setLang: Function
+}
+export function Menu({ lang, langugae, setLanguage, language, setLang }: LANG) {
+    const { push } = useRouter()
+    const t = useTranslations("Header")
     return (
         <nav className={styles.menu}>
             <Link href={"/"} className={styles.logo}>
@@ -201,11 +209,57 @@ export function Menu() {
             </Link>
             <ul>
                 <li>
-                    <Link href={"#products"}>Products</Link>
+                    <Link href={"#products"}>{t("product")}</Link>
                 </li>
-                <li><Link href={"#aboutUs"}>About Us</Link></li>
-                <li><Link href={"#contact"}>Contact</Link></li>
+                <li><Link href={"#aboutUs"}>{t("about")}</Link></li>
+                <li><Link href={"#contact"}>{t("contact")}</Link></li>
                 {/* <li>Search</li> */}
+                <div className={styles.language}>
+                    <nav className={styles.language} ref={lang}>
+                        <motion.button
+                            whileTap={{ scale: 0.97 }}
+                            onClick={() => setLanguage(!langugae)}
+                        >
+                            {language}
+                            <div className={styles.arrow} style={!langugae ?
+                                {
+                                    transform: "rotate(0)",
+                                    transition: "0.4s",
+                                }
+                                :
+                                {
+                                    transform: "rotate(180deg)",
+                                    transition: "0.4s"
+                                }}>
+                                <svg width="15" height="15" viewBox="0 0 20 20">
+                                    <path d="M0 7 L 20 7 L 10 16" />
+                                </svg>
+                            </div>
+                        </motion.button>
+                        <ul
+                            className={styles.dropDownModal}
+                            style={!langugae ? {
+                                opacity: 0,
+                                transition: "0.4s",
+                                height: 0,
+
+                            } : {
+                                flexDirection: "row",
+                                opacity: 1,
+                                transition: "0.4s"
+                            }}
+                        >
+                            <li onClick={() => {
+                                setLang("En")
+                                push("/en")
+                            }}>En</li>
+                            <li onClick={() => {
+                                setLang("Uz")
+                                push("/uz")
+                            }}>Uz</li>
+                        </ul>
+                    </nav>
+                </div>
             </ul>
         </nav>
     );
