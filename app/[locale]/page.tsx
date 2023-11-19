@@ -21,6 +21,7 @@ import { inView } from "framer-motion/dom"
 import { useInView } from 'react-intersection-observer';
 import { easing } from '@/utils/animations';
 import Footer from './components/global/Footer';
+import { useRouter } from 'next/navigation';
 
 
 export default function Index() {
@@ -28,7 +29,7 @@ export default function Index() {
   const title = useRef(null)
   const subTitle = useRef(null)
   const { scrollYProgress } = useScroll();
-
+  const {push} = useRouter()
   return (
     <>
       <main className={styles.main}>
@@ -58,7 +59,9 @@ export default function Index() {
                   },
                 }}>Sun Semurg</motion.h1>
                 <h3>crystals</h3>
-                <motion.div className={styles.arrowDown}>
+                <motion.div onClick={()=> {
+                  push("#products")
+                }} className={styles.arrowDown}>
                   <Image width={17} height={30} src={"/icons/arrowDown.svg"} alt='arrow down icon' />
                 </motion.div>
               </motion.div>
