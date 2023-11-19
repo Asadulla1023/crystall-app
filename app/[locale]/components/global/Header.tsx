@@ -92,7 +92,7 @@ const Header = () => {
     };
     useEffect(() => {
         window.addEventListener("scroll", changeBgHandler);
-    }, [window]);
+    });
     const pathname = usePathname()
     const l = pathname.split("/")
     const [language, setLang] = useState(l[1] === "" ? "Uz" : "En")
