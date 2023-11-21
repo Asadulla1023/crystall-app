@@ -445,7 +445,7 @@
   position: relative !important;
   left: 0;
   margin-left: 0rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
   top: 0 !important;
   width: fit-content !important;
 }
@@ -511,23 +511,23 @@
 
 @keyframes animationArrowCircle {
   0% {
-    border: 2px solid #7aeaff;
+    border: 2px solid #7a9dff;
     box-shadow: #7aeaff33 0px 8px 24px;
   }
   25% {
-    border: 2px solid #dfff52;
+    border: 2px solid #5255ff;
     box-shadow: #dfff5233 0px 8px 24px;
   }
   50% {
-    border: 2px solid #61ff52;
+    border: 2px solid #9452ff;
     box-shadow: #61ff5233 0px 8px 24px;
   }
   75% {
-    border: 2px solid #ff8952;
+    border: 2px solid #8f52ff;
     box-shadow: #ff895233 0px 8px 24px;
   }
   100% {
-    border: 2px solid #7aeaff;
+    border: 2px solid #7a7cff;
     box-shadow: #7aeaff33 0px 8px 24px;
   }
 }
@@ -535,9 +535,6 @@
 @keyframes subtitleColor {
   0% {
     color: #7aeaff;
-  }
-  50% {
-    color: #fffb03;
   }
   100% {
     padding: 0;
