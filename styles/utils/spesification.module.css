@@ -1,0 +1,217 @@
+.spesification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+  height: 100%;
+  background: rgba(105, 105, 105, 0.404);
+  transition: 0.2s linear;
+  opacity: 1;
+}
+
+.hidden {
+  transition: 0.3s linear;
+  z-index: -1000;
+  position: fixed;
+  margin: auto;
+}
+.hidden > .bg {
+  transition: 0.3s linear;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  z-index: -1000;
+  position: fixed;
+  left: 50%;
+  margin: auto;
+  top: 50%;
+}
+
+.hidden > .container {
+    width: 0;
+    opacity: 0;
+}
+
+.bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  cursor: not-allowed;
+  z-index: 1000;
+  left: 0;
+  height: 100%;
+  background: rgba(105, 105, 105, 0.404);
+}
+
+.container {
+  z-index: 10000;
+  width: 95%;
+  height: 95%;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.container > div {
+  margin: auto;
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+}
+
+.content > h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.formFill {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem;
+  height: 77vh;
+  overflow-y: scroll;
+}
+
+.information {
+  min-height: fit-content;
+  border: 1px solid #000;
+  border-bottom: 0;
+  border-right: 0 solid #000;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.information:nth-child(14) {
+  border-bottom: 1px solid #000;
+}
+
+.information > div {
+  border-right: 1px solid #000;
+}
+
+.queue {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  width: 5%;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  width: 43%;
+}
+
+.values {
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  min-height: 100%;
+  gap: 0.5rem;
+  width: 26.3%;
+}
+
+.values > input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.values > input::placeholder,
+.additional > input::placeholder {
+  color: #0099b6;
+}
+
+.formFill > .additional {
+  margin-top: 2rem;
+  resize: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.additional > textarea {
+  border: 1px solid #000;
+  outline: none;
+  padding: 0.5rem;
+  width: 80%;
+  overflow: hidden;
+  height: 200px;
+  border-radius: 0.5rem;
+  resize: vertical;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.additional > textarea::placeholder {
+  color: #0099b6;
+}
+
+.additional > input {
+  border-radius: 0.5rem;
+  outline: none;
+  width: 300px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #000;
+}
+
+.additional > button {
+  padding: 0.5rem 3rem;
+  border: none;
+  outline: none;
+  border: 1px solid #0099b6;
+  border-radius: 300px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content;
+  color: #0099b6;
+  background: #fff;
+  transition: 0.2s ease-in-out;
+  box-shadow: #ffffff59 0px 5px 15px;
+}
+
+.additional > button:active {
+  scale: 0.97;
+}
+
+.additional > button:hover {
+  background: #56e6ff;
+  color: #000;
+}
+
+@media screen and (max-width: 700px) {
+  .options,
+  .values,
+  .queue {
+    font-size: 12px;
+    padding-left: 0;
+  }
+  .content h1 {
+    font-size: 2rem;
+  }
+  .formFill {
+    margin-top: 1rem;
+  }
+  .formFill textarea,
+  .values input {
+    font-size: 12px;
+  }
+}

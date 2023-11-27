@@ -5,29 +5,26 @@
         "contact": "Contacts"
     },
     "Entrance": {
-        "info": "Sun Simurg Crystals, LLC. supplies nonlinear optical crystals for laser optics and helps you purchase crystal products to complete your laser system",
-        "products": "Productions:",
+        "info": "Sun Simurg Crystals, LLC. Supplies nonlinear optical crystals for laser optics and helps you purchase crystal products to complete your laser system",
+        "products": "Products:",
         "others": "Other"
     },
     "Company": {
-        "title": "ABOUT COMPANY",
-        "description": "Sun Simurg Crystals, LLC. Is the first commercial company in the RU market supplying nonlinear optical crystals for laser optics. our company has reliable partnerships with crystal growth production facilities of other companies, and also helps to purchase crystal products for completing laser systems in other countries. nonlinear optical elements supplied....",
+        "title": "ABOUT US",
+        "description": "Sun Simurg Crystals, LLC. is the first commercial company in the market of the Republic of Uzbekistan, supplying nonlinear optical crystals for laser optics. Our company has reliable partnerships with crystal growth production facilities of other companies, and also helps to purchase crystal products for completing laser systems in other countries. Nonlinear optical elements supplied by our company undergo standardized testing for compliance with the Specifications agreed with the Customer.",
         "years": "16+ years",
-        "works": "INTERNATIONAL EXPERIENCE IN THE CONSTRUCTION INDUSTRY (MORE THAN 20 CONSTRUCTION PROJECTS HAVE BEEN COMMISSIONED)",
-        "activities": "ACTIVITIES STARTED IN RUSSIA",
-        "inrussia": "FACILITY IN RUSSIA",
-        "designed": "DESIGNED",
-        "construction":"UNDER CONSTRUCTION",
-        "read": "Read more"
+        "works": "INTERNATIONAL EXPERIENCE IN THE CONSTRUCTION INDUSTRY (MORE THAN 20 CONSTRUCTION PROJECTS HAVE BEEN COMMISSIONED)"
     },
     "Contacts": {
         "title": "CONSULTATION SPECIALISTS",
-        "name": "Your name",
-        "phone": "Phone number",
+        "name": "Company name",
+        "phone": "Your email address",
         "button": "Submit"
     },
-    "Footer": {
-        "contact": "Contacts",
-        "about": "About Us"
+    "Spesifications": {
+        "title": "Customer’s Specification",
+        "subtitle": "COMMENTS AND ADDITIONAL REQUIREMENTS OF THE CUSTOMER",
+        "email": "Your email",
+        "additional": "Additional requirements"
     }
 }

@@ -9,47 +9,47 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 function useMenuAnimation(isOpen: boolean) {
     const [scope, animate] = useAnimate();
-
     useEffect(() => {
-        const menuAnimations = isOpen
-            ? [
-                [
-                    "nav",
-                    { transform: "translateX(0%)" },
-                    { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 }
-                ],
-                [
-                    "li",
-                    { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
-                    { delay: stagger(0.05), at: "-0.1" }
+        if (scope.current) {
+            const menuAnimations = isOpen
+                ? [
+                    [
+                        "nav",
+                        { transform: "translateX(0%)" },
+                        { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 }
+                    ],
+                    [
+                        "li",
+                        { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
+                        { delay: stagger(0.05), at: "-0.1" }
+                    ]
                 ]
-            ]
-            : [
+                : [
+                    [
+                        "li",
+                        { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
+                        { delay: stagger(0.05, { from: "last" }), at: "<" }
+                    ],
+                    ["nav", { transform: "translateX(-100%)" }, { at: "-0.1" }]
+                ];
+
+            animate([
                 [
-                    "li",
-                    { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
-                    { delay: stagger(0.05, { from: "last" }), at: "<" }
+                    "path.top",
+                    { d: isOpen ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5" },
+                    { at: "<" }
                 ],
-                ["nav", { transform: "translateX(-100%)" }, { at: "-0.1" }]
-            ];
-
-        animate([
-            [
-                "path.top",
-                { d: isOpen ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5" },
-                { at: "<" }
-            ],
-            ["path.middle", { opacity: isOpen ? 0 : 1 }, { at: "<" }],
-            [
-                "path.bottom",
-                { d: isOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346" },
-                { at: "<" }
-            ],
-            // @ts-ignore
-            ...menuAnimations
-        ]);
+                ["path.middle", { opacity: isOpen ? 0 : 1 }, { at: "<" }],
+                [
+                    "path.bottom",
+                    { d: isOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346" },
+                    { at: "<" }
+                ],
+                // @ts-ignore
+                ...menuAnimations
+            ]);
+        }
     }, [isOpen]);
-
     return scope;
 }
 
@@ -95,7 +95,7 @@ const Header = () => {
     });
     const pathname = usePathname()
     const l = pathname.split("/")
-    const [language, setLang] = useState(l[1] === "" ? "Uz" : "En")
+    const [language, setLang] = useState(l[1] === "" ? "O'zbekcha" : "English")
     return (
         <div style={
             isHeaderVisible === true
@@ -118,63 +118,24 @@ const Header = () => {
                     <nav className={styles.navigator}>
                         <ul className={styles.navigatorList}>
                             <li className={styles.navigate}>
-                                <Link href={"#products"}><span />{t("product")}</Link>
-                            </li>
-                            <li className={styles.navigate}>
                                 <Link href={"#aboutUs"}>{t("about")}</Link>
                             </li>
                             <li className={styles.navigate}>
                                 <Link href={"#contact"}>{t("contact")}</Link>
                             </li>
                             <div className={styles.language}>
-                                <nav className={styles.language} ref={lang}>
-                                    <motion.button
-                                        whileTap={{ scale: 0.97 }}
-                                        onClick={() => setLanguage(!langugae)}
-                                    >
-                                        {language}
-                                        <div className={styles.arrow} style={!langugae ?
-                                            {
-                                                transform: "rotate(0)",
-                                                transition: "0.4s",
-                                            }
-                                            :
-                                            {
-                                                transform: "rotate(180deg)",
-                                                transition: "0.4s"
-                                            }}>
-                                            <svg width="15" height="15" viewBox="0 0 20 20">
-                                                <path d="M0 7 L 20 7 L 10 16" />
-                                            </svg>
-                                        </div>
-                                    </motion.button>
-                                    <ul
-                                        className={styles.dropDownModal}
-                                        style={!langugae ? {
-                                            opacity: 0,
-                                            transition: "0.4s",
-                                            height: 0,
-
-                                        } : {
-                                            opacity: 1,
-                                            transition: "0.4s"
-                                        }}
-                                    >
-                                        <li onClick={() => {
-                                            setLang("En")
-                                            push("/en")
-                                        }}>En</li>
-                                        <li onClick={() => {
-                                            setLang("Uz")
-                                            push("/uz")
-                                        }}>Uz</li>
-                                    </ul>
-                                </nav>
+                                <button
+                                    onClick={() => {
+                                        pathname == "/" ? push("/en") : push("/uz")
+                                    }}
+                                >
+                                    {language}
+                                </button>
                             </div>
                         </ul>
                     </nav>
                     <div ref={scope}>
-                        <Menu lang={lang} langugae={langugae} language={language} setLang={setLang} setLanguage={setLanguage} />
+                        <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
                         <MenuToggle toggle={() => setIsOpen(!isOpen)} />
                     </div>
                 </div>
@@ -192,15 +153,12 @@ const Path = (props: any) => (
         {...props}
     />
 );
-interface LANG {
-    lang: any
-    langugae: boolean
-    setLanguage: Function
-    language: string
-    setLang: Function
-}
-export function Menu({ lang, langugae, setLanguage, language, setLang }: LANG) {
+export function Menu({isOpen, setIsOpen}: {
+    setIsOpen: Function,
+    isOpen: boolean
+}) {
     const { push } = useRouter()
+    const pathname = usePathname()
     const t = useTranslations("Header")
     return (
         <nav className={styles.menu}>
@@ -208,57 +166,20 @@ export function Menu({ lang, langugae, setLanguage, language, setLang }: LANG) {
                 <Image src={"/icons/logo.svg"} width={20} height={20} alt='logo' />
             </Link>
             <ul>
-                <li>
-                    <Link href={"#products"}>{t("product")}</Link>
-                </li>
-                <li><Link href={"#aboutUs"}>{t("about")}</Link></li>
-                <li><Link href={"#contact"}>{t("contact")}</Link></li>
-                {/* <li>Search</li> */}
+                <li><Link onMouseDown={()=> {
+                    setIsOpen(!isOpen)
+                }} href={"#aboutUs"}>{t("about")}</Link></li>
+                <li><Link onMouseDown={()=> {
+                    setIsOpen(!isOpen)
+                }}  href={"#contact"}>{t("contact")}</Link></li>
                 <div className={styles.language}>
-                    <nav className={styles.language} ref={lang}>
-                        <motion.button
-                            whileTap={{ scale: 0.97 }}
-                            onClick={() => setLanguage(!langugae)}
-                        >
-                            {language}
-                            <div className={styles.arrow} style={!langugae ?
-                                {
-                                    transform: "rotate(0)",
-                                    transition: "0.4s",
-                                }
-                                :
-                                {
-                                    transform: "rotate(180deg)",
-                                    transition: "0.4s"
-                                }}>
-                                <svg width="15" height="15" viewBox="0 0 20 20">
-                                    <path d="M0 7 L 20 7 L 10 16" />
-                                </svg>
-                            </div>
-                        </motion.button>
-                        <ul
-                            className={styles.dropDownModal}
-                            style={!langugae ? {
-                                opacity: 0,
-                                transition: "0.4s",
-                                height: 0,
-
-                            } : {
-                                flexDirection: "row",
-                                opacity: 1,
-                                transition: "0.4s"
-                            }}
-                        >
-                            <li onClick={() => {
-                                setLang("En")
-                                push("/en")
-                            }}>En</li>
-                            <li onClick={() => {
-                                setLang("Uz")
-                                push("/uz")
-                            }}>Uz</li>
-                        </ul>
-                    </nav>
+                    <button
+                        onClick={() => {
+                            pathname == "/" ? push("/en") : push("/uz")
+                        }}
+                    >
+                        {pathname == "/" ? "O'zbekcha" : "English"}
+                    </button>
                 </div>
             </ul>
         </nav>

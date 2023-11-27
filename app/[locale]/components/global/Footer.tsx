@@ -6,7 +6,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 const Footer = () => {
-    const t = useTranslations("Footer")
     return (
         <footer className={styles.footer}>
             <Container>
@@ -15,18 +14,10 @@ const Footer = () => {
                         <Link href={"/"} className={styles.logo}>
                             <Image src={"/icons/logo.svg"} width={20} height={20} alt='logo' />
                         </Link>
-                        <ul className={styles.navList}>
-                            <li>
-                                <Link href={"#contact"}>{t("contact")}</Link>
-                            </li>
-                            <li>
-                                <Link href={"#aboutUs"}>{t("about")}</Link>
-                            </li>
-                        </ul>
+                        <Link className={styles.contacts} href={"tel: +998 91 554 80 31"}>+998 91 554 80 31</Link>
                     </div>
-                    <Link href={"tel: +7(903)156-56-11"}>+7(903)156-56-11</Link>
                     <div className={styles.madeWith}>
-                        <h4>Copyright ⓒ 2019 - 2023  Кристаллы Сибири</h4>
+                        <h4 />
                         <h4>Создание, разработка сайта - студия <Link href={"https://www.empire-soft.net/"}>Empire-soft.net</Link></h4>
                     </div>
                 </div>
