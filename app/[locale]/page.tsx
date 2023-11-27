@@ -1,7 +1,6 @@
 "use client"
 import { useTranslations } from 'next-intl';
 import styles from "@/styles/home/index.module.css"
-import Header from './components/global/Header';
 import Container from './components/local/utils/Container';
 import Image from 'next/image';
 import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react"
@@ -10,39 +9,20 @@ import { useEffect, useRef, useState } from 'react';
 import {
   motion,
   useScroll,
-  useSpring,
-  useTransform,
-  MotionValue,
   useAnimation
 } from 'framer-motion';
 import Link from 'next/link';
 
-import { inView } from "framer-motion/dom"
 import { useInView } from 'react-intersection-observer';
-import { easing } from '@/utils/animations';
 import Footer from './components/global/Footer';
 import { usePathname, useRouter } from 'next/navigation';
 import Spesification from './components/local/utils/Spesification';
 
 
 export default function Index() {
-  // const t = useTranslations('Index');
-  const title = useRef(null)
   const entrance = useTranslations("Entrance")
-  const subTitle = useRef(null)
-  const { scrollYProgress } = useScroll();
   const pathname = usePathname()
-  const l = pathname.split("/")
   const { push } = useRouter()
-  const [isLoading, setIsLoading] = useState(true)
-  useEffect(() => {
-    if (videoRef.current && videoRef.current.readyState >= 3) {
-      setIsLoading(false)
-    } else {
-      setIsLoading(true)
-    }
-  }, [])
-  const videoRef = useRef<HTMLVideoElement | any>()
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>

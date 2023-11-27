@@ -49,7 +49,7 @@ function useMenuAnimation(isOpen: boolean) {
                 ...menuAnimations
             ]);
         }
-    }, [isOpen]);
+    }, [isOpen, scope, animate]);
     return scope;
 }
 
