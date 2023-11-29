@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   }
 }
 export function generateStaticParams() {
-  return [{ locale: 'ru' }, { locale: 'uz' }];
+  return [{ locale: 'en' }, { locale: 'uz' }];
 }
 
 
