@@ -5,10 +5,9 @@ import Container from './components/local/utils/Container';
 import Image from 'next/image';
 import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   motion,
-  useScroll,
   useAnimation
 } from 'framer-motion';
 import Link from 'next/link';
@@ -130,7 +129,7 @@ function Product({ id, title, advantages, images, route }: {
       controls.start("hidden");
     }
   }, [controls, inView]);
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+  const [sliderRef] = useKeenSlider<HTMLDivElement>(
     {
       loop: true,
       rubberband: false,
@@ -221,7 +220,7 @@ function Product({ id, title, advantages, images, route }: {
               }
             }
           }} ref={sliderRef} className={`keen-slider ${styles.slider}`} style={{ height: 500 }}>
-            {images.map((e, index) => {
+            {images.map((e) => {
               return <div key={e} className={`keen-slider__slide number-slide${id} ${styles.slide}`}>
                 <Image src={e} width={800} height={850} alt='some image' />
               </div>

@@ -1,12 +1,10 @@
 import { Metadata } from 'next';
-import { useLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import "@/styles/globals.css"
-import { motion } from "framer-motion"
 import Header from './components/global/Header';
-import Footer from './components/global/Footer';
 const locales = ['en', 'uz']
-import { NextIntlClientProvider } from 'next-intl';;
+import { NextIntlClientProvider } from 'next-intl';import { unstable_setRequestLocale } from 'next-intl/server';
+;
 
 export const metadata: Metadata = {
   title: 'Crystal shop',
@@ -35,6 +33,9 @@ export default async function LocaleLayout({ children, params: { locale } }: {
   } catch (error) {
     notFound();
   }
+  if (!locales.includes(locale as any)) notFound();
+ 
+  unstable_setRequestLocale(locale);
   return (
     <html lang={locale}>
       <body>
