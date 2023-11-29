@@ -96,5 +96,10 @@
     }
     .navigator {
         flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contacts {
+        font-size: 28px !important;
     }
 }

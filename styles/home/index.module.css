@@ -824,4 +824,7 @@
     flex-direction: column;
     gap: 0.3rem;
   }
+  .leftSide > h3 {
+    font-size: 28px;
+}
 }
