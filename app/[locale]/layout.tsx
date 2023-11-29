@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import "@/styles/globals.css"
 import Header from './components/global/Header';
 const locales = ['en', 'uz']
@@ -26,14 +26,14 @@ export default async function LocaleLayout({ children, params: { locale } }: {
   }
 }) {
   const isValidLocale = locales.some((cur) => cur === locale);
-  if (!isValidLocale) notFound();
+  if (!isValidLocale) redirect("/en");
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
-    notFound();
+    redirect("/en");
   }
-  if (!locales.includes(locale as any)) notFound();
+  if (!locales.includes(locale as any)) redirect("/en");
  
   unstable_setRequestLocale(locale);
   return (
