@@ -94,4 +94,7 @@
     .content a {
         top: -1rem;
     }
+    .navigator {
+        flex-direction: column;
+    }
 }
