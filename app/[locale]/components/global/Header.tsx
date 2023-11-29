@@ -94,8 +94,6 @@ const Header = () => {
         window.addEventListener("scroll", changeBgHandler);
     });
     const pathname = usePathname()
-    const l = pathname.split("/")
-    const [language, setLang] = useState(l[1] === "" ? "O'zbekcha" : "English")
     return (
         <div style={
             isHeaderVisible === true
@@ -126,10 +124,10 @@ const Header = () => {
                             <div className={styles.language}>
                                 <button
                                     onClick={() => {
-                                        pathname == "/" ? push("/en") : push("/uz")
+                                        pathname == "/uz"||"" ? push("/en") : push("/uz")
                                     }}
                                 >
-                                    {language}
+                                    {pathname === "/uz"? "O'zbekcha": "English"}
                                 </button>
                             </div>
                         </ul>

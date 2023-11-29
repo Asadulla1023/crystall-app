@@ -25,7 +25,6 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
         e.preventDefault()
         const data = new FormData(e.target)
         const obj = Object.fromEntries(data.entries())
-        console.log(obj);
         const msg = `Nonlinear optical crystal: ${obj.ktp} %0ADimensions of the optical elemen: ${obj.dimension}%0AOrientation: ${obj.orient}%0AType phase matching: ${obj.phase}%0ALasing wavelength, nm: ${obj.wavelength}%0AType of coating: ${obj.coating}%0AQuantity, pcs: ${obj.quantity}%0ADimensional tolerance: ${obj.dimension}%0AFlatness: ${obj.flatness}%0AParallelism, arcsec: ${obj.arcsec}%0APerpendicularity, arcmin: ${obj.arcmin}%0ASize of the chamfers: ${obj.chamfers}%0AOptical surface quality: ${obj.scratch}%0AAdditional text: ${obj.additional}%0AUser email: ${obj.email}`
         axios({
             method: "post",
