@@ -820,4 +820,8 @@
   .leftSide p {
     margin-top: -10rem;
   }
+  .products > ul {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
 }

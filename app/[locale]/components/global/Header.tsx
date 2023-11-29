@@ -173,10 +173,10 @@ export function Menu({isOpen, setIsOpen}: {
                 <div className={styles.language}>
                     <button
                         onClick={() => {
-                            pathname == "/" ? push("/en") : push("/uz")
+                            pathname == "/uz" ? push("/en") : push("/uz")
                         }}
                     >
-                        {pathname == "/" ? "O'zbekcha" : "English"}
+                        {pathname == "/uz" ? "O'zbekcha" : "English"}
                     </button>
                 </div>
             </ul>
