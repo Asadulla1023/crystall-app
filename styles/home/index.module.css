@@ -472,6 +472,10 @@
   color: #000;
 }
 
+.inform img {
+  border-radius: 0.5rem;
+}
+
 .rightSide > h4,
 .leftSide > h4 {
   font-size: 1.5rem;

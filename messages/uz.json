@@ -17,8 +17,8 @@
     },
     "Contacts": {
         "title": "MUTAXASSISLAR BILAN BOG'LANISH",
-        "name": "Ismingiz",
-        "phone": "Telefon raqamingiz",
+        "name": "Kompaniya nomi",
+        "phone": "Email address",
         "button": "Jo'natish"
     },
     "Spesifications": {

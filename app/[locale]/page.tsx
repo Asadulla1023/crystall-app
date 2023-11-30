@@ -116,7 +116,6 @@ function Product({ id, title, advantages, images, route }: {
   images: string[],
   route: string
 }) {
-
   const [ref, inView] = useInView({
     triggerOnce: true
   });
