@@ -158,7 +158,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <textarea placeholder={t("additional")} required name='additional' />
                                 <h3>{t("email")}</h3>
                                 <input type="email" name='email' required placeholder='example@mail.com' />
-                                <button>{path == "/uz" || "/" ? "Jo'natish" : "Submit"}</button>
+                                <button>{path == "/uz" ? "Jo'natish" : "Submit"}</button>
                             </div>
                         </form>
                     </div>

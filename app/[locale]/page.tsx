@@ -90,7 +90,7 @@ export default function Index() {
           </Container>
         </div>
         <div id='products' className={`${styles.entrance} ${styles.productsInformations}`}>
-          {pathname === "/" || "/uz" ? UZ_PRODUCTS.map((e, index) => {
+          {pathname === "/uz" ? UZ_PRODUCTS.map((e, index) => {
             return <Product route={e.route} advantages={e.advantages} images={e.images} title={e.title} key={Math.random() + `${e.title}`} id={index + 1} />
           }) : products.map((e, index) => {
             return <Product route={e.route} advantages={e.advantages} images={e.images} title={e.title} key={Math.random() + `${e.title}`} id={index + 1} />
@@ -98,7 +98,7 @@ export default function Index() {
           <div className={styles.spesicitaions}>
             <button onClick={() => {
               setIsOpen(true)
-            }}>{pathname === "/" || "/uz" ? 'Texnik xususiyatlari' : "Specifications"}</button>
+            }}>{pathname === "/uz" ? 'Texnik xususiyatlari' : "Specifications"}</button>
           </div>
         </div>
         <AboutSection />
@@ -183,7 +183,7 @@ function Product({ id, title, advantages, images, route }: {
               <div className={styles.circle}>{id}</div>
             </div>
             <div className={styles.productAdvantages}>
-              <h3>{pathname === "/" || "/uz" ? "Afzalliklar" : "Advantages"}</h3>
+              <h3>{pathname === "/uz" ? "Afzalliklar" : "Advantages"}</h3>
               <div className={styles.advantagesWrapper}>
                 {advantages.map(e => {
                   return <div key={e} className={styles.advantage}>
