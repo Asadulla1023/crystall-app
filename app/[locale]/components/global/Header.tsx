@@ -135,7 +135,7 @@ const Header = () => {
                                         push("/uz")
                                     }}
                                 >
-                                    O'zb
+                                    O{"'"}zb
                                 </button>
                             </div>
                         </ul>
@@ -192,7 +192,7 @@ export function Menu({ isOpen, setIsOpen }: {
                             push("/uz")
                         }}
                     >
-                        O'zb
+                        O{"'"}zb
                     </button>
                 </div>
             </ul>
