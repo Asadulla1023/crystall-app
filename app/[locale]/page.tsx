@@ -169,7 +169,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
                     <h4>{specifications.absor.title}</h4>
                     <div className={styles.productsArray}>
                       {specifications.absor.array.map((e: string) => {
-                        return <p>{e}</p>
+                        return <p key={e}>{e}</p>
                       })}
                     </div>
                   </>}
@@ -189,12 +189,12 @@ function Product({ id, title, advantages, images, route, specifications, applica
                   <h4>{specifications.size.title}</h4>
                   <div className={styles.productsArray}>
                     {specifications.size.array.map((e: string) => {
-                      return <p>{e}</p>
+                      return <p key={e}>{e}</p>
                     })}
                   </div>
                   <div className={styles.productsArray}>
                     {specifications.size.array2.map((e: string) => {
-                      return <p>{e}</p>
+                      return <p key={e}>{e}</p>
                     })}
                   </div>
                 </>}
@@ -202,7 +202,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
                   <h4>{specifications.capabe.title}</h4>
                   <div className={styles.productsArrayCapabe}>
                     {specifications.capabe.array.map((e: string) => {
-                      return <p>{e}</p>
+                      return <p key={e}>{e}</p>
                     })}
                   </div>
                 </>}
@@ -210,7 +210,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
               <p>{pathname === "/uz" ? "Maxsus o'lchamlar so'rov bo'yicha mavjud" : "Custom sizes available on request"}</p>
               <div className={styles.awd}>
                 {specifications.awd.map((e: any) => {
-                  return <div className={styles.awds}>
+                  return <div key={e} className={styles.awds}>
                     <h4>{e.title} <span>{e.sub}</span></h4>
                     <p>{e.standard}</p>
                     <p>{e.optional}</p>

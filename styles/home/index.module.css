@@ -463,6 +463,10 @@
   width: 100%;
 }
 
+.contact .companyInformation {
+  display: flex;
+}
+
 .companyInformation > h3 {
   font-family: "Roboto";
   font-weight: 400;
