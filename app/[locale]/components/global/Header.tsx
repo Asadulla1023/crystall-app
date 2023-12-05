@@ -124,10 +124,18 @@ const Header = () => {
                             <div className={styles.language}>
                                 <button
                                     onClick={() => {
-                                        pathname == "/uz"||"" ? push("/en") : push("/uz")
+                                        push("/en")
                                     }}
                                 >
-                                    {pathname === "/uz"? "O'zbekcha": "English"}
+                                    Eng
+                                </button>
+                                <button>|</button>
+                                <button
+                                    onClick={() => {
+                                        push("/uz")
+                                    }}
+                                >
+                                    O'zb
                                 </button>
                             </div>
                         </ul>
@@ -151,7 +159,7 @@ const Path = (props: any) => (
         {...props}
     />
 );
-export function Menu({isOpen, setIsOpen}: {
+export function Menu({ isOpen, setIsOpen }: {
     setIsOpen: Function,
     isOpen: boolean
 }) {
@@ -164,19 +172,27 @@ export function Menu({isOpen, setIsOpen}: {
                 <Image src={"/icons/logo.svg"} width={20} height={20} alt='logo' />
             </Link>
             <ul>
-                <li><Link onMouseDown={()=> {
+                <li><Link onMouseDown={() => {
                     setIsOpen(!isOpen)
                 }} href={"#aboutUs"}>{t("about")}</Link></li>
-                <li><Link onMouseDown={()=> {
+                <li><Link onMouseDown={() => {
                     setIsOpen(!isOpen)
-                }}  href={"#contact"}>{t("contact")}</Link></li>
+                }} href={"#contact"}>{t("contact")}</Link></li>
                 <div className={styles.language}>
                     <button
                         onClick={() => {
-                            pathname == "/uz" ? push("/en") : push("/uz")
+                            push("/en")
                         }}
                     >
-                        {pathname == "/uz" ? "O'zbekcha" : "English"}
+                        Eng
+                    </button>
+                    <button>|</button>
+                    <button
+                        onClick={() => {
+                            push("/uz")
+                        }}
+                    >
+                        O'zb
                     </button>
                 </div>
             </ul>

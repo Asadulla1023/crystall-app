@@ -11,9 +11,7 @@
     },
     "Company": {
         "title": "ABOUT US",
-        "description": "Sun Simurg Crystals, LLC. is the first commercial company in the market of the Republic of Uzbekistan, supplying nonlinear optical crystals for laser optics. Our company has reliable partnerships with crystal growth production facilities of other companies, and also helps to purchase crystal products for completing laser systems in other countries. Nonlinear optical elements supplied by our company undergo standardized testing for compliance with the Specifications agreed with the Customer.",
-        "years": "16+ years",
-        "works": "INTERNATIONAL EXPERIENCE IN THE CONSTRUCTION INDUSTRY (MORE THAN 20 CONSTRUCTION PROJECTS HAVE BEEN COMMISSIONED)"
+        "description": "Sun Simurg Crystals, LLC. is the first commercial company in the market of the Republic of Uzbekistan, supplying nonlinear optical crystals for laser optics. Our company has reliable partnerships with crystal growth production facilities of other companies, and also helps to purchase crystal products for completing laser systems in other countries. Nonlinear optical elements supplied by our company undergo standardized testing for compliance with the Specifications agreed with the Customer."
     },
     "Contacts": {
         "title": "CONSULTATION SPECIALISTS",
@@ -26,5 +24,9 @@
         "subtitle": "COMMENTS AND ADDITIONAL REQUIREMENTS OF THE CUSTOMER",
         "email": "Your email",
         "additional": "Additional requirements"
+    },
+    "Modal": {
+        "opt":"Options",
+        "values": "Values" 
     }
 }

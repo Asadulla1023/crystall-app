@@ -192,10 +192,40 @@
 .product > div {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   height: 100%;
   position: relative;
 }
+
+.product > div > button {
+  padding: 0.8rem 3rem;
+  border: none;
+  margin-top: 2rem !important;
+  outline: none;
+  width: fit-content;
+  margin: auto;
+  border: 1px solid #0099b6;
+  border-radius: 300px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content;
+  color: #0099b6;
+  background: #fff;
+  transition: 0.2s ease-in-out;
+  box-shadow: #ffffff59 0px 5px 15px;
+}
+
+.product > div > button:active {
+  scale: 0.97;
+}
+
+.product > div > button:hover {
+  background: #56e6ff;
+  color: #000;
+}
+
 
 .product > div > h3 {
   position: absolute;
@@ -213,24 +243,30 @@
 
 .productInformation {
   display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
   height: 100%;
-  width: 640px;
+  width: 100% !important;
+}
+.productInformation > .productSection {
+  width: 33%;
 }
 
 .infoTop {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 1rem;
   align-items: center;
 }
 
 .infoTop > h2 {
   text-transform: uppercase;
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   color: #fff;
-  width: 35rem;
+  width: 100% !important;
+  text-align: center;
 }
 
 .infoTop > .circle {
@@ -249,18 +285,115 @@
 .productAdvantages {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
-.productAdvantages > h3 {
-  font-size: 2rem;
+.productAdvantages > img {
+  width: 100% !important;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.productSpesics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.productSpesics > h4,.productsArrayOrient > h4 {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.productSection > p {
+  color: #fff;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.productsArrayOrient {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productsArrayOrient > p{ 
+  width: 70%;
+}
+
+.awd {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.productsArrayCapabe {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.productsArrayCapabe > p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: auto;
+  width: 70%;
+  list-style:disc outside none;
+     display:list-item; 
+}
+
+.awds {
+  display: flex;
+  justify-content: space-between;
+}
+
+.awds > h4 {
+  display: flex;
+  flex-direction: column;
+  width: 52%;
+  color: #fff;
+}
+
+.awds > p {
+  width: 24%;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #000;
+  text-align: right;
+}
+
+.productsArray {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productsArray h4 {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.productsArray p {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+.productAdvantages > h3, .productSection > h2 {
+  text-align: center;
+  font-size: 2.1rem;
   color: #fff;
 }
 
 .advantagesWrapper {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .advantage {
@@ -442,7 +575,7 @@
 
 .rightSide > p {
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 
 .leftSide > h3 {
@@ -460,7 +593,7 @@
   cursor: pointer;
   background: #fff;
   transition: 0.2s ease-in-out;
-  box-shadow: #ffffff59  0px 5px 15px;
+  box-shadow: #ffffff59 0px 5px 15px;
 }
 
 .spesicitaions > button:active {
@@ -627,11 +760,7 @@
     font-size: 1.5rem;
   }
   .product {
-    padding: 4rem 3%;
-  }
-  .productInformation {
-    padding-right: 1rem;
-    width: 65%;
+    padding: 2rem 3%;
   }
   .infoTop h2 {
     width: 350px;
@@ -688,10 +817,22 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
   .companyInformation > h3 {
     font-size: 1.5rem;
   }
+
+  .productInformation {
+    flex-wrap: wrap;
+  }
+  .productSection {
+    width: 48% !important;
+  }
+
+  .productSection:last-child{
+    width: 100% !important;
+  }
+
   .arrowDown {
     margin-left: 1rem;
     left: 0;
@@ -704,15 +845,14 @@
     padding: 1% !important;
   }
   .product {
-    padding: 4rem 1%;
-    padding-bottom: 6rem !important;
+    padding: 2rem 1%;
+    padding-bottom: 2rem !important;
   }
   .rightSide {
     width: 350px;
   }
   .infoTop > h2 {
     font-size: 1.8rem;
-    width: 300px;
   }
   .leftSide {
     width: 450px !important;
@@ -736,9 +876,6 @@
   .info {
     width: 100%;
   }
-  .infoTop > h2 {
-    width: 80% !important;
-  } 
   .products > ul > li > a {
     font-size: 1rem;
   }
@@ -768,6 +905,7 @@
   }
   .product > div {
     flex-direction: column;
+    display: flex;
     position: relative;
   }
   .productInformation {
@@ -775,6 +913,9 @@
   }
   .product > div > h3 {
     top: 50%;
+  }
+  .rightSide > p {
+    font-size: 1.3rem;
   }
   .dots {
     top: 50%;
@@ -792,6 +933,11 @@
   .content h1 {
     font-size: 5rem;
   }
+
+  .productSection {
+    width: 100% !important;
+  }
+
   .content h3 {
     left: 0;
     text-align: right;
@@ -830,5 +976,5 @@
   }
   .leftSide > h3 {
     font-size: 28px;
-}
+  }
 }
