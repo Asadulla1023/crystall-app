@@ -74,13 +74,13 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                         <form onSubmit={sendMessages} action="" className={styles.formFill}>
                             <div className={styles.information}>
                                 <div className={styles.queue}>№</div>
-                                <div className={styles.options}>Options</div>
-                                <div className={styles.values}>Values (To type)</div>
-                                <div className={styles.values}>Values</div>
+                                <div className={styles.options}>{t("opt")}</div>
+                                <div className={styles.values}>{t("val")} {path === "/uz"?"(Yozish uchun)" :"(To type)"}</div>
+                                <div className={styles.values}>{t("val")}</div>
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>1.</div>
-                                <div className={styles.options}>Nonlinear optical crystal</div>
+                                <div className={styles.options}>{t("nonlinear")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef} placeholder="Type value" required name='ktp' />
                                 </div>
@@ -88,7 +88,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>2.</div>
-                                <div className={styles.options}>Dimensions of the optical element, mm³ (* - crystal length)</div>
+                                <div className={styles.options}>{t("dimension")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef1} placeholder="Type value" required name='dimension' />
                                 </div>
@@ -96,7 +96,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>3.</div>
-                                <div className={styles.options}>Orientation</div>
+                                <div className={styles.options}>{t("orient")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef2} placeholder="Type value" required name='orient' />
                                 </div>
@@ -104,7 +104,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>4.</div>
-                                <div className={styles.options}>Type phase matching</div>
+                                <div className={styles.options}>{t("phase")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef3} placeholder="Type value" required name='phase' />
                                 </div>
@@ -112,7 +112,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>5.</div>
-                                <div className={styles.options}>Lasing wavelength, nm</div>
+                                <div className={styles.options}>{t("wave")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef4} placeholder="Type value" required name='wavelength' />
                                 </div>
@@ -120,7 +120,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>6.</div>
-                                <div className={styles.options}>Type of coating (specify wavelengths of antireflection and reflection coefficients)</div>
+                                <div className={styles.options}>{t("coating")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef5} placeholder="Type value" required name='coating' />
                                 </div>
@@ -130,7 +130,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>7.</div>
-                                <div className={styles.options}>Quantity, pcs.</div>
+                                <div className={styles.options}>{t("quantity")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef6} placeholder="Type value" required name='quantity' />
                                 </div>
@@ -138,7 +138,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>8.</div>
-                                <div className={styles.options}>Dimensional tolerance (aperture), mm <br />Dimensional tolerance (length), mm</div>
+                                <div className={styles.options}>{t("tolerance")}<br />{t("tolerance2")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef7} placeholder="Type value" required name='tolerance' />
                                 </div>
@@ -146,7 +146,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>9.</div>
-                                <div className={styles.options}>Flatness (at =633nm)</div>
+                                <div className={styles.options}>{t("flatness")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef8} placeholder="Type value" required name='flatness' />
                                 </div>
@@ -154,7 +154,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>10.</div>
-                                <div className={styles.options}>Parallelism, arcsec</div>
+                                <div className={styles.options}>{t("parall")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef9} placeholder="Type value" required name='arcsec' />
                                 </div>
@@ -162,7 +162,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>11.</div>
-                                <div className={styles.options}>Perpendicularity, arcmin</div>
+                                <div className={styles.options}>{t("perpen")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef10} placeholder="Type value" required name='arcmin' />
                                 </div>
@@ -170,7 +170,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>12.</div>
-                                <div className={styles.options}>The size of the chamfers along the aperture and on the side surfaces</div>
+                                <div className={styles.options}>{t("size")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef11} placeholder="Type value" required name='chamfers' />
                                 </div>
@@ -178,7 +178,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>13.</div>
-                                <div className={styles.options}>Optical surface quality, scratch/dig</div>
+                                <div className={styles.options}>{t("surface")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef12} placeholder="Type value" required name='scratch' />
                                 </div>
