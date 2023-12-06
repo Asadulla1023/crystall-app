@@ -87,7 +87,7 @@ export default function Index() {
                 <div className={styles.products}>
                   <ul>
                     <li>
-                      <Link href="#">{entrance("products")}</Link>
+                      <Link href="#products">{entrance("products")}</Link>
                     </li>
                     <li>
                       <Link href="#lbo">LBO</Link>
