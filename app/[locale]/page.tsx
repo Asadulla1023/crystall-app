@@ -577,7 +577,7 @@ const products = [
     ]
   },
   {
-    title: "POTASSIUM-GADOLINIUM TUNGSTATE (KGW/KGY)",
+    title: "POTASSIUM-GADOLINIUM TUNGSTATE (KGW/KGW)",
     advantages: ["high absorbance at 981 nm", "high simulated radiation cross section", "high threshold of laser beam damage", "very low quantum defect λpump/λse", "wide polarized output at 1023-1060 nm", "high tilt efficiency with diode pumping (~60%)", "high concentration of Yb doping"],
     images: ["/images/purple3.JPG"],
     route: "kgw",
@@ -854,7 +854,7 @@ const UZ_PRODUCTS = [
     ]
   },
   {
-    title: "POTASSIUM-GADOLINIUM TUNGSTATE (KGW/KGY)",
+    title: "POTASSIUM-GADOLINIUM TUNGSTATE (KGW/KGW)",
     advantages: ["981 nm da yuqori absorbans", "yuqori simulyatsiya qilingan nurlanish kesimi", "lazer nurlari shikastlanishining yuqori chegarasi", "juda kam kvant λnasos/λse", "1023-1060 nm da keng polarizatsiyali chiqish", "diodli nasos bilan yuqori egilish samaradorligi (~ 60%)", "Yb dopingning yuqori konsentratsiyasi"],
     images: ["/images/purple3.JPG"],
     route: "kgw",
