@@ -16,13 +16,29 @@ import { useInView } from 'react-intersection-observer';
 import Footer from './components/global/Footer';
 import { usePathname, useRouter } from 'next/navigation';
 import Spesification from './components/local/utils/Spesification';
+import axios from 'axios';
 
 
 export default function Index() {
   const entrance = useTranslations("Entrance")
   const pathname = usePathname()
   const { push } = useRouter()
+  const other = useTranslations("OtherPr")
   const [isOpen, setIsOpen] = useState(false)
+  const handleSendTelegram = (e: {
+    preventDefault: () => void,
+    target: any
+  }) => {
+    e.preventDefault()
+    const data = new FormData(e.target)
+    const obj = Object.fromEntries(data.entries())
+    console.log(obj);
+    const msg = `Customer application: ${obj.additional}%0ACustomer Email: ${obj.email}`
+    axios({
+      method: "post",
+      url: `https://api.telegram.org/bot6506618725:AAGvO9uS8jVGzNq5vZnfMaM2eIrJgymJ2t8/sendMessage?chat_id=-1002032821157&text=${msg}`,
+    })
+  }
   return (
     <>
       <Spesification isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -96,6 +112,51 @@ export default function Index() {
             return <Product route={e.route} setIsOpen={setIsOpen} isOpen={isOpen} specifications={e.specifications} application={e.applications} advantages={e.advantages} images={e.images} title={e.title} key={Math.random() + `${e.title}`} id={index + 1} />
           })}
         </div>
+        <div id='others' className={`${styles.entrance} ${styles.productsInformations} ${styles.otherPr}`}>
+          <Container>
+            <section
+              className={styles.product}>
+              <motion.div initial="hidden" animate="visible"
+                variants={{
+                  visible: {
+                    opacity: 1,
+                    transitionDuration: "1s",
+                  },
+                  hidden: {
+                    opacity: 0,
+                    transitionDuration: "1s",
+                  }
+                }}>
+                <div className={styles.infoTop}>
+                  <motion.h2 className="h2">{pathname === "/uz" ? "Boshqa maxsulotlat" : "Other products"}</motion.h2>
+                </div>
+                <div className={styles.detailss}>
+                  <div className={styles.advantagesWrapper}>
+                    {pathname === "/uz" ? other_products_uz.map(e => {
+                      return <div key={e} className={styles.advantage}>
+                        <Image src={"/icons/shape.svg"} alt='shape icon' width={15} height={15} />
+                        <h3>{e}</h3>
+                      </div>
+                    }) : other_products.map(e => {
+                      return <div key={e} className={styles.advantage}>
+                        <Image src={"/icons/shape.svg"} alt='shape icon' width={15} height={15} />
+                        <h3>{e}</h3>
+                      </div>
+                    })}
+                  </div>
+                  <Image src={"/images/pink3.jpg"} alt='image' width={700} height={400} />
+                </div>
+                <form onSubmit={handleSendTelegram} className={styles.additional}>
+                  <h3>{other("subtitle")}</h3>
+                  <textarea placeholder={pathname === "/uz" ? "To'ldiring..." : "Type here..."} required name='additional' />
+                  <h3>{other("email")}</h3>
+                  <input type="email" name='email' required placeholder='example@mail.com' />
+                  <button>{pathname == "/uz" ? "Jo'natish" : other("submit")}</button>
+                </form>
+              </motion.div>
+            </section>
+          </Container>
+        </div>
         <AboutSection />
         <Contact />
       </main>
@@ -162,7 +223,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
               </div>
             </div>
             <div className={styles.productSection}>
-              <h2>{pathname ==="/uz" ? "Texnik xususiyatlari" : "Specifications"}</h2>
+              <h2>{pathname === "/uz" ? "Texnik xususiyatlari" : "Specifications"}</h2>
               <div className={styles.productSpesics}>
                 {specifications?.absor &&
                   <>
@@ -219,7 +280,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
               </div>
             </div>
             <div className={styles.productSection}>
-              <h2>{pathname === "/uz" ? "Ilovalar" :"Applications"}</h2>
+              <h2>{pathname === "/uz" ? "Ilovalar" : "Applications"}</h2>
               <div style={{
                 marginTop: 16
               }} className={styles.advantagesWrapper}>
@@ -234,7 +295,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
           </div>
           <button onClick={() => {
             setIsOpen(true)
-          }}>{pathname === "/uz" ? "Xususiyatlar" :"Specification"}</button>
+          }}>{pathname === "/uz" ? "Xususiyatlar" : "Specification"}</button>
         </motion.div>
       </section>
     </Container>
@@ -915,4 +976,24 @@ const UZ_PRODUCTS = [
       "Argon-ion, Cu-bug' va Ruby lazerlarining chastotasini ikki baravar oshirish, tashqi bo'shliq SHG"
     ]
   },
+]
+
+const other_products = [
+  "Nd:YAG rods;",
+  "Crystals of silver thiogallate AgGaS2;",
+  "Production of some optical elements of laser technology from glass, fused quartz (mirrors, polarizers);",
+  "If we do not have the necessary components, we provide supplies from partner companies with mandatory 100% testing of key parameters at our stands;",
+  "Repolishing and coating of Customer's elements;",
+  "Carrying out R&D in the field of nonlinear optical elements, etc.;",
+  "Creation of optical modulators and elements of laser power optics with unique parameters."
+]
+
+const other_products_uz = [
+  "Nd:YAG rodlari;",
+  "Kumush tiogallat AgGaS2 kristallari;",
+  "Shishadan, eritilgan kvartsdan (oyna, polarizator) lazer texnologiyasining ayrim optik elementlarini ishlab chiqarish;",
+  "Agar bizda kerakli komponentlar bo'lmasa, biz hamkor kompaniyalardan stendlarimizda asosiy parametrlarni majburiy 100% sinovdan o'tkazgan holda etkazib beramiz;",
+  "Buyurtmachi elementlarini qayta jilozlash va qoplash;",
+  "Nochiziqli optik elementlar sohasida ilmiy-tadqiqot ishlarini olib borish va boshqalar;",
+  "Noyob parametrlarga ega optik modulyatorlar va lazer quvvat optikasi elementlarini yaratish."
 ]

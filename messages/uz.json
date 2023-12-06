@@ -24,5 +24,10 @@
         "subtitle": "MIJOCHNING IJROLARI VA QO‘SHIMCHA TALABLARI",
         "email": "Sizning elektron manzilingiz",
         "additional": "Qo'shimcha talablar"
+    },
+    "OtherPr": {
+        "subtitle": "MIJOZNING MUROJATNOMASI",
+        "email": "E-Pochta:",
+        "submit": "So'rovnomani yuborish"
     }
 }

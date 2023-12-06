@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from "@/styles/utils/spesification.module.css"
 import Container from './Container'
 import axios from 'axios'
 import { useTranslations } from 'next-intl'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 interface Specifics {
     isOpen: boolean
@@ -21,6 +21,22 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
             document.body.style.overflowX = "hidden"
         }
     }, [isOpen])
+    const valueRef = useRef<any>()
+    const valueRef1 = useRef<any>()
+    const valueRef2 = useRef<any>()
+    const valueRef3 = useRef<any>()
+    const valueRef4 = useRef<any>()
+    const valueRef5 = useRef<any>()
+    const valueRef6 = useRef<any>()
+    const valueRef7 = useRef<any>()
+    const valueRef8 = useRef<any>()
+    const valueRef9 = useRef<any>()
+    const valueRef10 = useRef<any>()
+    const valueRef11 = useRef<any>()
+    const valueRef12 = useRef<any>()
+    const valueRef13 = useRef<any>()
+    const valueRef14 = useRef<any>()
+    const { push, refresh } = useRouter()
     const sendMessages = (e: React.FormEvent<HTMLFormElement> | any): void => {
         e.preventDefault()
         const data = new FormData(e.target)
@@ -30,10 +46,25 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
             method: "post",
             url: `https://api.telegram.org/bot6506618725:AAGvO9uS8jVGzNq5vZnfMaM2eIrJgymJ2t8/sendMessage?chat_id=-1002032821157&text=${msg}`,
         })
+        setIsOpen(false)
+        valueRef.current.value = ""
+        valueRef1.current.value = ""
+        valueRef2.current.value = ""
+        valueRef3.current.value = ""
+        valueRef4.current.value = ""
+        valueRef5.current.value = ""
+        valueRef6.current.value = ""
+        valueRef7.current.value = ""
+        valueRef8.current.value = ""
+        valueRef9.current.value = ""
+        valueRef10.current.value = ""
+        valueRef11.current.value = ""
+        valueRef12.current.value = ""
+        valueRef13.current.value = ""
+        valueRef14.current.value = ""
     }
 
     const path = usePathname()
-
     return (
         <div className={isOpen == true ? styles.spesification : styles.hidden}>
             <div className={styles.container}>
@@ -51,7 +82,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>1.</div>
                                 <div className={styles.options}>Nonlinear optical crystal</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='ktp' />
+                                    <input type="text" ref={valueRef} placeholder="Type value" required name='ktp' />
                                 </div>
                                 <div className={styles.values}>KTP</div>
                             </div>
@@ -59,7 +90,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>2.</div>
                                 <div className={styles.options}>Dimensions of the optical element, mm³ (* - crystal length)</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='dimension' />
+                                    <input type="text" ref={valueRef1} placeholder="Type value" required name='dimension' />
                                 </div>
                                 <div className={styles.values}>4x4x10*</div>
                             </div>
@@ -67,7 +98,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>3.</div>
                                 <div className={styles.options}>Orientation</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='orient' />
+                                    <input type="text" ref={valueRef2} placeholder="Type value" required name='orient' />
                                 </div>
                                 <div className={styles.values}>X cut</div>
                             </div>
@@ -75,7 +106,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>4.</div>
                                 <div className={styles.options}>Type phase matching</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='phase' />
+                                    <input type="text" ref={valueRef3} placeholder="Type value" required name='phase' />
                                 </div>
                                 <div className={styles.values}>ㅤ</div>
                             </div>
@@ -83,7 +114,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>5.</div>
                                 <div className={styles.options}>Lasing wavelength, nm</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='wavelength' />
+                                    <input type="text" ref={valueRef4} placeholder="Type value" required name='wavelength' />
                                 </div>
                                 <div className={styles.values}>1320 nm</div>
                             </div>
@@ -91,7 +122,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>6.</div>
                                 <div className={styles.options}>Type of coating (specify wavelengths of antireflection and reflection coefficients)</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='coating' />
+                                    <input type="text" ref={valueRef5} placeholder="Type value" required name='coating' />
                                 </div>
                                 <div className={styles.values}>AR/AR@ 1320+1064
                                     @1064  R{"<"}1%
@@ -101,7 +132,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>7.</div>
                                 <div className={styles.options}>Quantity, pcs.</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='quantity' />
+                                    <input type="text" ref={valueRef6} placeholder="Type value" required name='quantity' />
                                 </div>
                                 <div className={styles.values}>8</div>
                             </div>
@@ -109,7 +140,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>8.</div>
                                 <div className={styles.options}>Dimensional tolerance (aperture), mm <br />Dimensional tolerance (length), mm</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='tolerance' />
+                                    <input type="text" ref={valueRef7} placeholder="Type value" required name='tolerance' />
                                 </div>
                                 <div className={styles.values}>+0,1 ÷ 0,0 <br />+0,5 ÷ 0,0</div>
                             </div>
@@ -117,7 +148,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>9.</div>
                                 <div className={styles.options}>Flatness (at =633nm)</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='flatness' />
+                                    <input type="text" ref={valueRef8} placeholder="Type value" required name='flatness' />
                                 </div>
                                 <div className={styles.values}>/6</div>
                             </div>
@@ -125,7 +156,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>10.</div>
                                 <div className={styles.options}>Parallelism, arcsec</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='arcsec' />
+                                    <input type="text" ref={valueRef9} placeholder="Type value" required name='arcsec' />
                                 </div>
                                 <div className={styles.values}>10</div>
                             </div>
@@ -133,7 +164,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>11.</div>
                                 <div className={styles.options}>Perpendicularity, arcmin</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='arcmin' />
+                                    <input type="text" ref={valueRef10} placeholder="Type value" required name='arcmin' />
                                 </div>
                                 <div className={styles.values}>15</div>
                             </div>
@@ -141,7 +172,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>12.</div>
                                 <div className={styles.options}>The size of the chamfers along the aperture and on the side surfaces</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='chamfers' />
+                                    <input type="text" ref={valueRef11} placeholder="Type value" required name='chamfers' />
                                 </div>
                                 <div className={styles.values}>0,3x45</div>
                             </div>
@@ -149,15 +180,15 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>13.</div>
                                 <div className={styles.options}>Optical surface quality, scratch/dig</div>
                                 <div className={styles.values}>
-                                    <input type="text" placeholder="Type value" required name='scratch' />
+                                    <input type="text" ref={valueRef12} placeholder="Type value" required name='scratch' />
                                 </div>
                                 <div className={styles.values}>10/5</div>
                             </div>
                             <div className={styles.additional}>
                                 <h3>{t("subtitle")}</h3>
-                                <textarea placeholder={t("additional")} required name='additional' />
+                                <textarea ref={valueRef13} placeholder={t("additional")} required name='additional' />
                                 <h3>{t("email")}</h3>
-                                <input type="email" name='email' required placeholder='example@mail.com' />
+                                <input type="email" ref={valueRef14} name='email' required placeholder='example@mail.com' />
                                 <button>{path == "/uz" ? "Jo'natish" : "Submit"}</button>
                             </div>
                         </form>

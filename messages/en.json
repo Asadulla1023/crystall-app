@@ -28,5 +28,10 @@
     "Modal": {
         "opt":"Options",
         "values": "Values" 
+    },
+    "OtherPr": {
+        "subtitle": "CUSTOMER'S APPLICATION",
+        "email": "E-MAIL CUSTOMER:",
+        "submit": "Send a request for approval"
     }
 }
