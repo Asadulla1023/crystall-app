@@ -5,7 +5,7 @@ import Container from './components/local/utils/Container';
 import Image from 'next/image';
 import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react"
 import "keen-slider/keen-slider.min.css"
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   motion,
   useAnimation
@@ -38,7 +38,12 @@ export default function Index() {
       method: "post",
       url: `https://api.telegram.org/bot6506618725:AAGvO9uS8jVGzNq5vZnfMaM2eIrJgymJ2t8/sendMessage?chat_id=-1002032821157&text=${msg}`,
     })
+    vRef.current.value = ""
+    bRef.current.value = ""
   }
+
+  const vRef = useRef<any>()
+  const bRef = useRef<any>()
   return (
     <>
       <Spesification isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -148,9 +153,9 @@ export default function Index() {
                 </div>
                 <form onSubmit={handleSendTelegram} className={styles.additional}>
                   <h3>{other("subtitle")}</h3>
-                  <textarea placeholder={pathname === "/uz" ? "To'ldiring..." : "Type here..."} required name='additional' />
+                  <textarea ref={bRef} placeholder={pathname === "/uz" ? "To'ldiring..." : "Type here..."} required name='additional' />
                   <h3>{other("email")}</h3>
-                  <input type="email" name='email' required placeholder='example@mail.com' />
+                  <input ref={vRef} type="email" name='email' required placeholder='example@mail.com' />
                   <button>{pathname == "/uz" ? "Jo'natish" : other("submit")}</button>
                 </form>
               </motion.div>
