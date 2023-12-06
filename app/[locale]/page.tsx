@@ -17,6 +17,7 @@ import Footer from './components/global/Footer';
 import { usePathname, useRouter } from 'next/navigation';
 import Spesification from './components/local/utils/Spesification';
 import axios from 'axios';
+import ScrollTop from './components/local/utils/ScrollTop';
 
 
 export default function Index() {
@@ -165,6 +166,7 @@ export default function Index() {
         <AboutSection />
         <Contact />
       </main>
+      <ScrollTop/>
     </>
   )
 }

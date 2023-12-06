@@ -39,7 +39,7 @@
         "perpen": "Perpendicularity, arcmin",
         "size": "The size of the chamfers along the aperture and on the side surfaces",
         "surface": "Optical surface quality, scratch/dig",
-        "val": "Values"
+        "val": "Values "
     },
     "Modal": {
         "opt":"Options",
