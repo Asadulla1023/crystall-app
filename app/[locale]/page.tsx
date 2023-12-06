@@ -102,7 +102,7 @@ export default function Index() {
                       <Link href="#kgw">KGW/KYW</Link>
                     </li>
                     <li>
-                      <Link href="#products">{entrance("others")}</Link>
+                      <Link href="#other_pr">{entrance("others")}</Link>
                     </li>
                   </ul>
                 </div>
@@ -117,7 +117,7 @@ export default function Index() {
             return <Product route={e.route} setIsOpen={setIsOpen} isOpen={isOpen} specifications={e.specifications} application={e.applications} advantages={e.advantages} images={e.images} title={e.title} key={Math.random() + `${e.title}`} id={index + 1} />
           })}
         </div>
-        <div id='others' className={`${styles.entrance} ${styles.productsInformations} ${styles.otherPr}`}>
+        <div id='other_pr' className={`${styles.entrance} ${styles.productsInformations} ${styles.otherPr}`}>
           <Container>
             <section
               className={styles.product}>
@@ -149,7 +149,7 @@ export default function Index() {
                       </div>
                     })}
                   </div>
-                  <Image src={"/images/pink3.jpg"} alt='image' width={700} height={400} />
+                  <Image src={"/images/pink3.JPG"} alt='image' width={700} height={400} />
                 </div>
                 <form onSubmit={handleSendTelegram} className={styles.additional}>
                   <h3>{other("subtitle")}</h3>
