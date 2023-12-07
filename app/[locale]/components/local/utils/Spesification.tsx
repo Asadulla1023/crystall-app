@@ -245,7 +245,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <h3 style={{
                                 marginTop: 8
-                            }}>⁂ - mandatory filling</h3>
+                            }}>⁂ - {path === "/uz" ? "majburiy to'ldirish" :"mandatory filling"}</h3>
                             <div className={styles.additional}>
                                 <h3>{t("subtitle")}</h3>
                                 <textarea ref={valueRef13} placeholder={t("additional")} required name='additional' />
