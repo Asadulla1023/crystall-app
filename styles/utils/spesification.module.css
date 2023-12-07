@@ -85,20 +85,30 @@
 
 .information {
   min-height: fit-content;
-  border: 1px solid #000;
   border-bottom: 0;
-  border-right: 0 solid #000;
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.information:nth-child(14) {
+.information > div {
+  border: 1px solid #000;
+  border-right: 0px solid #000;
+  border-bottom: 0;
+}
+
+.information:nth-child(15) > .values, .information:nth-child(15) > .queue, .information:nth-child(15) > .options{
   border-bottom: 1px solid #000;
 }
 
-.information > div {
-  border-right: 1px solid #000;
+.values > h3 {
+  font-size: 1.2rem;
+  font-family: "Roboto", serif;
+  font-weight: 300;
+}
+
+.values > h3 > b {
+  font-weight: bold;
 }
 
 .queue {
@@ -112,17 +122,26 @@
   display: flex;
   align-items: center;
   padding-left: 0.5rem;
-  width: 43%;
+  width: 40%;
 }
 
 .values {
+  border-right: 1px solid #000 !important;
   display: flex;
   align-items: center;
   padding: 0 0.5rem;
   min-height: 100%;
   gap: 0.5rem;
-  width: 26.3%;
+  width: 25%;
 }
+
+.values:nth-child(even) {
+  /* background: #000; */
+  border: none;
+  width: 5% !important;
+  opacity: 0;
+}
+
 
 .values > input {
   width: 100%;
@@ -213,5 +232,8 @@
   .formFill textarea,
   .values input {
     font-size: 12px;
+  }
+  .values > h3 {
+    font-size: 0.8rem;
   }
 }

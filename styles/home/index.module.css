@@ -198,7 +198,7 @@
   position: relative;
 }
 
-.product > div > button {
+.fillForm {
   padding: 0.8rem 3rem;
   border: none;
   margin-top: 2rem !important;
@@ -217,11 +217,11 @@
   box-shadow: #ffffff59 0px 5px 15px;
 }
 
-.product > div > button:active {
+.fillForm:active {
   scale: 0.97;
 }
 
-.product > div > button:hover {
+.fillForm:hover {
   background: #56e6ff;
   color: #000;
 }
@@ -251,6 +251,9 @@
 }
 .productInformation > .productSection {
   width: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .infoTop {
@@ -259,6 +262,7 @@
   width: 100%;
   margin-bottom: 1rem;
   align-items: center;
+  flex-direction: column;
 }
 
 .infoTop > h2 {

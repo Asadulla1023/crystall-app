@@ -110,7 +110,12 @@ const Header = () => {
         } className={!nav ? styles.header : styles.headerNav}>
             <Container>
                 <div className={styles.content}>
-                    <Link href={"/"} className={styles.logo}>
+                    <Link href={"#home"} onClick={(e: {
+                        preventDefault: () => void
+                    }) => {
+                        e.preventDefault()
+                        push("#home")
+                    }} className={styles.logo}>
                         <Image src={"/icons/logo.svg"} width={20} height={20} alt='logo' />
                     </Link>
                     <nav className={styles.navigator}>
@@ -168,7 +173,12 @@ export function Menu({ isOpen, setIsOpen }: {
     const t = useTranslations("Header")
     return (
         <nav className={styles.menu}>
-            <Link href={"/"} className={styles.logo}>
+            <Link href={"#home"} onClick={(e: {
+                preventDefault: () => void
+            }) => {
+                e.preventDefault()
+                push("#home")
+            }} className={styles.logo}>
                 <Image src={"/icons/logo.svg"} width={20} height={20} alt='logo' />
             </Link>
             <ul>

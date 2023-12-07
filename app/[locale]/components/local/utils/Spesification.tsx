@@ -73,24 +73,50 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                         <h1>{t("title")}</h1>
                         <form onSubmit={sendMessages} action="" className={styles.formFill}>
                             <div className={styles.information}>
+                                <div className={styles.queue} style={{
+                                    opacity: 0
+                                }}>№</div>
+                                <div className={styles.options} style={{
+                                    opacity: 0
+                                }}>{t("opt")}</div>
+                                <div className={styles.values} style={{
+                                    opacity: 0
+                                }}>{t("val")} {path === "/uz" ? "(Yozish uchun)" : "(To type)"}</div>
+                                <div className={styles.values} style={{
+                                    opacity: 0
+                                }}>
+                                    <input type="text" disabled />
+                                </div>
+                                <div className={styles.values}><h3><b>{path === "/uz" ? "Buyurtmachining ": "Example "}</b>{path === "/uz" ? "to'ldirishga misol" : "of filling out the Customer’s Specification"}</h3></div>
+                            </div>
+                            <div className={styles.information}>
                                 <div className={styles.queue}>№</div>
                                 <div className={styles.options}>{t("opt")}</div>
-                                <div className={styles.values}>{t("val")} {path === "/uz"?"(Yozish uchun)" :"(To type)"}</div>
+                                <div className={styles.values}>{t("val")} {path === "/uz" ? "(Yozish uchun)" : "(To type)"}</div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
+                                </div>
                                 <div className={styles.values}>{t("val")}</div>
                             </div>
                             <div className={styles.information}>
-                                <div className={styles.queue}>1.</div>
+                                <div className={styles.queue}>1. ⁂</div>
                                 <div className={styles.options}>{t("nonlinear")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef} placeholder="Type value" required name='ktp' />
                                 </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
+                                </div>
                                 <div className={styles.values}>KTP</div>
                             </div>
                             <div className={styles.information}>
-                                <div className={styles.queue}>2.</div>
+                                <div className={styles.queue}>2. ⁂</div>
                                 <div className={styles.options}>{t("dimension")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef1} placeholder="Type value" required name='dimension' />
+                                </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
                                 </div>
                                 <div className={styles.values}>4x4x10*</div>
                             </div>
@@ -100,6 +126,9 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef2} placeholder="Type value" required name='orient' />
                                 </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
+                                </div>
                                 <div className={styles.values}>X cut</div>
                             </div>
                             <div className={styles.information}>
@@ -108,31 +137,43 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef3} placeholder="Type value" required name='phase' />
                                 </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
+                                </div>
                                 <div className={styles.values}>ㅤ</div>
                             </div>
                             <div className={styles.information}>
-                                <div className={styles.queue}>5.</div>
+                                <div className={styles.queue}>5. ⁂</div>
                                 <div className={styles.options}>{t("wave")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef4} placeholder="Type value" required name='wavelength' />
                                 </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
+                                </div>
                                 <div className={styles.values}>1320 nm</div>
                             </div>
                             <div className={styles.information}>
-                                <div className={styles.queue}>6.</div>
+                                <div className={styles.queue}>6. ⁂</div>
                                 <div className={styles.options}>{t("coating")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef5} placeholder="Type value" required name='coating' />
+                                </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
                                 </div>
                                 <div className={styles.values}>AR/AR@ 1320+1064
                                     @1064  R{"<"}1%
                                     @1320  R{"<"}0,15</div>
                             </div>
                             <div className={styles.information}>
-                                <div className={styles.queue}>7.</div>
+                                <div className={styles.queue}>7. ⁂</div>
                                 <div className={styles.options}>{t("quantity")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef6} placeholder="Type value" required name='quantity' />
+                                </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
                                 </div>
                                 <div className={styles.values}>8</div>
                             </div>
@@ -142,6 +183,9 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef7} placeholder="Type value" required name='tolerance' />
                                 </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
+                                </div>
                                 <div className={styles.values}>+0,1 ÷ 0,0 <br />+0,5 ÷ 0,0</div>
                             </div>
                             <div className={styles.information}>
@@ -149,6 +193,9 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.options}>{t("flatness")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef8} placeholder="Type value" required name='flatness' />
+                                </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
                                 </div>
                                 <div className={styles.values}>/6</div>
                             </div>
@@ -158,6 +205,9 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef9} placeholder="Type value" required name='arcsec' />
                                 </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
+                                </div>
                                 <div className={styles.values}>10</div>
                             </div>
                             <div className={styles.information}>
@@ -165,6 +215,9 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.options}>{t("perpen")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef10} placeholder="Type value" required name='arcmin' />
+                                </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
                                 </div>
                                 <div className={styles.values}>15</div>
                             </div>
@@ -174,6 +227,9 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef11} placeholder="Type value" required name='chamfers' />
                                 </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
+                                </div>
                                 <div className={styles.values}>0,3x45</div>
                             </div>
                             <div className={styles.information}>
@@ -182,8 +238,14 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef12} placeholder="Type value" required name='scratch' />
                                 </div>
+                                <div className={styles.values}>
+                                    <input type="text" disabled />
+                                </div>
                                 <div className={styles.values}>10/5</div>
                             </div>
+                            <h3 style={{
+                                marginTop: 8
+                            }}>⁂ - mandatory filling</h3>
                             <div className={styles.additional}>
                                 <h3>{t("subtitle")}</h3>
                                 <textarea ref={valueRef13} placeholder={t("additional")} required name='additional' />
