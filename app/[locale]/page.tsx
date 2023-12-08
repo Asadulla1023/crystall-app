@@ -85,7 +85,7 @@ export default function Index() {
                     <li>
                       <Link href="#" onClick={(e: {
                         preventDefault: () => void
-                      })=> {
+                      }) => {
                         e.preventDefault()
                       }} >{entrance("products")}</Link>
                     </li>
@@ -167,7 +167,7 @@ export default function Index() {
         <AboutSection />
         <Contact />
       </main>
-      <ScrollTop/>
+      <ScrollTop />
     </>
   )
 }
@@ -268,7 +268,10 @@ function Product({ id, title, advantages, images, route, specifications, applica
                   </div>
                 </>}
                 {specifications?.size && <>
-                  <h4>{specifications.size.title}</h4>
+                  <h4>{specifications.size.title} <span style={{
+                    color: "#000",
+                    fontWeight: "500"
+                  }}>(Standard)</span></h4>
                   <div className={styles.productsArray}>
                     {specifications.size.array.map((e: string) => {
                       return <p key={e}>{e}</p>
@@ -289,11 +292,20 @@ function Product({ id, title, advantages, images, route, specifications, applica
                   </div>
                 </>}
               </div>
-              <p>{pathname === "/uz" ? "Maxsus o'lchamlar so'rov bo'yicha mavjud" : "Custom sizes available on request"}</p>
+              <p style={{
+                color: "#000"
+              }}>{pathname === "/uz" ? "Maxsus o'lchamlar so'rov bo'yicha mavjud" : "Custom sizes available on request"}</p>
               <div className={styles.awd}>
+                <div className={styles.awds}>
+                  <h4 style={{
+                    opacity: 0
+                  }}>wefuwhefiu</h4>
+                  <p>Standard</p>
+                  <p>Optional</p>
+                </div>
                 {specifications.awd.map((e: any) => {
                   return <div key={e} className={styles.awds}>
-                    <h4>{e.title} <span>{e.sub}</span></h4>
+                    <h4>{e.title} <span>({e.sub})</span></h4>
                     <p>{e.standard}</p>
                     <p>{e.optional}</p>
                   </div>
@@ -313,8 +325,8 @@ function Product({ id, title, advantages, images, route, specifications, applica
                 })}
               </div>
               <button className={styles.fillForm} onClick={() => {
-            setIsOpen(true)
-          }}>{pathname === "/uz" ? "Xususiyatlar" : "Customer’s Specification"}</button>
+                setIsOpen(true)
+              }}>{pathname === "/uz" ? "Xususiyatlar" : "Customer’s Specification"}</button>
             </div>
           </div>
         </motion.div>
@@ -448,7 +460,7 @@ const Contact = () => {
 const products = [
   {
     title: "Lithium Triborate (LiB₃O₅ or LBO)",
-    advantages: ["broad transparency range from 0.160 µm to 2.6 µm (SHG range from 0.55 µm to 2.6 µm)", "type I and type II non-critical phase-matching (NCPM) over a wide wavelength range", "relatively large effective SHG coefficient (about three times larger than that of KDP)", "high damage threshold (> 10 GW/cm² for 10 ns laser at 1.054 µm)", "wide acceptance angle and small walk-off", "high optical quality (homogeneity Δn 10⁴/cm)"],
+    advantages: ["broad transparency range from 0.160µm to 2.6µm (SHG range from 0.55µm to 2.6µm)", "type I and type II non-critical phase-matching (NCPM) over a wide wavelength range", "relatively large effective SHG coefficient (about three times larger than that of KDP)", "high damage threshold (> 10 GW/cm² for 10ns laser at 1.054µm)", "wide acceptance angle and small walk-off", "high optical quality (homogeneity Δn 10⁴/cm)"],
     images: ["/images/lib.jpg"],
     route: "lbo",
     specifications: {
@@ -484,7 +496,7 @@ const products = [
         },
         {
           title: "Optional Surface Quality",
-          optional: "0/0",
+          optional: "5/0",
           sub: "scratch/dig",
           standard: "10/5"
         },
@@ -509,7 +521,6 @@ const products = [
       ]
     },
     applications: [
-      "High power Nd: YAG, and Nd:YLF lasers for R % D and military applications",
       "Ti:Sapphire, Alexandrite and Cr:LiSAF lasers",
       "Medical and industrial Nd: YAG lasers",
       "Diode laser pumped Nd: YVO₄, Nd: YAG and Nd:YLF lasers",
@@ -519,8 +530,8 @@ const products = [
     ]
   },
   {
-    title: "Beta-Barium Borate (β-BaB₂0₄ or BBO)",
-    advantages: ["Broad phase-matchable region from 410nm to 3500nm", "Wide transmission region from 190nm to 3500nm", "Large effective second-harmonic-generation (SHG) coefficent, d11(BBG)=5,8xd36(KDP)", "High damage threshold of (> 5GW/cm² for 10ns pulse-width at 1064 nm)", "High optional homogeneity Δn 10⁴/cm", "Wide temperature-bandwidth of about 55 C (for type I SHG 1064 nm)", "Good mechanical and physical properties"],
+    title: "Beta-Barium Borate (β-BaB₂O₄ or BBO)",
+    advantages: ["Broad phase-matchable region from 410nm to 3500nm", "Wide transmission region from 190nm to 3500nm", "Large effective second-harmonic-generation (SHG) coefficent, d11(BBG)=5,8xd36(KDP)", "High damage threshold of (> 5GW/cm² for 10ns pulse-width at 1064nm)", "High optional homogeneity Δn 10⁴/cm", "Wide temperature-bandwidth of about 55 C (for type I SHG 1064nm)", "Good mechanical and physical properties"],
     images: ["/images/barium.jpg"],
     route: "bbo",
     specifications: {
@@ -556,7 +567,7 @@ const products = [
         },
         {
           title: "Optional Surface Quality",
-          optional: "0/0",
+          optional: "5/0",
           sub: "scratch/dig",
           standard: "10/5"
         },
@@ -591,7 +602,7 @@ const products = [
   },
   {
     title: "Potassium Tytanil Phosphate (KTP)",
-    advantages: ["broad transparency range from 0.160 µm to 2.6 µm (SHG range from 0.55 µm to 2.6 µm)", "type I and type II non-critical phase-matching (NCPM) over a wide wavelength range", "relatively large effective SHG coefficient (about three times larger than that of KDP)", "high damage threshold (> 10 GW/cm² for 10 ns laser at 1.054 µm)", "wide acceptance angle and small walk-off", "high optical quality (homogeneity Δn 10⁴/cm)"],
+    advantages: ["broad transparency range from 0.160µm to 2.6µm (SHG range from 0.55µm to 2.6µm)", "type I and type II non-critical phase-matching (NCPM) over a wide wavelength range", "relatively large effective SHG coefficient (about three times larger than that of KDP)", "high damage threshold (> 10 GW/cm² for 10ns laser at 1.054µm)", "wide acceptance angle and small walk-off", "high optical quality (homogeneity Δn 10⁴/cm)"],
     images: ["/images/ktp.jpg"],
     route: "ktp",
     specifications: {
@@ -627,7 +638,7 @@ const products = [
         },
         {
           title: "Optional Surface Quality",
-          optional: "0/0",
+          optional: "5/0",
           sub: "scratch/dig",
           standard: "10/5"
         },
@@ -652,7 +663,6 @@ const products = [
       ]
     },
     applications: [
-      "High power Nd: YAG, and Nd:YLF lasers for R % D and military applications",
       "Ti:Sapphire, Alexandrite and Cr:LiSAF lasers",
       "Medical and industrial Nd: YAG lasers",
       "Diode laser pumped Nd: YVO₄, Nd: YAG and Nd:YLF lasers",
@@ -662,10 +672,10 @@ const products = [
     ]
   },
   {
-    title: `Potassium-gadolinium tungstate (Yb:KGW)`,
-    title2: "Potassium-yttrium tungstate (Yb:KYW)",
+    title: `Potassium-Gadolinium Tungstate (Yb:KGW)`,
+    title2: "Potassium-Gttrium Gungstate (Yb:KYW)",
     subtitle: "doped with yttrium Yb",
-    advantages: ["high absorbance at 981 nm", "high simulated radiation cross section", "high threshold of laser beam damage", "very low quantum defect λpump/λse", "wide polarized output at 1023-1060 nm", "high tilt efficiency with diode pumping (~60%)", "high concentration of Yb doping"],
+    advantages: ["high absorbance at 981nm", "high simulated radiation cross section", "high threshold of laser beam damage", "very low quantum defect λpump/λse", "wide polarized output at 1023-1060nm", "high tilt efficiency with diode pumping (~60%)", "high concentration of Yb doping"],
     images: ["/images/kgw.jpg"],
     route: "kgw",
     specifications: {
@@ -692,7 +702,7 @@ const products = [
         },
         {
           title: "Optional Surface Quality",
-          optional: "0/0",
+          optional: "5/0",
           sub: "scratch/dig",
           standard: "10/5"
         },
@@ -719,7 +729,7 @@ const products = [
     applications: [
       "Yb:KGW and Yb:KYW can be used as an ultrashort pulse amplifier.",
       "Yb:KGW and Yb KYW are among the best materials for high power disk lasers",
-      "thin (100-150 μm) Yb:KGW and YbKYW crystals are used as lasing sources to generate ultrashort (hundreds of femtoseconds) high- power pulses (>22 W). Standard pumping is 981 nm, output: 1023-1060 nm."
+      "thin (100-150μm) Yb:KGW and YbKYW crystals are used as lasing sources to generate ultrashort (hundreds of femtoseconds) high- power pulses (>22 W). Standard pumping is 981nm, output: 1023-1060nm."
     ]
   }
 ]
@@ -727,7 +737,7 @@ const products = [
 const UZ_PRODUCTS = [
   {
     title: "Lithium Triborate (LiB₃O₅; or LBO)",
-    advantages: ["Keng shaffoflik diapazoni 0,160 µm dan 2,6 µm gacha (SHG diapazoni 0,55 µm dan 2,6 µm gacha)", "keng to'lqin uzunligi diapazonida I va II turdagi kritik bo'lmagan fazalarni moslashtirish (NCPM).", "nisbatan katta samarali SHG koeffitsienti (KDP dan taxminan uch baravar katta)", "yuqori shikastlanish chegarasi (10 ns lazer uchun > 10 GVt/sm², 1,054 µm)", "keng qabul qilish burchagi va kichik yurish", "yuqori optik sifat (bir xillik Δn 10⁴/sm)"],
+    advantages: ["Keng shaffoflik diapazoni 0,160µm dan 2,6µm gacha (SHG diapazoni 0,55µm dan 2,6µm gacha)", "keng to'lqin uzunligi diapazonida I va II turdagi kritik bo'lmagan fazalarni moslashtirish (NCPM).", "nisbatan katta samarali SHG koeffitsienti (KDP dan taxminan uch baravar katta)", "yuqori shikastlanish chegarasi (10ns lazer uchun > 10 GVt/sm², 1,054µm)", "keng qabul qilish burchagi va kichik yurish", "yuqori optik sifat (bir xillik Δn 10⁴/sm)"],
     images: ["/images/lib.jpg"],
     route: "lbo",
     specifications: {
@@ -763,7 +773,7 @@ const UZ_PRODUCTS = [
         },
         {
           title: "Ixtiyoriy sirt sifati",
-          optional: "0/0",
+          optional: "5/0",
           sub: "scratch/dig",
           standard: "10/5"
         },
@@ -788,7 +798,6 @@ const UZ_PRODUCTS = [
       ]
     },
     applications: [
-      "R % D va harbiy ilovalar uchun yuqori quvvatli Nd:YAG va Nd:YLF lazerlari",
       "Ti: Safir, Aleksandrit va Cr: LiSAF lazerlari",
       "Tibbiy va sanoat Nd: YAG lazerlari",
       "Diodli lazer pompalanadigan Nd: YVO₄, Nd: YAG va Nd: YLF lazerlari",
@@ -798,8 +807,8 @@ const UZ_PRODUCTS = [
     ]
   },
   {
-    title: "Beta-Barium Borate (β-BaB₂0₄ or BBO)",
-    advantages: ["410nm dan 3500nm gacha bo'lgan keng fazaga mos keladigan hudud", "190nm dan 3500nm gacha bo'lgan keng uzatish hududi", "Katta samarali ikkinchi garmonik avlod (SHG) koeffitsienti, d11(BBG)=5,8xd36(KDP)", "Yuqori shikastlanish chegarasi (1064 nm da 10 ns impuls kengligi uchun > 5 GVt/sm²)", "Yuqori ixtiyoriy bir xillik Δn 10⁴/sm", "Keng harorat o'tkazuvchanligi taxminan 55 C (I SHG 1064 nm uchun)", "Yaxshi mexanik va fizik xususiyatlar"],
+    title: "Beta-Barium Borate (β-BaB₂O₄ or BBO)",
+    advantages: ["410nm dan 3500nm gacha bo'lgan keng fazaga mos keladigan hudud", "190nm dan 3500nm gacha bo'lgan keng uzatish hududi", "Katta samarali ikkinchi garmonik avlod (SHG) koeffitsienti, d11(BBG)=5,8xd36(KDP)", "Yuqori shikastlanish chegarasi (1064nm da 10ns impuls kengligi uchun > 5 GVt/sm²)", "Yuqori ixtiyoriy bir xillik Δn 10⁴/sm", "Keng harorat o'tkazuvchanligi taxminan 55 C (I SHG 1064nm uchun)", "Yaxshi mexanik va fizik xususiyatlar"],
     images: ["/images/barium.jpg"],
     route: "bbo",
     specifications: {
@@ -835,7 +844,7 @@ const UZ_PRODUCTS = [
         },
         {
           title: "Ixtiyoriy sirt sifati",
-          optional: "0/0",
+          optional: "5/0",
           sub: "scratch/dig",
           standard: "10/5"
         },
@@ -870,7 +879,7 @@ const UZ_PRODUCTS = [
   },
   {
     title: "Potassium Tytanil Phosphate (KTP)",
-    advantages: ["Keng shaffoflik diapazoni 0,160 µm dan 2,6 µm gacha (SHG diapazoni 0,55 µm dan 2,6 µm gacha)", "keng to'lqin uzunligi diapazonida I va II turdagi kritik bo'lmagan fazalarni moslashtirish (NCPM).", "nisbatan katta samarali SHG koeffitsienti (KDP dan taxminan uch baravar katta)", "yuqori shikastlanish chegarasi (10 ns lazer uchun > 10 GVt/sm², 1,054 µm)", "keng qabul qilish burchagi va kichik yurish", "yuqori optik sifat (bir xillik Δn 10⁴/sm)"],
+    advantages: ["Keng shaffoflik diapazoni 0,160µm dan 2,6µm gacha (SHG diapazoni 0,55µm dan 2,6µm gacha)", "keng to'lqin uzunligi diapazonida I va II turdagi kritik bo'lmagan fazalarni moslashtirish (NCPM).", "nisbatan katta samarali SHG koeffitsienti (KDP dan taxminan uch baravar katta)", "yuqori shikastlanish chegarasi (10ns lazer uchun > 10 GVt/sm², 1,054µm)", "keng qabul qilish burchagi va kichik yurish", "yuqori optik sifat (bir xillik Δn 10⁴/sm)"],
     images: ["/images/ktp.jpg"],
     route: "ktp",
     specifications: {
@@ -906,7 +915,7 @@ const UZ_PRODUCTS = [
         },
         {
           title: "Ixtiyoriy sirt sifati",
-          optional: "0/0",
+          optional: "5/0",
           sub: "scratch/dig",
           standard: "10/5"
         },
@@ -931,7 +940,6 @@ const UZ_PRODUCTS = [
       ]
     },
     applications: [
-      "R % D va harbiy ilovalar uchun yuqori quvvatli Nd:YAG va Nd:YLF lazerlari",
       "Ti: Safir, Aleksandrit va Cr: LiSAF lazerlari",
       "Tibbiy va sanoat Nd: YAG lazerlari",
       "Diodli lazer pompalanadigan Nd: YVO₄, Nd: YAG va Nd: YLF lazerlari",
@@ -941,10 +949,10 @@ const UZ_PRODUCTS = [
     ]
   },
   {
-    title: "Potassium-gadolinium tungstate (Yb:KGW)",
-    title2: "Potassium-yttrium tungstate (Yb:KYW)",
+    title: "Potassium-Gadolinium Tungstate (Yb:KGW)",
+    title2: "Potassium-Yttrium Tungstate (Yb:KYW)",
     subtitle: "itriy Yb bilan qo'shilgan",
-    advantages: ["981 nm da yuqori absorbans", "yuqori simulyatsiya qilingan nurlanish kesimi", "lazer nurlari shikastlanishining yuqori chegarasi", "juda kam kvant λnasos/λse", "1023-1060 nm da keng polarizatsiyali chiqish", "diodli nasos bilan yuqori egilish samaradorligi (~ 60%)", "Yb dopingning yuqori konsentratsiyasi"],
+    advantages: ["981nm da yuqori absorbans", "yuqori simulyatsiya qilingan nurlanish kesimi", "lazer nurlari shikastlanishining yuqori chegarasi", "juda kam kvant λnasos/λse", "1023-1060nm da keng polarizatsiyali chiqish", "diodli nasos bilan yuqori egilish samaradorligi (~ 60%)", "Yb dopingning yuqori konsentratsiyasi"],
     images: ["/images/kgw.jpg"],
     route: "kgw",
     specifications: {
@@ -971,7 +979,7 @@ const UZ_PRODUCTS = [
         },
         {
           title: "Ixtiyoriy sirt sifati",
-          optional: "0/0",
+          optional: "5/0",
           sub: "scratch/dig",
           standard: "10/5"
         },
@@ -998,7 +1006,7 @@ const UZ_PRODUCTS = [
     applications: [
       "Yb: KGW va Yb: KYW ultra qisqa puls kuchaytirgich sifatida ishlatilishi mumkin.",
       "Yb: KGW va Yb KYW yuqori quvvatli disk lazerlari uchun eng yaxshi materiallardan biridir",
-      "yupqa (100-150 μm) Yb:KGW va YbKYW kristallari ultra qisqa (yuzlab femtosekundlar) yuqori quvvatli impulslarni (>22 Vt) hosil qilish uchun lazer manbalari sifatida ishlatiladi. Standart nasos 981 nm, chiqishi: 1023-1060 nm."
+      "yupqa (100-150μm) Yb:KGW va YbKYW kristallari ultra qisqa (yuzlab femtosekundlar) yuqori quvvatli impulslarni (>22 Vt) hosil qilish uchun lazer manbalari sifatida ishlatiladi. Standart nasos 981nm, chiqishi: 1023-1060nm."
     ]
   }
 ]

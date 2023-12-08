@@ -53,6 +53,7 @@
 }
 
 .content > h1 {
+  margin-top: 3rem;
   font-size: 12rem;
   text-align: center;
   font-weight: 400;
@@ -65,8 +66,8 @@
   font-size: 3.5rem;
   font-weight: 700;
   text-align: right;
-  position: relative;
-  top: -7rem;
+  /* position: relative; */
+  margin-top: -7rem;
   left: -7rem;
   color: #8400ff !important;
   text-transform: uppercase;
@@ -253,7 +254,6 @@
   width: 33%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .infoTop {
@@ -295,7 +295,8 @@
 .productAdvantages > img {
   width: 100% !important;
   height: auto;
-  border-radius: 0.5rem;
+  height: 300px;
+  object-fit: cover;
 }
 
 .productSpesics {
