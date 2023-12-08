@@ -301,7 +301,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
                     opacity: 0
                   }}>wefuwhefiu</h4>
                   <p>Standard</p>
-                  <p>Optional</p>
+                  <p>{ pathname ==="/uz" ? "Ixtiyoriy" :"Optional"}</p>
                 </div>
                 {specifications.awd.map((e: any) => {
                   return <div key={e} className={styles.awds}>
