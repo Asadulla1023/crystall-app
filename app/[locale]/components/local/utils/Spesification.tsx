@@ -12,6 +12,7 @@ interface Specifics {
 
 const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
     const t = useTranslations("Spesifications")
+    console.log(t)
     useEffect(() => {
         if (isOpen === true) {
             document.body.style.overflow = "hidden"
@@ -87,7 +88,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 }}>
                                     <input type="text" disabled />
                                 </div>
-                                <div className={styles.values}><h3><b>{path === "/uz" ? "Buyurtmachining ": "Example "}</b>{path === "/uz" ? "to'ldirishga misol" : "of filling out the Customer’s Specification"}</h3></div>
+                                <div className={styles.values}><h3><b>{path === "/uz" ? "Buyurtmachining ": "Example "}</b>{path === "/uz" ? "To'ldirishga Misol" : "Of Filling Out The Customer’s Specification"}</h3></div>
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>№</div>
@@ -197,7 +198,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.values}>
                                     <input type="text" disabled />
                                 </div>
-                                <div className={styles.values}>/6</div>
+                                <div className={styles.values}>λ/6</div>
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>10.</div>
@@ -230,7 +231,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.values}>
                                     <input type="text" disabled />
                                 </div>
-                                <div className={styles.values}>0,3x45</div>
+                                <div className={styles.values}>0,3x45⁰</div>
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>13.</div>
@@ -245,7 +246,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <h3 style={{
                                 marginTop: 8
-                            }}>⁂ - {path === "/uz" ? "majburiy to'ldirish" :"mandatory filling"}</h3>
+                            }}>⁂ - {path === "/uz" ? "Majburiy To'ldirish" :"Mandatory Filling"}</h3>
                             <div className={styles.additional}>
                                 <h3>{t("subtitle")}</h3>
                                 <textarea ref={valueRef13} placeholder={t("additional")} required name='additional' />

@@ -2,16 +2,16 @@
     "Header": {
         "product": "Mahsulotlar",
         "about": "Biz Haqimizda",
-        "contact": "Biz bilan bog'lanish"
+        "contact": "Biz Bilan bog'lanish"
     },
     "Entrance": {
-        "info": "Sun Simurg Crystals MChJ. lazer optikasi uchun chiziqli bo'lmagan optik kristallar bilan ta'minlaydi va lazer tizimini to'ldirish uchun kristalli mahsulotlarni sotib olishga yordam beradi.",
+        "info": "Sun Simurg Crystals MChJ. Lazer Optikasi Uchun Chiziqli Bo'lmagan Optik Kristallar Bilan ta'minlaydi Va Lazer tizimini To'ldirish Uchun Kristalli mahsulotlarni Sotib Olishga Yordam Beradi.",
         "products": "Mahsulotlar:",
         "others": "Boshqalar"
     },
     "Company": {
         "title": "KOMPANIYA HAQIDA",
-        "description": "Sun Simurg Crystals MChJ lazer optikasi uchun chiziqli bo'lmagan optik kristallarni yetkazib beruvchi O'zbekiston Respublikasi bozoridagi birinchi tijorat kompaniyasidir. Bizning kompaniyamiz boshqa kompaniyalarning kristall ishlab chiqarish zavodlari bilan ishonchli hamkorlikka ega, shuningdek, boshqa mamlakatlarda lazer tizimlarini to'ldirish uchun kristall mahsulotlarini sotib olishga yordam beradi. Kompaniyamiz tomonidan etkazib beriladigan chiziqli bo'lmagan optik elementlar Buyurtmachi bilan kelishilgan Texnik shartlarga muvofiqligi uchun standartlashtirilgan sinovdan o'tadi."
+        "description": "Sun Simurg Crystals MChJ Lazer Optikasi Uchun Chiziqli Bo'lmagan Optik Kristallarni Yetkazib Beruvchi O'zbekiston Respublikasi Bozoridagi Birinchi Tijorat Kompaniyasidir. Bizning Kompaniyamiz Boshqa Kompaniyalarning Kristall Ishlab Chiqarish Zavodlari Bilan Ishonchli Hamkorlikka Ega, Shuningdek, Boshqa Mamlakatlarda Lazer Tizimlarini To'ldirish Uchun Kristall Mahsulotlarini Sotib Olishga Yordam Beradi. Kompaniyamiz Tomonidan Yetkazib Beriladigan Chiziqli Bo'lmagan Optik Elementlar Buyurtmachi Bilan kelishilgan Texnik shartlarga muvofiqligi Uchun standartlashtirilgan sinovdan o'tadi."
     },
     "Contacts": {
         "title": "MUTAXASSISLAR BILAN BOG'LANISH",
@@ -20,25 +20,25 @@
         "button": "Jo'natish"
     },
     "Spesifications": {
-        "title": "Buyurtmachi spetsifikatsiyasi",
+        "title": "Buyurtmachi Spetsifikatsiyasi",
         "subtitle": "MIJOCHNING IJROLARI VA QO‘SHIMCHA TALABLARI",
-        "email": "Sizning elektron manzilingiz",
-        "additional": "Qo'shimcha talablar",
+        "email": "Sizning Elektron Manzilingiz",
+        "additional": "Qo'shimcha Talablar",
         "opt": "Variantlar",
-        "nonlinear": "Chiziqli bo'lmagan optik kristal",
-        "dimension": "Optik elementning o'lchamlari, mm³ (* - kristall uzunligi)",
+        "nonlinear": "Chiziqli Bo'lmagan Optik Kristal",
+        "dimension": "Optik Elementning O'lchamlari, mm³ (* - Kristall Uzunligi)",
         "orient": "Orientatsiya",
-        "phase": "Tur fazalarini moslashtirish",
-        "wave":"Lasing to'lqin uzunligi, nm",
-        "coating": "Qoplama turi (aks ettirishga qarshi to'lqin uzunliklarini va ko'zgu koeffitsientlarini belgilang)",
+        "phase": "Tur Fazalarini Moslashtirish",
+        "wave":"Lasing To'lqin Uzunligi, nm",
+        "coating": "Qoplama Turi (Aks Ettirishga Qarshi To'lqin Uzunliklarini Va Ko'zgu Koeffitsientlarini Belgilang)",
         "quantity": "Miqdori, dona.",
-        "tolerance": "O'lchovli bardoshlik (diafragma), mm",
-        "tolerance2":"O'lchovli bardoshlik (uzunlik), mm",
+        "tolerance": "O'lchovli Bardoshlik (Diafragma), mm",
+        "tolerance2":"O'lchovli Bardoshlik (Uzunlik), mm",
         "flatness": "Yassilik (=633nm da)",
         "parall": "Parallellik, arcsec",
         "perpen": "Perpendikulyarlik, arcmin",
-        "size": "Diafragma bo'ylab va yon yuzalardagi chamferlarning o'lchami",
-        "surface": "Optik sirt sifati, chizish/o'yish",
+        "size": "Diafragma Bo'ylab Va Yon Yuzalardagi Chamferlarning O'lchami",
+        "surface": "Optik Sirt Sifati, chizish/o'yish",
         "val": "Qiymatlar"
     },
     "OtherPr": {

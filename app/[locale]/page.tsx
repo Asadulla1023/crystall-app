@@ -460,7 +460,7 @@ const Contact = () => {
 const products = [
   {
     title: "Lithium Triborate (LiB₃O₅ or LBO)",
-    advantages: ["Broad Transparency Range From 0.160µm To 2.6µm (SHG Range From 0.55µm To 2.6µm)", "Type I And Type II Non-Critical Phase-Matching (NCPM) Over A Wide Wavelength Range", "Relatively Large Effective SHG Coefficient (About Three Times Larger Than That Of KDP)", "High Damage Threshold (> 10 GW/cm² For 10ns Laser At 1.054µm)", "Wide Acceptance Angle And Small Walk-Off", "High Optical Quality (Homogeneity Δn 10⁴/cm)"],
+    advantages: ["Broad Transparency Range From 0.160µm To 2.6µm (SHG Range From 0.55µm To 2.6µm)", "Type I And Type II Non-Critical Phase-Matching (NCPM) Over A Wide Wavelength Range", "Relatively Large Effective SHG Coefficient (About Three Times Larger Than That Of KDP)", "High Damage Threshold (> 10 GW/cm² For 10ns Laser At 1.054µm)", "Wide Acceptance Angle And Small Walk-Off", "High Optical Homogeneity"],
     images: ["/images/lib.jpg"],
     route: "lbo",
     specifications: {
@@ -525,14 +525,14 @@ const products = [
       "Ti:Sapphire, Alexandrite And Cr:LiSAF Lasers",
       "Medical And Industrial Nd: YAG Lasers",
       "Diode Laser Pumped Nd: YVO₄, Nd: YAG And Nd:YLF Lasers",
-      "Third Harmonic Generation (THG) Of Nd: YAG And Nd:YLY Lasers",
+      "Third Harmonic Generation (THG) Of Nd: YAG And Nd:YLF Lasers",
       "Optical Parametric Amplifiers OPA And Oscillators OPO Pumped By Excimer Lasers And Harmonics Of Nd:YAG Lasers",
       "Second Harmonic Genration (SHG) And Tripling (THG) Of High Power Nd:YAP Laser At 1.34μm"
     ]
   },
   {
     title: "Beta-Barium Borate (β-BaB₂O₄ or BBO)",
-    advantages: ["Broad Phase-Matchable SHG Region From 410nm To 3500nm", "Wide Transmission Region From 190nm To 3500nm", "Large Effective Second-Harmonic-Generation (SHG) Coefficent, d₁₁(BBG)=5,8xd₃₆(KDP)", "High Damage Threshold Of (> 5GW/cm² For 10ns Pulse-Width At 1064nm)", "High Optional Homogeneity Δn 10⁴/cm", "Wide Temperature-BandWidth Of About 55 C (for Type I SHG 1064nm)", "Good Mechanical And Physical Properties"],
+    advantages: ["Broad Phase-Matchable SHG Range From 410nm To 3500nm", "Wide Transmission Region From 190nm To 3500nm", "Large Effective Second-Harmonic-Generation (SHG) Coefficent, d₁₁(BBO)=5,8xd₃₆(KDP)", "High Damage Threshold Of (> 5GW/cm² For 10ns Pulse-Width At 1064nm)", "High Optical Homogeneity Δn 10⁶/cm", "Wide Temperature-BandWidth Of About 55 C (for Type I SHG 1064nm)", "Good Mechanical And Physical Properties"],
     images: ["/images/barium.jpg"],
     route: "bbo",
     specifications: {
@@ -547,7 +547,7 @@ const products = [
       size: {
         title: "Sizes, mm³",
         array: ["3x3x5", "4x4x7", "4x6x7", "5x5x7", "5x5x10", "5x7x10"],
-        array2: ["8x10x12", "5x5x1", "5x5x0,5", "6x10x25", "7x7x0,1", "7x7x0,01"]
+        array2: ["8x10x12", "5x5x1", "5x5x0,5", "7x7x0,1", "7x7x0,01"]
       },
       orient: {
         title: "Orientation",
@@ -603,7 +603,7 @@ const products = [
   },
   {
     title: "Potassium Tytanil Phosphate (KTP)",
-    advantages: ["Broad Transparency Range From 0.160µm To 2.6µm (SHG Range From 0.55µm To 2.6µm)", "Type I And Type II Non-Critical Phase-Matching (NCPM) Over A Wide Wavelength Range", "Relatively Large Effective SHG Coefficient (About Three Times Larger Than That Of KDP)", "High Damage Threshold (> 10 GW/cm² For 10ns Laser At 1.054µm)", "Wide Acceptance Angle And Small Walk-Off", "High Optical Quality (Homogeneity Δn 10⁴/cm)"],
+    advantages: ["Broad Transparency Range From 0.160µm To 2.6µm (SHG Range From 0.55µm To 2.6µm)", "Type I And Type II Non-Critical Phase-Matching (NCPM) Over A Wide Wavelength Range", "Relatively Large Effective SHG Coefficient (About Three Times Larger Than That Of KDP)", "High Damage Threshold (> 10 GW/cm² For 10ns Laser At 1.054µm)", "Wide Acceptance Angle And Small Walk-Off", "High Optical Quality (Homogeneity Δn 10⁶/cm)"],
     images: ["/images/ktp.jpg"],
     route: "ktp",
     specifications: {
@@ -668,7 +668,7 @@ const products = [
       "Ti:Sapphire, Alexandrite And Cr:LiSAF Lasers",
       "Medical And Industrial Nd: YAG Lasers",
       "Diode Laser Pumped Nd: YVO₄, Nd: YAG And Nd:YLF Lasers",
-      "Third Harmonic Generation (THG) Of Nd: YAG And Nd:YLY Lasers",
+      "Third Harmonic Generation (THG) Of Nd: YAG And Nd:YLF Lasers",
       "Optical Parametric Amplifiers OPA And Oscillators OPO Pumped By Excimer Lasers And Harmonics Of Nd:YAG Lasers",
       "Second Harmonic Genration (SHG) And Tripling (THG) Of High Power Nd:YAP Laser At 1.34μm"
     ]
@@ -739,7 +739,7 @@ const products = [
 const UZ_PRODUCTS = [
   {
     title: "Lithium Triborate (LiB₃O₅; or LBO)",
-    advantages: ["Keng Shaffoflik Diapazoni 0,160µm Dan 2,6µm Gacha (SHG Diapazoni 0,55µm Dan 2,6µm Gacha)", "Keng To'lqin Uzunligi Diapazonida I Va II Turdagi Kritik Bo'lmagan Fazalarni Moslashtirish (NCPM).", "Nisbatan Katta Samarali SHG Koeffitsienti (KDP Dan Taxminan Uch Baravar Katta)", "Yuqori Shikastlanish Chegarasi (10ns Lazer Uchun > 10 GVt/sm², 1,054µm)", "Keng Qabul Qilish Burchagi Va Kichik Yurish", "Yuqori Optik Sifat (Bir Xillik Δn 10⁴/sm)"],
+    advantages: ["Keng Shaffoflik Diapazoni 0,160µm Dan 2,6µm Gacha (SHG Diapazoni 0,55µm Dan 2,6µm Gacha)", "Keng To'lqin Uzunligi Diapazonida I Va II Turdagi Kritik Bo'lmagan Fazalarni Moslashtirish (NCPM).", "Nisbatan Katta Samarali SHG Koeffitsienti (KDP Dan Taxminan Uch Baravar Katta)", "Yuqori Shikastlanish Chegarasi (10ns Lazer Uchun > 10 GVt/sm², 1,054µm)", "Keng Qabul Qilish Burchagi Va Kichik Yurish", "Yuqori Optik Bir Xillik"],
     images: ["/images/lib.jpg"],
     route: "lbo",
     specifications: {
@@ -804,14 +804,14 @@ const UZ_PRODUCTS = [
       "Ti: Safir, Aleksandrit Va Cr: LiSAF Lazerlari",
       "Tibbiy Va Sanoat Nd: YAG Lazerlari",
       "Diodli Lazer Pompalanadigan Nd: YVO₄, Nd: YAG Va Nd: YLF Lazerlari",
-      "Nd: YAG Va Nd: YLY Lazerlarining Uchinchi Harmonik Avlodi (THG).",
+      "Nd: YAG Va Nd: YLF Lazerlarining Uchinchi Harmonik Avlodi (THG).",
       "Optik Parametrik Kuchaytirgichlar OPA Va Eksimer Lazerlari Tomonidan Pompalanadigan OPO Osilatorlari Va Nd: YAG Lazerlarining Harmoniklari",
       "Ikkinchi Garmonik Nasl (SHG) Va Yuqori Quvvatli Nd: YAP Lazerining 1.34μmdagi Uch Baravar (THG)"
     ]
   },
   {
     title: "Beta-Barium Borate (β-BaB₂O₄ or BBO)",
-    advantages: ["410nm Dan 3500nm Gacha Bo'lgan Keng Fazaga Mos Keladigan Hudud", "190nm Dan 3500nm Gacha Bo'lgan Keng Uzatish Hududi", "Katta Samarali Ikkinchi Garmonik Avlod (SHG) Koeffitsienti, d₁₁(BBG)=5,8xd₃₆(KDP)", "Yuqori Shikastlanish Chegarasi (1064nm Da 10ns Impuls Kengligi Uchun > 5 GVt/sm²)", "Yuqori Ixtiyoriy Bir Xillik Δn 10⁴/sm", "Keng Harorat O'tkazuvchanligi Taxminan 55 C (I SHG 1064nm Uchun)", "Yaxshi Mexanik Va Fizik Xususiyatlar"],
+    advantages: ["Keng Fazaga Mos Keladigan SHG Diapazoni 410nm Dan 3500nm Gacha", "190nm Dan 3500nm Gacha Bo'lgan Keng Uzatish Hududi", "Katta Samarali Ikkinchi Garmonik Avlod (SHG) Koeffitsienti, d₁₁(BBO)=5,8xd₃₆(KDP)", "Yuqori Shikastlanish Chegarasi (1064nm Da 10ns Impuls Kengligi Uchun > 5 GVt/sm²)", "Yuqori Ixtiyoriy Bir Xillik Δn 10⁶/sm", "Keng Harorat O'tkazuvchanligi Taxminan 55 C (I SHG 1064nm Uchun)", "Yaxshi Mexanik Va Fizik Xususiyatlar"],
     images: ["/images/barium.jpg"],
     route: "bbo",
     specifications: {
@@ -830,7 +830,7 @@ const UZ_PRODUCTS = [
       size: {
         title: "Hajmi, mm³",
         array: ["3x3x5", "3x3x10", "3x3x14", "3x3x20", "4x4x12", "5x5x10", "5x5x15"],
-        array2: ["10x10x15", "10x10x20", "20x20x10", "6x10x25", "7x7x1,0", "7x7x0,1"]
+        array2: ["10x10x15", "10x10x20", "20x20x10", "7x7x1,0", "7x7x0,1"]
       },
       awd: [
         {
@@ -882,7 +882,7 @@ const UZ_PRODUCTS = [
   },
   {
     title: "Potassium Tytanil Phosphate (KTP)",
-    advantages: ["Keng Shaffoflik Diapazoni 0,160µm Dan 2,6µm Gacha (SHG Diapazoni 0,55µm Dan 2,6µm Gacha)", "Keng To'lqin Uzunligi Diapazonida I Va II Turdagi Kritik Bo'lmagan Fazalarni Moslashtirish (NCPM).", "Nisbatan Katta Samarali SHG Koeffitsienti (KDP Dan Taxminan Uch Baravar Katta)", "Yuqori Shikastlanish Chegarasi (10ns Lazer Uchun > 10 GVt/sm², 1,054µm)", "Keng Qabul Qilish Burchagi Va Kichik Yurish", "Yuqori Optik Sifat (Bir Xillik Δn 10⁴/sm)"],
+    advantages: ["Keng Shaffoflik Diapazoni 0,160µm Dan 2,6µm Gacha (SHG Diapazoni 0,55µm Dan 2,6µm Gacha)", "Keng To'lqin Uzunligi Diapazonida I Va II Turdagi Kritik Bo'lmagan Fazalarni Moslashtirish (NCPM).", "Nisbatan Katta Samarali SHG Koeffitsienti (KDP Dan Taxminan Uch Baravar Katta)", "Yuqori Shikastlanish Chegarasi (10ns Lazer Uchun > 10 GVt/sm², 1,054µm)", "Keng Qabul Qilish Burchagi Va Kichik Yurish", "Yuqori Optik Sifat (Bir Xillik Δn 10⁶/sm)"],
     images: ["/images/ktp.jpg"],
     route: "ktp",
     specifications: {
@@ -947,7 +947,7 @@ const UZ_PRODUCTS = [
       "Ti: Safir, Aleksandrit Va Cr: LiSAF Lazerlari",
       "Tibbiy Va Sanoat Nd: YAG Lazerlari",
       "Diodli Lazer Pompalanadigan Nd: YVO₄, Nd: YAG Va Nd: YLF Lazerlari",
-      "Nd: YAG Va Nd: YLY Lazerlarining Uchinchi Harmonik Avlodi (THG).",
+      "Nd: YAG Va Nd: YLF Lazerlarining Uchinchi Harmonik Avlodi (THG).",
       "Optik Parametrik Kuchaytirgichlar OPA Va Eksimer Lazerlari Tomonidan Pompalanadigan OPO Osilatorlari Va Nd: YAG Lazerlarining Harmoniklari",
       "Ikkinchi Garmonik Nasl (SHG) Va Yuqori Quvvatli Nd: YAP Lazerining 1.34μmdagi Uch Baravar (THG)"
     ]
