@@ -34,7 +34,7 @@ export default function Index() {
     const data = new FormData(e.target)
     const obj = Object.fromEntries(data.entries())
     console.log(obj);
-    const msg = `Customer application: ${obj.additional}%0ACustomer Email: ${obj.email}`
+    const msg = `Customer Application: ${obj.additional}%0ACustomer Email: ${obj.email}`
     axios({
       method: "post",
       url: `https://api.telegram.org/bot6506618725:AAGvO9uS8jVGzNq5vZnfMaM2eIrJgymJ2t8/sendMessage?chat_id=-1002032821157&text=${msg}`,
@@ -112,9 +112,9 @@ export default function Index() {
         </div>
         <div id='products' className={`${styles.entrance} ${styles.productsInformations}`}>
           {pathname === "/uz" ? UZ_PRODUCTS.map((e, index) => {
-            return <Product title2={e.title2} subtitle={e.subtitle} route={e.route} setIsOpen={setIsOpen} isOpen={isOpen} specifications={e.specifications} application={e.applications} advantages={e.advantages} images={e.images} title={e.title} key={Math.random() + `${e.title}`} id={index + 1} />
+            return <Product title2={e.title2} subtitle={e.subtitle} route={e.route} setIsOpen={setIsOpen} isOpen={isOpen} specifications={e.specifications} Application={e.Applications} advantages={e.advantages} images={e.images} title={e.title} key={Math.random() + `${e.title}`} id={index + 1} />
           }) : products.map((e, index) => {
-            return <Product title2={e.title2} subtitle={e.subtitle} route={e.route} setIsOpen={setIsOpen} isOpen={isOpen} specifications={e.specifications} application={e.applications} advantages={e.advantages} images={e.images} title={e.title} key={Math.random() + `${e.title}`} id={index + 1} />
+            return <Product title2={e.title2} subtitle={e.subtitle} route={e.route} setIsOpen={setIsOpen} isOpen={isOpen} specifications={e.specifications} Application={e.Applications} advantages={e.advantages} images={e.images} title={e.title} key={Math.random() + `${e.title}`} id={index + 1} />
           })}
         </div>
         <div id='other_pr' className={`${styles.entrance} ${styles.productsInformations} ${styles.otherPr}`}>
@@ -172,7 +172,7 @@ export default function Index() {
   )
 }
 
-function Product({ id, title, advantages, images, route, specifications, application, setIsOpen, isOpen, title2, subtitle }: {
+function Product({ id, title, advantages, images, route, specifications, Application, setIsOpen, isOpen, title2, subtitle }: {
   id: number
   title: string
   title2?: string
@@ -181,7 +181,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
   images: string[],
   route: string,
   specifications: any,
-  application: any,
+  Application: any,
   setIsOpen: Function
   isOpen: boolean
 }) {
@@ -231,7 +231,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
           <div className={styles.productInformation}>
             <div className={styles.productSection}>
               <div className={styles.productAdvantages}>
-                <Image src={images[0]} width={800} height={850} alt='some image' />
+                <Image src={images[0]} width={800} height={850} alt='Some image' />
                 <h3>{pathname === "/uz" ? "Afzalliklar" : "Advantages"}</h3>
                 <div className={styles.advantagesWrapper}>
                   {advantages.map(e => {
@@ -244,7 +244,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
               </div>
             </div>
             <div className={styles.productSection}>
-              <h2>{pathname === "/uz" ? "Texnik xususiyatlari" : "Specifications"}</h2>
+              <h2>{pathname === "/uz" ? "Texnik Xususiyatlari" : "Specifications"}</h2>
               <div className={styles.productSpesics}>
                 {specifications?.absor &&
                   <>
@@ -294,7 +294,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
               </div>
               <p style={{
                 color: "#000"
-              }}>{pathname === "/uz" ? "Maxsus o'lchamlar so'rov bo'yicha mavjud" : "Custom sizes available on request"}</p>
+              }}>{pathname === "/uz" ? "Maxsus o'lchamlar so'rov bo'yicha mavjud" : "Custom sizes available On request"}</p>
               <div className={styles.awd}>
                 <div className={styles.awds}>
                   <h4 style={{
@@ -307,7 +307,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
                   return <div key={e} className={styles.awds}>
                     <h4>{e.title} <span>({e.sub})</span></h4>
                     <p>{e.standard}</p>
-                    <p>{e.optional}</p>
+                    <p>{e.Optional}</p>
                   </div>
                 })}
               </div>
@@ -317,7 +317,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
               <div style={{
                 marginTop: 16
               }} className={styles.advantagesWrapper}>
-                {application.map((e: string) => {
+                {Application.map((e: string) => {
                   return <div key={e} className={styles.advantage}>
                     <Image src={"/icons/shape.svg"} alt='shape icon' width={15} height={15} />
                     <h3>{e}</h3>
@@ -349,7 +349,7 @@ const AboutSection = () => {
     }
   }, [controls, inView]);
   return (
-    <motion.section ref={ref} id='aboutUs' className={styles.about}>
+    <motion.section ref={ref} id='AboutUs' className={styles.about}>
       <Container>
         <motion.section initial="hidden" animate={controls}
           variants={{
@@ -460,21 +460,21 @@ const Contact = () => {
 const products = [
   {
     title: "Lithium Triborate (LiB₃O₅ or LBO)",
-    advantages: ["broad transparency range from 0.160µm to 2.6µm (SHG range from 0.55µm to 2.6µm)", "type I and type II non-critical phase-matching (NCPM) over a wide wavelength range", "relatively large effective SHG coefficient (about three times larger than that of KDP)", "high damage threshold (> 10 GW/cm² for 10ns laser at 1.054µm)", "wide acceptance angle and small walk-off", "high optical quality (homogeneity Δn 10⁴/cm)"],
+    advantages: ["Broad Transparency Range From 0.160µm To 2.6µm (SHG Range From 0.55µm To 2.6µm)", "Type I And Type II Non-Critical Phase-Matching (NCPM) Over A Wide Wavelength Range", "Relatively Large Effective SHG Coefficient (About Three Times Larger Than That Of KDP)", "High Damage Threshold (> 10 GW/cm² For 10ns Laser At 1.054µm)", "Wide Acceptance Angle And Small Walk-Off", "High Optical Quality (Homogeneity Δn 10⁴/cm)"],
     images: ["/images/lib.jpg"],
     route: "lbo",
     specifications: {
       absor: {
-        title: "Absorption losses",
-        array: ["1/cm", "0,20μm<λ<2,0μm", " < 0,005"]
+        title: "Absorption Losses",
+        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
         title: "Bubbles, Inclusions, etc.",
-        value: "none"
+        value: "None"
       },
       orient: {
         title: "Orientation",
-        value: "Depends on application"
+        value: "Depends On Application"
       },
       size: {
         title: "Sizes, mm³",
@@ -483,26 +483,26 @@ const products = [
       },
       awd: [
         {
-          title: "Allowance for Dimensions",
+          title: "Allowance For Dimensions",
           sub: "mm",
           standard: "0,1",
-          optional: "0,05"
+          Optional: "0,05"
         },
         {
-          title: "Accuracy of Orientation",
+          title: "Accuracy Of Orientation",
           sub: "min. of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
-          title: "Optional Surface Quality",
-          optional: "5/0",
+          title: "Optical Surface Quality",
+          Optional: "5/2",
           sub: "scratch/dig",
           standard: "10/5"
         },
         {
           title: "Flatness",
-          optional: "λ/10",
+          Optional: "λ/10",
           sub: "/at λ=0,633 μm",
           standard: "λ/6"
         },
@@ -510,70 +510,71 @@ const products = [
           title: "Parallelism",
           sub: "sec.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
           title: "Perpendicularity",
           sub: "min.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         }
       ]
     },
-    applications: [
-      "Ti:Sapphire, Alexandrite and Cr:LiSAF lasers",
-      "Medical and industrial Nd: YAG lasers",
-      "Diode laser pumped Nd: YVO₄, Nd: YAG and Nd:YLF lasers",
-      "Third harmonic generation (THG) of Nd: YAG and Nd:YLY lasers",
-      "Optical parametric amplifiers OPA and oscillators OPO pumped by Excimer lasers and harmonics of Nd:YAG lasers",
-      "Second harmonic genration (SHG) and tripling (THG) of higyh power Nd:YAP laser at 1.34μm"
+    Applications: [
+      "High Power Nd: YAG And Nd:YLF Lasers For R & D",
+      "Ti:Sapphire, Alexandrite And Cr:LiSAF Lasers",
+      "Medical And Industrial Nd: YAG Lasers",
+      "Diode Laser Pumped Nd: YVO₄, Nd: YAG And Nd:YLF Lasers",
+      "Third Harmonic Generation (THG) Of Nd: YAG And Nd:YLY Lasers",
+      "Optical Parametric Amplifiers OPA And Oscillators OPO Pumped By Excimer Lasers And Harmonics Of Nd:YAG Lasers",
+      "Second Harmonic Genration (SHG) And Tripling (THG) Of High Power Nd:YAP Laser At 1.34μm"
     ]
   },
   {
     title: "Beta-Barium Borate (β-BaB₂O₄ or BBO)",
-    advantages: ["Broad phase-matchable region from 410nm to 3500nm", "Wide transmission region from 190nm to 3500nm", "Large effective second-harmonic-generation (SHG) coefficent, d11(BBG)=5,8xd36(KDP)", "High damage threshold of (> 5GW/cm² for 10ns pulse-width at 1064nm)", "High optional homogeneity Δn 10⁴/cm", "Wide temperature-bandwidth of about 55 C (for type I SHG 1064nm)", "Good mechanical and physical properties"],
+    advantages: ["Broad Phase-Matchable SHG Region From 410nm To 3500nm", "Wide Transmission Region From 190nm To 3500nm", "Large Effective Second-Harmonic-Generation (SHG) Coefficent, d₁₁(BBG)=5,8xd₃₆(KDP)", "High Damage Threshold Of (> 5GW/cm² For 10ns Pulse-Width At 1064nm)", "High Optional Homogeneity Δn 10⁴/cm", "Wide Temperature-BandWidth Of About 55 C (for Type I SHG 1064nm)", "Good Mechanical And Physical Properties"],
     images: ["/images/barium.jpg"],
     route: "bbo",
     specifications: {
       absor: {
-        title: "Absorption losses",
-        array: ["1/cm", "0,20μm<λ<2,0μm", " < 0,005"]
+        title: "Absorption Losses",
+        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
         title: "Bubbles, Inclusions, etc.",
-        value: "none"
+        value: "None"
       },
       size: {
         title: "Sizes, mm³",
-        array: ["3x3x5", "3x3x10", "3x3x14", "3x3x20", "4x4x12", "5x5x10", "5x5x15"],
-        array2: ["10x10x15", "10x10x20", "20x20x10", "6x10x25", "7x7x1,0", "7x7x0,1"]
+        array: ["3x3x5", "4x4x7", "4x6x7", "5x5x7", "5x5x10", "5x7x10"],
+        array2: ["8x10x12", "5x5x1", "5x5x0,5", "6x10x25", "7x7x0,1", "7x7x0,01"]
       },
       orient: {
         title: "Orientation",
-        value: "Depends on application, Contact us to determine orientation for you element"
+        value: "Depends On Application, Contact Us To Determine Orientation For Your Element"
       },
       awd: [
         {
-          title: "Allowance for Dimensions",
+          title: "Allowance For Dimensions",
           sub: "mm",
           standard: "0,1",
-          optional: "0,05"
+          Optional: "0,05"
         },
         {
-          title: "Accuracy of Orientation",
+          title: "Accuracy Of Orientation",
           sub: "min. of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
-          title: "Optional Surface Quality",
-          optional: "5/0",
+          title: "Optical Surface Quality",
+          Optional: "5/2",
           sub: "scratch/dig",
           standard: "10/5"
         },
         {
           title: "Flatness",
-          optional: "λ/10",
+          Optional: "λ/10",
           sub: "/at λ=0,633 μm",
           standard: "λ/6"
         },
@@ -581,42 +582,42 @@ const products = [
           title: "Parallelism",
           sub: "sec.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
           title: "Perpendicularity",
           sub: "min.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         }
       ]
     },
-    applications: [
-      "Second, third, fourth and fifth harmonic generatios of Nd:lasers",
-      "Frequency-doubling, -tripling, and -mixing of Dye lasers",
-      "Second, third & fourth harmonic generations of Ti:Al₂0₃, and Alexandrite lasers",
-      "Optical parametric amplifiers (OPA) and optical parametric oscillators (OPO)",
-      "Frequency-doubling, -tripling of ultrashort pulse Ti:Sapphire and Dye lasers",
-      "Frequency-doubling of Argon-ion, Cu-vapor and Ruby lasers, External intracavitySHG"
+    Applications: [
+      "Second, Third, FOurth And Fifth Harmonic Generatios Of Nd:Lasers",
+      "Frequency-Doubling, -Tripling, And -Mixing Of Dye Lasers",
+      "Second, Third & Fourth Harmonic Generations Of Ti:Al₂0₃, And Alexandrite Lasers",
+      "Optical Parametric Amplifiers (OPA) And Optical Parametric Oscillators (OPO)",
+      "Frequency-Doubling, -Tripling Of Ultrashort Pulse Ti:Sapphire And Dye Lasers",
+      "Frequency-Doubling Of Argon-ion, Cu-vapor And Ruby Lasers, External Intracavity (SHG)"
     ]
   },
   {
     title: "Potassium Tytanil Phosphate (KTP)",
-    advantages: ["broad transparency range from 0.160µm to 2.6µm (SHG range from 0.55µm to 2.6µm)", "type I and type II non-critical phase-matching (NCPM) over a wide wavelength range", "relatively large effective SHG coefficient (about three times larger than that of KDP)", "high damage threshold (> 10 GW/cm² for 10ns laser at 1.054µm)", "wide acceptance angle and small walk-off", "high optical quality (homogeneity Δn 10⁴/cm)"],
+    advantages: ["Broad Transparency Range From 0.160µm To 2.6µm (SHG Range From 0.55µm To 2.6µm)", "Type I And Type II Non-Critical Phase-Matching (NCPM) Over A Wide Wavelength Range", "Relatively Large Effective SHG Coefficient (About Three Times Larger Than That Of KDP)", "High Damage Threshold (> 10 GW/cm² For 10ns Laser At 1.054µm)", "Wide Acceptance Angle And Small Walk-Off", "High Optical Quality (Homogeneity Δn 10⁴/cm)"],
     images: ["/images/ktp.jpg"],
     route: "ktp",
     specifications: {
       absor: {
-        title: "Absorption losses",
-        array: ["1/cm", "0,20μm<λ<2,0μm", " < 0,005"]
+        title: "Absorption Losses",
+        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
         title: "Bubbles, Inclusions, etc.",
-        value: "none"
+        value: "None"
       },
       orient: {
         title: "Orientation",
-        value: "Depends on application"
+        value: "Depends On Application, Contact Us To Determine Orientation For Your Element"
       },
       size: {
         title: "Sizes, mm³",
@@ -625,26 +626,26 @@ const products = [
       },
       awd: [
         {
-          title: "Allowance for Dimensions",
+          title: "Allowance For Dimensions",
           sub: "mm",
           standard: "0,1",
-          optional: "0,05"
+          Optional: "0,05"
         },
         {
-          title: "Accuracy of Orientation",
+          title: "Accuracy Of Orientation",
           sub: "min. of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
-          title: "Optional Surface Quality",
-          optional: "5/0",
+          title: "Optical Surface Quality",
+          Optional: "5/2",
           sub: "scratch/dig",
           standard: "10/5"
         },
         {
           title: "Flatness",
-          optional: "λ/10",
+          Optional: "λ/10",
           sub: "/at λ=0,633 μm",
           standard: "λ/6"
         },
@@ -652,63 +653,64 @@ const products = [
           title: "Parallelism",
           sub: "sec.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
           title: "Perpendicularity",
           sub: "min.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         }
       ]
     },
-    applications: [
-      "Ti:Sapphire, Alexandrite and Cr:LiSAF lasers",
-      "Medical and industrial Nd: YAG lasers",
-      "Diode laser pumped Nd: YVO₄, Nd: YAG and Nd:YLF lasers",
-      "Third harmonic generation (THG) of Nd: YAG and Nd:YLY lasers",
-      "Optical parametric amplifiers OPA and oscillators OPO pumped by Excimer lasers and harmonics of Nd:YAG lasers",
-      "Second harmonic genration (SHG) and tripling (THG) of higyh power Nd:YAP laser at 1.34μm"
+    Applications: [
+      "High Power Nd: YAG And Nd:YLF Lasers For R & D",
+      "Ti:Sapphire, Alexandrite And Cr:LiSAF Lasers",
+      "Medical And Industrial Nd: YAG Lasers",
+      "Diode Laser Pumped Nd: YVO₄, Nd: YAG And Nd:YLF Lasers",
+      "Third Harmonic Generation (THG) Of Nd: YAG And Nd:YLY Lasers",
+      "Optical Parametric Amplifiers OPA And Oscillators OPO Pumped By Excimer Lasers And Harmonics Of Nd:YAG Lasers",
+      "Second Harmonic Genration (SHG) And Tripling (THG) Of High Power Nd:YAP Laser At 1.34μm"
     ]
   },
   {
     title: `Potassium-Gadolinium Tungstate (Yb:KGW)`,
     title2: "Potassium-Gttrium Gungstate (Yb:KYW)",
-    subtitle: "doped with yttrium Yb",
-    advantages: ["high absorbance at 981nm", "high simulated radiation cross section", "high threshold of laser beam damage", "very low quantum defect λpump/λse", "wide polarized output at 1023-1060nm", "high tilt efficiency with diode pumping (~60%)", "high concentration of Yb doping"],
+    subtitle: "Doped With Yttrium Yb",
+    advantages: ["High Absorbance At 981nm", "High Simulated Radiation Cross Section", "High Threshold Of Laser Beam Damage", "Very Low Quantum Defect λpump/λse", "Wide Polarized Output At 1023-1060nm", "High Tilt Efficiency With Diode Pumping (~60%)", "High Concentration Of Yb Doping"],
     images: ["/images/kgw.jpg"],
     route: "kgw",
     specifications: {
       capabe: {
         title: "PRODUCTIONS CAPABILITIES",
         array: [
-          "production of various forms (plates, rods, cubes)",
-          "various dopted",
-          "different types of coatings"
+          "Production Of Various Forms (Plates, Rods, Cubes)",
+          "Various Dopted",
+          "Different Types Of Coatings"
         ]
       },
       awd: [
         {
-          title: "Allowance for Dimensions",
+          title: "Allowance For Dimensions",
           sub: "mm",
           standard: "0,1",
-          optional: "0,05"
+          Optional: "0,05"
         },
         {
-          title: "Accuracy of Orientation",
+          title: "Accuracy Of Orientation",
           sub: "min. of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
-          title: "Optional Surface Quality",
-          optional: "5/0",
+          title: "Optical Surface Quality",
+          Optional: "5/2",
           sub: "scratch/dig",
           standard: "10/5"
         },
         {
           title: "Flatness",
-          optional: "λ/10",
+          Optional: "λ/10",
           sub: "/at λ=0,633 μm",
           standard: "λ/6"
         },
@@ -716,20 +718,20 @@ const products = [
           title: "Parallelism",
           sub: "sec.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
           title: "Perpendicularity",
           sub: "min.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         }
       ]
     },
-    applications: [
-      "Yb:KGW and Yb:KYW can be used as an ultrashort pulse amplifier.",
-      "Yb:KGW and Yb KYW are among the best materials for high power disk lasers",
-      "thin (100-150μm) Yb:KGW and YbKYW crystals are used as lasing sources to generate ultrashort (hundreds of femtoseconds) high- power pulses (>22 W). Standard pumping is 981nm, output: 1023-1060nm."
+    Applications: [
+      "Yb:KGW And Yb:KYW Can Be Used As An Ultrashort Pulse Amplifier.",
+      "Yb:KGW And Yb KYW Are Among The Best Materials For High Power Disk Lasers",
+      "Thin (100-150μm) Yb:KGW And YbKYW Crystals Are Used As Lasing Sources To Generate Ultrashort (Hundreds Of Femtoseconds) High- Power Pulses (>22 W). Standard Pumping Is 981nm, Output: 1023-1060nm."
     ]
   }
 ]
@@ -737,21 +739,21 @@ const products = [
 const UZ_PRODUCTS = [
   {
     title: "Lithium Triborate (LiB₃O₅; or LBO)",
-    advantages: ["Keng shaffoflik diapazoni 0,160µm dan 2,6µm gacha (SHG diapazoni 0,55µm dan 2,6µm gacha)", "keng to'lqin uzunligi diapazonida I va II turdagi kritik bo'lmagan fazalarni moslashtirish (NCPM).", "nisbatan katta samarali SHG koeffitsienti (KDP dan taxminan uch baravar katta)", "yuqori shikastlanish chegarasi (10ns lazer uchun > 10 GVt/sm², 1,054µm)", "keng qabul qilish burchagi va kichik yurish", "yuqori optik sifat (bir xillik Δn 10⁴/sm)"],
+    advantages: ["Keng Shaffoflik Diapazoni 0,160µm Dan 2,6µm Gacha (SHG Diapazoni 0,55µm Dan 2,6µm Gacha)", "Keng To'lqin Uzunligi Diapazonida I Va II Turdagi Kritik Bo'lmagan Fazalarni Moslashtirish (NCPM).", "Nisbatan Katta Samarali SHG Koeffitsienti (KDP Dan Taxminan Uch Baravar Katta)", "Yuqori Shikastlanish Chegarasi (10ns Lazer Uchun > 10 GVt/sm², 1,054µm)", "Keng Qabul Qilish Burchagi Va Kichik Yurish", "Yuqori Optik Sifat (Bir Xillik Δn 10⁴/sm)"],
     images: ["/images/lib.jpg"],
     route: "lbo",
     specifications: {
       absor: {
-        title: "Absorbtsiya yo'qotishlari",
-        array: ["1/cm", "0,20μm<λ<2,0μm", " < 0,005"]
+        title: "Absorbtsiya Yo'qotishlari",
+        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
-        title: "Pufakchalar, qo'shimchalar va boshqalar.",
+        title: "Pufakchalar, Qo'shimchalar Va Boshqalar.",
         value: "Yo'q"
       },
       orient: {
         title: "Orientatsiya",
-        value: "Ilovaga bog'liq"
+        value: "Ilovaga Bog'liq"
       },
       size: {
         title: "Hajmi, mm³",
@@ -760,26 +762,26 @@ const UZ_PRODUCTS = [
       },
       awd: [
         {
-          title: "O'lchamlar uchun ruxsat",
+          title: "O'lchamlar Uchun Ruxsat",
           sub: "mm",
           standard: "0,1",
-          optional: "0,05"
+          Optional: "0,05"
         },
         {
-          title: "Orientatsiyaning aniqligi",
+          title: "Orientatsiyaning Aniqligi",
           sub: "min. of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
-          title: "Ixtiyoriy sirt sifati",
-          optional: "5/0",
+          title: "Ixtiyoriy Sirt Sifati",
+          Optional: "5/2",
           sub: "scratch/dig",
           standard: "10/5"
         },
         {
           title: "Yassilik",
-          optional: "λ/10",
+          Optional: "λ/10",
           sub: "/at λ=0,633 μm",
           standard: "λ/6"
         },
@@ -787,42 +789,43 @@ const UZ_PRODUCTS = [
           title: "Parallellik",
           sub: "sec.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
           title: "Perpendikulyarlik",
           sub: "min.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         }
       ]
     },
-    applications: [
-      "Ti: Safir, Aleksandrit va Cr: LiSAF lazerlari",
-      "Tibbiy va sanoat Nd: YAG lazerlari",
-      "Diodli lazer pompalanadigan Nd: YVO₄, Nd: YAG va Nd: YLF lazerlari",
-      "Nd: YAG va Nd: YLY lazerlarining uchinchi harmonik avlodi (THG).",
-      "Optik parametrik kuchaytirgichlar OPA va eksimer lazerlari tomonidan pompalanadigan OPO osilatorlari va Nd: YAG lazerlarining harmoniklari",
-      "Ikkinchi garmonik nasl (SHG) va yuqori quvvatli Nd: YAP lazerining 1.34μmdagi uch baravar (THG)"
+    Applications: [
+      "Yuqori Quvvatli Nd: YAG Va Nd: YLF R&D Uchun Lazerlar",
+      "Ti: Safir, Aleksandrit Va Cr: LiSAF Lazerlari",
+      "Tibbiy Va Sanoat Nd: YAG Lazerlari",
+      "Diodli Lazer Pompalanadigan Nd: YVO₄, Nd: YAG Va Nd: YLF Lazerlari",
+      "Nd: YAG Va Nd: YLY Lazerlarining Uchinchi Harmonik Avlodi (THG).",
+      "Optik Parametrik Kuchaytirgichlar OPA Va Eksimer Lazerlari Tomonidan Pompalanadigan OPO Osilatorlari Va Nd: YAG Lazerlarining Harmoniklari",
+      "Ikkinchi Garmonik Nasl (SHG) Va Yuqori Quvvatli Nd: YAP Lazerining 1.34μmdagi Uch Baravar (THG)"
     ]
   },
   {
     title: "Beta-Barium Borate (β-BaB₂O₄ or BBO)",
-    advantages: ["410nm dan 3500nm gacha bo'lgan keng fazaga mos keladigan hudud", "190nm dan 3500nm gacha bo'lgan keng uzatish hududi", "Katta samarali ikkinchi garmonik avlod (SHG) koeffitsienti, d11(BBG)=5,8xd36(KDP)", "Yuqori shikastlanish chegarasi (1064nm da 10ns impuls kengligi uchun > 5 GVt/sm²)", "Yuqori ixtiyoriy bir xillik Δn 10⁴/sm", "Keng harorat o'tkazuvchanligi taxminan 55 C (I SHG 1064nm uchun)", "Yaxshi mexanik va fizik xususiyatlar"],
+    advantages: ["410nm Dan 3500nm Gacha Bo'lgan Keng Fazaga Mos Keladigan Hudud", "190nm Dan 3500nm Gacha Bo'lgan Keng Uzatish Hududi", "Katta Samarali Ikkinchi Garmonik Avlod (SHG) Koeffitsienti, d₁₁(BBG)=5,8xd₃₆(KDP)", "Yuqori Shikastlanish Chegarasi (1064nm Da 10ns Impuls Kengligi Uchun > 5 GVt/sm²)", "Yuqori Ixtiyoriy Bir Xillik Δn 10⁴/sm", "Keng Harorat O'tkazuvchanligi Taxminan 55 C (I SHG 1064nm Uchun)", "Yaxshi Mexanik Va Fizik Xususiyatlar"],
     images: ["/images/barium.jpg"],
     route: "bbo",
     specifications: {
       absor: {
-        title: "Absorbtsiya yo'qotishlari",
-        array: ["1/cm", "0,20μm<λ<2,0μm", " < 0,005"]
+        title: "Absorbtsiya Yo'qotishlari",
+        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
-        title: "Pufakchalar, qo'shimchalar va boshqalar.",
+        title: "Pufakchalar, Qo'shimchalar Va Boshqalar.",
         value: "Yo'q"
       },
       orient: {
         title: "Orientatsiya",
-        value: "Ilovaga bog'liq"
+        value: "Ilovaga Bog'liq"
       },
       size: {
         title: "Hajmi, mm³",
@@ -831,26 +834,26 @@ const UZ_PRODUCTS = [
       },
       awd: [
         {
-          title: "O'lchamlar uchun ruxsat",
+          title: "O'lchamlar Uchun Ruxsat",
           sub: "mm",
           standard: "0,1",
-          optional: "0,05"
+          Optional: "0,05"
         },
         {
-          title: "Orientatsiyaning aniqligi",
+          title: "Orientatsiyaning Aniqligi",
           sub: "min. of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
-          title: "Ixtiyoriy sirt sifati",
-          optional: "5/0",
+          title: "Ixtiyoriy Sirt Sifati",
+          Optional: "5/2",
           sub: "scratch/dig",
           standard: "10/5"
         },
         {
           title: "Yassilik",
-          optional: "λ/10",
+          Optional: "λ/10",
           sub: "/at λ=0,633 μm",
           standard: "λ/6"
         },
@@ -858,42 +861,42 @@ const UZ_PRODUCTS = [
           title: "Parallellik",
           sub: "sec.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
           title: "Perpendikulyarlik",
           sub: "min.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         }
       ]
     },
-    applications: [
-      "Nd: lazerlarning ikkinchi, uchinchi, to'rtinchi va beshinchi garmonik avlodlari",
-      "Bo'yoq lazerlarining chastotasini ikki baravar oshirish, uch marta oshirish va aralashtirish",
-      "Ti:Al₂0₃ va Aleksandrit lazerlarining ikkinchi, uchinchi va toʻrtinchi garmonik avlodlari",
-      "Optik parametrik kuchaytirgichlar (OPA) va optik parametrik osilatorlar (OPO)",
-      "Chastotani ikki baravar oshirish, ultra qisqa pulsni uch marta oshirish Ti: Safir va Bo'yoq lazerlari",
-      "Argon-ion, Cu-bug' va Ruby lazerlarining chastotasini ikki baravar oshirish, tashqi bo'shliq SHG"
+    Applications: [
+      "Nd: Lazerlarning Ikkinchi, Uchinchi, to'rtinchi Va beshinchi Garmonik Avlodlari",
+      "Bo'yoq Lazerlarining Chastotasini Ikki Baravar Oshirish, Uch Marta Oshirish Va Aralashtirish",
+      "Ti:Al₂0₃ Va Aleksandrit Lazerlarining Ikkinchi, Uchinchi Va Toʻrtinchi Garmonik Avlodlari",
+      "Optik Parametrik Kuchaytirgichlar (OPA) Va Optik Parametrik Osilatorlar (OPO)",
+      "Chastotani Ikki Baravar Oshirish, Ultra Qisqa Pulsni Uch Marta Oshirish Ti: Safir Va Bo'yoq Lazerlari",
+      "Argon-ion, Cu-bug' Va Ruby Lazerlarining Chastotasini Ikki Baravar Oshirish, Tashqi Bo'shliq SHG"
     ]
   },
   {
     title: "Potassium Tytanil Phosphate (KTP)",
-    advantages: ["Keng shaffoflik diapazoni 0,160µm dan 2,6µm gacha (SHG diapazoni 0,55µm dan 2,6µm gacha)", "keng to'lqin uzunligi diapazonida I va II turdagi kritik bo'lmagan fazalarni moslashtirish (NCPM).", "nisbatan katta samarali SHG koeffitsienti (KDP dan taxminan uch baravar katta)", "yuqori shikastlanish chegarasi (10ns lazer uchun > 10 GVt/sm², 1,054µm)", "keng qabul qilish burchagi va kichik yurish", "yuqori optik sifat (bir xillik Δn 10⁴/sm)"],
+    advantages: ["Keng Shaffoflik Diapazoni 0,160µm Dan 2,6µm Gacha (SHG Diapazoni 0,55µm Dan 2,6µm Gacha)", "Keng To'lqin Uzunligi Diapazonida I Va II Turdagi Kritik Bo'lmagan Fazalarni Moslashtirish (NCPM).", "Nisbatan Katta Samarali SHG Koeffitsienti (KDP Dan Taxminan Uch Baravar Katta)", "Yuqori Shikastlanish Chegarasi (10ns Lazer Uchun > 10 GVt/sm², 1,054µm)", "Keng Qabul Qilish Burchagi Va Kichik Yurish", "Yuqori Optik Sifat (Bir Xillik Δn 10⁴/sm)"],
     images: ["/images/ktp.jpg"],
     route: "ktp",
     specifications: {
       absor: {
-        title: "Absorbtsiya yo'qotishlari",
-        array: ["1/cm", "0,20μm<λ<2,0μm", " < 0,005"]
+        title: "Absorbtsiya Yo'qotishlari",
+        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
-        title: "Pufakchalar, qo'shimchalar va boshqalar.",
+        title: "Pufakchalar, Qo'shimchalar Va Boshqalar.",
         value: "Yo'q"
       },
       orient: {
         title: "Orientatsiya",
-        value: "Ilovaga bog'liq"
+        value: "Ilovaga Bog'liq"
       },
       size: {
         title: "Hajmi, mm³",
@@ -902,26 +905,26 @@ const UZ_PRODUCTS = [
       },
       awd: [
         {
-          title: "O'lchamlar uchun ruxsat",
+          title: "O'lchamlar Uchun Ruxsat",
           sub: "mm",
           standard: "0,1",
-          optional: "0,05"
+          Optional: "0,05"
         },
         {
-          title: "Orientatsiyaning aniqligi",
+          title: "Orientatsiyaning Aniqligi",
           sub: "min. of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
-          title: "Ixtiyoriy sirt sifati",
-          optional: "5/0",
+          title: "Ixtiyoriy Sirt Sifati",
+          Optional: "5/2",
           sub: "scratch/dig",
           standard: "10/5"
         },
         {
           title: "Yassilik",
-          optional: "λ/10",
+          Optional: "λ/10",
           sub: "/at λ=0,633 μm",
           standard: "λ/6"
         },
@@ -929,63 +932,64 @@ const UZ_PRODUCTS = [
           title: "Parallellik",
           sub: "sec.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
           title: "Perpendikulyarlik",
           sub: "min.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         }
       ]
     },
-    applications: [
-      "Ti: Safir, Aleksandrit va Cr: LiSAF lazerlari",
-      "Tibbiy va sanoat Nd: YAG lazerlari",
-      "Diodli lazer pompalanadigan Nd: YVO₄, Nd: YAG va Nd: YLF lazerlari",
-      "Nd: YAG va Nd: YLY lazerlarining uchinchi harmonik avlodi (THG).",
-      "Optik parametrik kuchaytirgichlar OPA va eksimer lazerlari tomonidan pompalanadigan OPO osilatorlari va Nd: YAG lazerlarining harmoniklari",
-      "Ikkinchi garmonik nasl (SHG) va yuqori quvvatli Nd: YAP lazerining 1.34μmdagi uch baravar (THG)"
+    Applications: [
+      "Yuqori Quvvatli Nd: YAG Va Nd: YLF R&D Uchun Lazerlar",
+      "Ti: Safir, Aleksandrit Va Cr: LiSAF Lazerlari",
+      "Tibbiy Va Sanoat Nd: YAG Lazerlari",
+      "Diodli Lazer Pompalanadigan Nd: YVO₄, Nd: YAG Va Nd: YLF Lazerlari",
+      "Nd: YAG Va Nd: YLY Lazerlarining Uchinchi Harmonik Avlodi (THG).",
+      "Optik Parametrik Kuchaytirgichlar OPA Va Eksimer Lazerlari Tomonidan Pompalanadigan OPO Osilatorlari Va Nd: YAG Lazerlarining Harmoniklari",
+      "Ikkinchi Garmonik Nasl (SHG) Va Yuqori Quvvatli Nd: YAP Lazerining 1.34μmdagi Uch Baravar (THG)"
     ]
   },
   {
     title: "Potassium-Gadolinium Tungstate (Yb:KGW)",
     title2: "Potassium-Yttrium Tungstate (Yb:KYW)",
-    subtitle: "itriy Yb bilan qo'shilgan",
-    advantages: ["981nm da yuqori absorbans", "yuqori simulyatsiya qilingan nurlanish kesimi", "lazer nurlari shikastlanishining yuqori chegarasi", "juda kam kvant λnasos/λse", "1023-1060nm da keng polarizatsiyali chiqish", "diodli nasos bilan yuqori egilish samaradorligi (~ 60%)", "Yb dopingning yuqori konsentratsiyasi"],
+    subtitle: "Itriy Yb Bilan qo'shilgan",
+    advantages: ["981nm Da Yuqori Absorbans", "Yuqori Simulyatsiya Qilingan Nurlanish Kesimi", "Lazer Nurlari Shikastlanishining Yuqori Chegarasi", "Juda Kam Kvant λNasos/λse", "1023-1060nm Da Keng Polarizatsiyali Chiqish", "Diodli Nasos Bilan Yuqori Egilish Samaradorligi (~ 60%)", "Yb Dopingning Yuqori Konsentratsiyasi"],
     images: ["/images/kgw.jpg"],
     route: "kgw",
     specifications: {
       capabe: {
         title: "ISHLAB CHIQARISH IMKONIYATLARI",
         array: [
-          "turli shakllarni ishlab chiqarish (plastinkalar, novdalar, kublar)",
-          "turlicha qabul qilingan",
-          "har xil turdagi qoplamalar"
+          "Turli Shakllarni Ishlab Chiqarish (Plastinkalar, Novdalar, Kublar)",
+          "Turlicha Qabul Qilingan",
+          "Har Xil Turdagi Q+oplamalar"
         ]
       },
       awd: [
         {
-          title: "O'lchamlar uchun ruxsat",
+          title: "O'lchamlar Uchun Ruxsat",
           sub: "mm",
           standard: "0,1",
-          optional: "0,05"
+          Optional: "0,05"
         },
         {
-          title: "Orientatsiyaning aniqligi",
+          title: "Orientatsiyaning Aniqligi",
           sub: "min. of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
-          title: "Ixtiyoriy sirt sifati",
-          optional: "5/0",
+          title: "Ixtiyoriy Sirt Sifati",
+          Optional: "5/2",
           sub: "scratch/dig",
           standard: "10/5"
         },
         {
           title: "Yassilik",
-          optional: "λ/10",
+          Optional: "λ/10",
           sub: "/at λ=0,633 μm",
           standard: "λ/6"
         },
@@ -993,40 +997,40 @@ const UZ_PRODUCTS = [
           title: "Parallellik",
           sub: "sec.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         },
         {
           title: "Perpendikulyarlik",
           sub: "min.of arc",
           standard: "<30",
-          optional: "<10"
+          Optional: "<10"
         }
       ]
     },
-    applications: [
-      "Yb: KGW va Yb: KYW ultra qisqa puls kuchaytirgich sifatida ishlatilishi mumkin.",
-      "Yb: KGW va Yb KYW yuqori quvvatli disk lazerlari uchun eng yaxshi materiallardan biridir",
-      "yupqa (100-150μm) Yb:KGW va YbKYW kristallari ultra qisqa (yuzlab femtosekundlar) yuqori quvvatli impulslarni (>22 Vt) hosil qilish uchun lazer manbalari sifatida ishlatiladi. Standart nasos 981nm, chiqishi: 1023-1060nm."
+    Applications: [
+      "Yb: KGW Va Yb: KYW Ultra Qisqa Puls Kuchaytirgich Sifatida Ishlatilishi Mumkin.",
+      "Yb: KGW Va Yb KYW Yuqori Quvvatli Disk Lazerlari Uchun Eng Yaxshi Materiallardan Biridir",
+      "Yupqa (100-150μm) Yb:KGW Va YbKYW Kristallari Ultra Qisqa (Yuzlab Femtosekundlar) Yuqori Quvvatli Impulslarni (>22 Vt) Hosil Qilish Uchun Lazer Manbalari Sifatida Ishlatiladi. Standart Nasos 981nm, Chiqishi: 1023-1060nm."
     ]
   }
 ]
 
 const other_products = [
-  "Nd:YAG rods;",
-  "Crystals of silver thiogallate AgGaS2;",
-  "Production of some optical elements of laser technology from glass, fused quartz (mirrors, polarizers);",
-  "If we do not have the necessary components, we provide supplies from partner companies with mandatory 100% testing of key parameters at our stands;",
-  "Repolishing and coating of Customer's elements;",
-  "Carrying out R&D in the field of nonlinear optical elements, etc.;",
-  "Creation of optical modulators and elements of laser power optics with unique parameters."
+  "Nd:YAG Rods;",
+  "Crystals Of Silver Thiogallate AgGaS₂;",
+  "Production Of Some Optical Elements Of Laser Technology From Glass, Fused Quartz (Mirrors, Polarizers);",
+  "If We Do Not Have The Necessary Components, We Provide Supplies From Partner Companies With Mandatory 100% Testing Of Key Parameters At Our Stands;",
+  "Repolishing And Coating Of Customer's Elements;",
+  "Carrying Out R&D In The Field Of Nonlinear Optical Elements, etc.;",
+  "Creation Of Optical Modulators And Elements Of Laser Power Optics With Unique Parameters."
 ]
 
 const other_products_uz = [
-  "Nd:YAG rodlari;",
-  "Kumush tiogallat AgGaS2 kristallari;",
-  "Shishadan, eritilgan kvartsdan (oyna, polarizator) lazer texnologiyasining ayrim optik elementlarini ishlab chiqarish;",
-  "Agar bizda kerakli komponentlar bo'lmasa, biz hamkor kompaniyalardan stendlarimizda asosiy parametrlarni majburiy 100% sinovdan o'tkazgan holda etkazib beramiz;",
-  "Buyurtmachi elementlarini qayta jilozlash va qoplash;",
-  "Nochiziqli optik elementlar sohasida ilmiy-tadqiqot ishlarini olib borish va boshqalar;",
-  "Noyob parametrlarga ega optik modulyatorlar va lazer quvvat optikasi elementlarini yaratish."
+  "Nd:YAG Rodlari;",
+  "Kumush Tiogallat AgGaS₂ Kristallari;",
+  "Shishadan, Eritilgan Kvartsdan (Oyna, Polarizator) Lazer Texnologiyasining Ayrim Optik Elementlarini Ishlab Chiqarish;",
+  "Agar Bizda Kerakli Komponentlar Bo'lmasa, Biz Hamkor Kompaniyalardan Stendlarimizda Asosiy Parametrlarni Majburiy 100% Sinovdan O'tkazgan Holda Yetkazib Beramiz;",
+  "Buyurtmachi Elementlarini qayta jilozlash Va qoplash;",
+  "Nochiziqli Optik Elementlar Sohasida Ilmiy-Tadqiqot Ishlarini Olib Borish Va Boshqalar;",
+  "Noyob Parametrlarga Ega Optik Modulyatorlar Va Lazer Quvvat Optikasi Elementlarini Yaratish."
 ]
