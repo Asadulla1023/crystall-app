@@ -178,7 +178,11 @@ function Product({ id, title, advantages, images, route, specifications, Applica
   title2?: string
   subtitle?: string
   advantages: string[]
-  images: string[],
+  images: {
+    file: string,
+    w: number,
+    h: number
+  },
   route: string,
   specifications: any,
   Application: any,
@@ -231,7 +235,7 @@ function Product({ id, title, advantages, images, route, specifications, Applica
           <div className={styles.productInformation}>
             <div className={styles.productSection}>
               <div className={styles.productAdvantages}>
-                <Image src={images[0]} width={800} height={850} alt='Some image' />
+                <Image src={images.file} width={images.w} height={images.h} alt='Some image' />
                 <h3>{pathname === "/uz" ? "Afzalliklar" : "Advantages"}</h3>
                 <div className={styles.advantagesWrapper}>
                   {advantages.map(e => {
@@ -460,8 +464,12 @@ const Contact = () => {
 const products = [
   {
     title: "Lithium Triborate (LiB₃O₅ or LBO)",
-    advantages: ["Broad Transparency Range From 0.160µm To 2.6µm (SHG Range From 0.55µm To 2.6µm)", "Type I And Type II Non-Critical Phase-Matching (NCPM) Over A Wide Wavelength Range", "Relatively Large Effective SHG Coefficient (About Three Times Larger Than That Of KDP)", "High Damage Threshold (> 10 GW/cm² For 10ns Laser At 1.054µm)", "Wide Acceptance Angle And Small Walk-Off", "High Optical Homogeneity"],
-    images: ["/images/lib.jpg"],
+    advantages: ["Broad Transparency Range From 0.160µm To 2.6µm (SHG Range From 0.55µm To 2.6µm)", "Type I And Type II Non-Critical Phase-Matching (NCPM) Over A Wide Wavelength Range", "Relatively Large Effective SHG Coefficient (About Three Times Larger Than That Of KDP)", "High Damage Threshold (> 10 GW/cm² For 10ns Laser At 1.054µm)", "Wide Acceptance Angle And Small Walk-Off", "High Optical Homogeneity Δn 1/10⁶cm"],
+    images: {
+      w: 365,
+      h: 301,
+      file:"/images/lib.jpg"
+    },
     route: "lbo",
     specifications: {
       absor: {
@@ -490,7 +498,7 @@ const products = [
         },
         {
           title: "Accuracy Of Orientation",
-          sub: "min. of arc",
+          sub: "min.of arc",
           standard: "<30",
           Optional: "<10"
         },
@@ -532,8 +540,12 @@ const products = [
   },
   {
     title: "Beta-Barium Borate (β-BaB₂O₄ or BBO)",
-    advantages: ["Broad Phase-Matchable SHG Range From 410nm To 3500nm", "Wide Transmission Region From 190nm To 3500nm", "Large Effective Second-Harmonic-Generation (SHG) Coefficent, d₁₁(BBO)=5,8xd₃₆(KDP)", "High Damage Threshold Of (> 5GW/cm² For 10ns Pulse-Width At 1064nm)", "High Optical Homogeneity Δn 10⁶/cm", "Wide Temperature-BandWidth Of About 55 C (for Type I SHG 1064nm)", "Good Mechanical And Physical Properties"],
-    images: ["/images/barium.jpg"],
+    advantages: ["Broad Phase-Matchable SHG Range From 410nm To 3500nm", "Wide Transmission Region From 190nm To 3500nm", "Large Effective Second-Harmonic-Generation (SHG) Coefficent, d₁₁(BBO)=5,8xd₃₆(KDP)", "High Damage Threshold Of (> 5GW/cm² For 10ns Pulse-Width At 1064nm)", "High Optical Homogeneity Δn 1/10⁶cm", "Wide Temperature-BandWidth Of About 55 C (for Type I SHG 1064nm)", "Good Mechanical And Physical Properties"],
+    images: {
+        w: 349,
+        h: 311,
+        file: "/images/barium.jpg"
+    },
     route: "bbo",
     specifications: {
       absor: {
@@ -562,7 +574,7 @@ const products = [
         },
         {
           title: "Accuracy Of Orientation",
-          sub: "min. of arc",
+          sub: "min.of arc",
           standard: "<30",
           Optional: "<10"
         },
@@ -603,8 +615,12 @@ const products = [
   },
   {
     title: "Potassium Tytanil Phosphate (KTP)",
-    advantages: ["Broad Transparency Range From 0.160µm To 2.6µm (SHG Range From 0.55µm To 2.6µm)", "Type I And Type II Non-Critical Phase-Matching (NCPM) Over A Wide Wavelength Range", "Relatively Large Effective SHG Coefficient (About Three Times Larger Than That Of KDP)", "High Damage Threshold (> 10 GW/cm² For 10ns Laser At 1.054µm)", "Wide Acceptance Angle And Small Walk-Off", "High Optical Quality (Homogeneity Δn 10⁶/cm)"],
-    images: ["/images/ktp.jpg"],
+    advantages: ["Broad Transparency Range From 0.160µm To 2.6µm (SHG Range From 0.55µm To 2.6µm)", "Type I And Type II Non-Critical Phase-Matching (NCPM) Over A Wide Wavelength Range", "Relatively Large Effective SHG Coefficient (About Three Times Larger Than That Of KDP)", "High Damage Threshold (> 10 GW/cm² For 10ns Laser At 1.054µm)", "Wide Acceptance Angle And Small Walk-Off", "High Optical Quality (Homogeneity Δn 1/10⁶cm)"],
+    images: {
+      w: 347,
+      h: 339,
+      file:"/images/ktp.jpg"
+    },
     route: "ktp",
     specifications: {
       absor: {
@@ -633,7 +649,7 @@ const products = [
         },
         {
           title: "Accuracy Of Orientation",
-          sub: "min. of arc",
+          sub: "min.of arc",
           standard: "<30",
           Optional: "<10"
         },
@@ -678,7 +694,11 @@ const products = [
     title2: "Potassium-Gttrium Gungstate (Yb:KYW)",
     subtitle: "Doped With Yttrium Yb",
     advantages: ["High Absorbance At 981nm", "High Simulated Radiation Cross Section", "High Threshold Of Laser Beam Damage", "Very Low Quantum Defect λpump/λse", "Wide Polarized Output At 1023-1060nm", "High Tilt Efficiency With Diode Pumping (~60%)", "High Concentration Of Yb Doping"],
-    images: ["/images/kgw.jpg"],
+    images: {
+      w: 403,
+      h: 363,
+      file:"/images/kgw.jpg"
+    },
     route: "kgw",
     specifications: {
       capabe: {
@@ -698,7 +718,7 @@ const products = [
         },
         {
           title: "Accuracy Of Orientation",
-          sub: "min. of arc",
+          sub: "min.of arc",
           standard: "<30",
           Optional: "<10"
         },
@@ -739,8 +759,12 @@ const products = [
 const UZ_PRODUCTS = [
   {
     title: "Lithium Triborate (LiB₃O₅; or LBO)",
-    advantages: ["Keng Shaffoflik Diapazoni 0,160µm Dan 2,6µm Gacha (SHG Diapazoni 0,55µm Dan 2,6µm Gacha)", "Keng To'lqin Uzunligi Diapazonida I Va II Turdagi Kritik Bo'lmagan Fazalarni Moslashtirish (NCPM).", "Nisbatan Katta Samarali SHG Koeffitsienti (KDP Dan Taxminan Uch Baravar Katta)", "Yuqori Shikastlanish Chegarasi (10ns Lazer Uchun > 10 GVt/sm², 1,054µm)", "Keng Qabul Qilish Burchagi Va Kichik Yurish", "Yuqori Optik Bir Xillik"],
-    images: ["/images/lib.jpg"],
+    advantages: ["Keng Shaffoflik Diapazoni 0,160µm Dan 2,6µm Gacha (SHG Diapazoni 0,55µm Dan 2,6µm Gacha)", "Keng To'lqin Uzunligi Diapazonida I Va II Turdagi Kritik Bo'lmagan Fazalarni Moslashtirish (NCPM).", "Nisbatan Katta Samarali SHG Koeffitsienti (KDP Dan Taxminan Uch Baravar Katta)", "Yuqori Shikastlanish Chegarasi (10ns Lazer Uchun > 10 GVt/sm², 1,054µm)", "Keng Qabul Qilish Burchagi Va Kichik Yurish", "Yuqori Optik Bir Xillik Δn 1/10⁶cm"],
+    images: {
+      w: 365,
+      h: 301,
+      file:"/images/lib.jpg"
+    },
     route: "lbo",
     specifications: {
       absor: {
@@ -769,7 +793,7 @@ const UZ_PRODUCTS = [
         },
         {
           title: "Orientatsiyaning Aniqligi",
-          sub: "min. of arc",
+          sub: "min.of arc",
           standard: "<30",
           Optional: "<10"
         },
@@ -811,8 +835,12 @@ const UZ_PRODUCTS = [
   },
   {
     title: "Beta-Barium Borate (β-BaB₂O₄ or BBO)",
-    advantages: ["Keng Fazaga Mos Keladigan SHG Diapazoni 410nm Dan 3500nm Gacha", "190nm Dan 3500nm Gacha Bo'lgan Keng Uzatish Hududi", "Katta Samarali Ikkinchi Garmonik Avlod (SHG) Koeffitsienti, d₁₁(BBO)=5,8xd₃₆(KDP)", "Yuqori Shikastlanish Chegarasi (1064nm Da 10ns Impuls Kengligi Uchun > 5 GVt/sm²)", "Yuqori Ixtiyoriy Bir Xillik Δn 10⁶/sm", "Keng Harorat O'tkazuvchanligi Taxminan 55 C (I SHG 1064nm Uchun)", "Yaxshi Mexanik Va Fizik Xususiyatlar"],
-    images: ["/images/barium.jpg"],
+    advantages: ["Keng Fazaga Mos Keladigan SHG Diapazoni 410nm Dan 3500nm Gacha", "190nm Dan 3500nm Gacha Bo'lgan Keng Uzatish Hududi", "Katta Samarali Ikkinchi Garmonik Avlod (SHG) Koeffitsienti, d₁₁(BBO)=5,8xd₃₆(KDP)", "Yuqori Shikastlanish Chegarasi (1064nm Da 10ns Impuls Kengligi Uchun > 5 GVt/sm²)", "Yuqori Ixtiyoriy Bir Xillik Δn 1/10⁶sm", "Keng Harorat O'tkazuvchanligi Taxminan 55 C (I SHG 1064nm Uchun)", "Yaxshi Mexanik Va Fizik Xususiyatlar"],
+    images: {
+      w: 349,
+      h: 311,
+      file: "/images/barium.jpg"
+  },
     route: "bbo",
     specifications: {
       absor: {
@@ -841,7 +869,7 @@ const UZ_PRODUCTS = [
         },
         {
           title: "Orientatsiyaning Aniqligi",
-          sub: "min. of arc",
+          sub: "min.of arc",
           standard: "<30",
           Optional: "<10"
         },
@@ -882,8 +910,12 @@ const UZ_PRODUCTS = [
   },
   {
     title: "Potassium Tytanil Phosphate (KTP)",
-    advantages: ["Keng Shaffoflik Diapazoni 0,160µm Dan 2,6µm Gacha (SHG Diapazoni 0,55µm Dan 2,6µm Gacha)", "Keng To'lqin Uzunligi Diapazonida I Va II Turdagi Kritik Bo'lmagan Fazalarni Moslashtirish (NCPM).", "Nisbatan Katta Samarali SHG Koeffitsienti (KDP Dan Taxminan Uch Baravar Katta)", "Yuqori Shikastlanish Chegarasi (10ns Lazer Uchun > 10 GVt/sm², 1,054µm)", "Keng Qabul Qilish Burchagi Va Kichik Yurish", "Yuqori Optik Sifat (Bir Xillik Δn 10⁶/sm)"],
-    images: ["/images/ktp.jpg"],
+    advantages: ["Keng Shaffoflik Diapazoni 0,160µm Dan 2,6µm Gacha (SHG Diapazoni 0,55µm Dan 2,6µm Gacha)", "Keng To'lqin Uzunligi Diapazonida I Va II Turdagi Kritik Bo'lmagan Fazalarni Moslashtirish (NCPM).", "Nisbatan Katta Samarali SHG Koeffitsienti (KDP Dan Taxminan Uch Baravar Katta)", "Yuqori Shikastlanish Chegarasi (10ns Lazer Uchun > 10 GVt/sm², 1,054µm)", "Keng Qabul Qilish Burchagi Va Kichik Yurish", "Yuqori Optik Sifat (Bir Xillik Δn 1/10⁶sm)"],
+    images: {
+      w: 347,
+      h: 339,
+      file:"/images/ktp.jpg"
+    },
     route: "ktp",
     specifications: {
       absor: {
@@ -912,7 +944,7 @@ const UZ_PRODUCTS = [
         },
         {
           title: "Orientatsiyaning Aniqligi",
-          sub: "min. of arc",
+          sub: "min.of arc",
           standard: "<30",
           Optional: "<10"
         },
@@ -957,7 +989,11 @@ const UZ_PRODUCTS = [
     title2: "Potassium-Yttrium Tungstate (Yb:KYW)",
     subtitle: "Itriy Yb Bilan qo'shilgan",
     advantages: ["981nm Da Yuqori Absorbans", "Yuqori Simulyatsiya Qilingan Nurlanish Kesimi", "Lazer Nurlari Shikastlanishining Yuqori Chegarasi", "Juda Kam Kvant λNasos/λse", "1023-1060nm Da Keng Polarizatsiyali Chiqish", "Diodli Nasos Bilan Yuqori Egilish Samaradorligi (~ 60%)", "Yb Dopingning Yuqori Konsentratsiyasi"],
-    images: ["/images/kgw.jpg"],
+    images: {
+      w: 403,
+      h: 363,
+      file:"/images/kgw.jpg"
+    },
     route: "kgw",
     specifications: {
       capabe: {
@@ -977,7 +1013,7 @@ const UZ_PRODUCTS = [
         },
         {
           title: "Orientatsiyaning Aniqligi",
-          sub: "min. of arc",
+          sub: "min.of arc",
           standard: "<30",
           Optional: "<10"
         },

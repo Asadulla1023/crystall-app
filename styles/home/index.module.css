@@ -77,38 +77,16 @@
   animation-duration: 1s;
 }
 
-.arrowDown {
-  width: 200px;
-  height: 200px;
-  border-radius: 150px;
-  transition: 0.3s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0%;
-  top: 8rem;
-  margin-top: -1rem;
-  cursor: pointer;
-  animation-name: animationArrowCircle;
-  animation-iteration-count: infinite;
-  animation-duration: 2s;
-}
-
-.arrowDown > img {
-  height: 100px;
-  width: auto;
-  animation-name: animateArrow;
-  animation-iteration-count: infinite;
-  animation-duration: 1s;
-}
-
 .info {
   background: #fff;
   width: 768px;
   margin: 0 auto;
   padding: 1rem;
   font-size: 2rem;
+}
+
+.info > p {
+  text-transform: capitalize;
 }
 
 .content:nth-child(1) {
@@ -292,9 +270,6 @@
 }
 
 .productAdvantages > img {
-  width: 100% !important;
-  height: auto;
-  height: 300px;
   object-fit: cover;
 }
 
@@ -313,6 +288,7 @@
 
 .productSection > p {
   color: #fff;
+  text-transform: capitalize;
   font-size: 1.2rem;
   width: 100%;
   text-align: center;
@@ -1078,6 +1054,10 @@
 @media screen and (max-width: 450px) {
   .product > div > h3 {
     margin-top: 2rem;
+  }
+  .productAdvantages > img {
+    width: 100% !important;
+    height: auto;
   }
   .dots {
     margin-top: 5.5rem;

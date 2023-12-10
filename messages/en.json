@@ -30,7 +30,7 @@
         "orient": "Orientation",
         "phase": "Type Phase Matching",
         "wave":"Lasing Wavelength, nm",
-        "coating": "Type Of coating (Specify Wavelengths Of Antireflection And Reflection Coefficients)",
+        "coating": "Type Of Coating (Specify Wavelengths Of Antireflection And Reflection Coefficients)",
         "quantity": "Quantity, pcs.",
         "tolerance": "Dimensional Tolerance (Aperture), mm",
         "tolerance2":"Dimensional Tolerance (Length), mm",
