@@ -317,7 +317,7 @@ function Product({ id, title, advantages, images, route, specifications, applica
               </div>
             </div>
             <div className={styles.productSection}>
-              <h2>{pathname === "/uz" ? "Ilovalar" : "applications"}</h2>
+              <h2>{pathname === "/uz" ? "Ilovalar" : "Applications"}</h2>
               <div style={{
                 marginTop: 16
               }} className={styles.advantagesWrapper}>
@@ -481,7 +481,7 @@ const products = [
         value: "None"
       },
       orient: {
-        title: "orientation",
+        title: "Orientation",
         value: "Depends on application"
       },
       size: {
@@ -562,7 +562,7 @@ const products = [
         array2: ["8x10x12", "5x5x1", "5x5x0,5", "7x7x0,1", "7x7x0,01"]
       },
       orient: {
-        title: "orientation",
+        title: "Orientation",
         value: "Depends on application, contact us to determine orientation for your element"
       },
       awd: [
@@ -632,7 +632,7 @@ const products = [
         value: "None"
       },
       orient: {
-        title: "orientation",
+        title: "Orientation",
         value: "Depends on application, contact us to determine orientation for your element"
       },
       size: {
