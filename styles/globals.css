@@ -47,6 +47,10 @@ h3 {
   font-family: "Cormorant Garamond", serif;
 }
 
+p {
+  text-transform: none !important;
+}
+
 .dots {
   display: flex;
   flex-direction: column !important;
