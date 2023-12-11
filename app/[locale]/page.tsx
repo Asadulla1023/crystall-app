@@ -697,7 +697,7 @@ const products = [
     images: {
       w: 403,
       h: 363,
-      file:"/images/KGW.jpg"
+      file:"/images/kgw.jpg"
     },
     route: "KGW",
     specifications: {
@@ -992,7 +992,7 @@ const UZ_PRODUCTS = [
     images: {
       w: 403,
       h: 363,
-      file:"/images/KGW.jpg"
+      file:"/images/kgw.jpg"
     },
     route: "KGW",
     specifications: {
