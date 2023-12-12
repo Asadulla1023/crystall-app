@@ -219,14 +219,9 @@ function Product({ id, title, advantages, images, route, specifications, applica
             }
           }} >
           <div className={styles.infoTop}>
-            <motion.h2 className="h2" style={{
-              textTransform: "none"
-            }}>{title}</motion.h2>
-            {title2 && <motion.h2 className="h2" style={{
-              textTransform: "capitalize"
-            }}>{title2}</motion.h2>}
+            <motion.h2>{title}</motion.h2>
+            {title2 && <motion.h2>{title2}</motion.h2>}
             {subtitle && <motion.h2 className="h2" style={{
-              textTransform: "capitalize",
               fontSize: 16,
               color: "#fff",
               fontWeight: "400"
@@ -353,7 +348,7 @@ const AboutSection = () => {
     }
   }, [controls, inView]);
   return (
-    <motion.section ref={ref} id='AboutUs' className={styles.about}>
+    <motion.section ref={ref} id='aboutUs' className={styles.about}>
       <Container>
         <motion.section initial="hidden" animate={controls}
           variants={{
@@ -474,7 +469,7 @@ const products = [
     specifications: {
       absor: {
         title: "Absorption losses",
-        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
+        array: ["1/cm, at 0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
         title: "Bubbles, inclusions, etc.",
@@ -511,7 +506,7 @@ const products = [
         {
           title: "Flatness",
           Optional: "λ/10",
-          sub: "/at λ=0,633 μm",
+          sub: "at λ=0,633 μm",
           standard: "λ/6"
         },
         {
@@ -535,7 +530,7 @@ const products = [
       "Diode laser pumped nd: YVO₄, nd: YAG and nd:YLF lasers",
       "Third harmonic generation (THG) of nd: YAG and nd:YLF lasers",
       "Optical parametric amplifiers OPA and oscillators OPO pumped by excimer lasers and harmonics of nd:YAG lasers",
-      "Second harmonic genration (SHG) and tripling (THG) of high power nd:YAP laser at 1.34μm"
+      "Second harmonic generation (SHG) and tripling (THG) of high power nd:YAP laser at 1.34μm"
     ]
   },
   {
@@ -550,7 +545,7 @@ const products = [
     specifications: {
       absor: {
         title: "Absorption losses",
-        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
+        array: ["1/cm, at 0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
         title: "Bubbles, inclusions, etc.",
@@ -587,7 +582,7 @@ const products = [
         {
           title: "Flatness",
           Optional: "λ/10",
-          sub: "/at λ=0,633 μm",
+          sub: "at λ=0,633 μm",
           standard: "λ/6"
         },
         {
@@ -625,7 +620,7 @@ const products = [
     specifications: {
       absor: {
         title: "Absorption losses",
-        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
+        array: ["1/cm, at 0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
         title: "Bubbles, inclusions, etc.",
@@ -662,7 +657,7 @@ const products = [
         {
           title: "Flatness",
           Optional: "λ/10",
-          sub: "/at λ=0,633 μm",
+          sub: "at λ=0,633 μm",
           standard: "λ/6"
         },
         {
@@ -686,14 +681,14 @@ const products = [
       "Diode laser pumped nd: YVO₄, nd: YAG and nd:YLF lasers",
       "Third harmonic generation (THG) of nd: YAG and nd:YLF lasers",
       "Optical parametric amplifiers OPA and oscillators OPO pumped by excimer lasers and harmonics of nd:YAG lasers",
-      "Second harmonic genration (SHG) and tripling (THG) of high power nd:YAP laser at 1.34μm"
+      "Second harmonic generation (SHG) and tripling (THG) of high power nd:YAP laser at 1.34μm"
     ]
   },
   {
-    title: `Potassium-Gadolinium Tungstate (Yb:KGW)`,
-    title2: "Potassium-Gttrium Gungstate (Yb:KYW)",
+    title: `Potassium-gadolinium tungstate (Yb: KGW)`,
+    title2: "Potassium-yttrium tungstate (Yb: KYW)",
     subtitle: "Doped With Yttrium Yb",
-    advantages: ["High absorbance at 981nm", "High simulated radiation cross section", "High threshold of laser beam damage", "Very low quantum defect λpump/λse", "Wide polarized output at 1023-1060nm", "High tilt efficiency with diode pumping (~60%)", "High concentration of yb doping"],
+    advantages: ["High absorbance at 981nm", "High simulated radiation cross section", "High threshold of laser beam damage", "Very low quantum defect λpump/λse", "Wide polarized output at 1023-1060nm", "High tilt efficiency with diode pumping (~60%)", "High concentration of Yb doping"],
     images: {
       w: 403,
       h: 363,
@@ -731,7 +726,7 @@ const products = [
         {
           title: "Flatness",
           Optional: "λ/10",
-          sub: "/at λ=0,633 μm",
+          sub: "at λ=0,633 μm",
           standard: "λ/6"
         },
         {
@@ -749,9 +744,9 @@ const products = [
       ]
     },
     applications: [
-      "Yb:KGW and yb:KYW can be used as an ultrashort pulse amplifier.",
-      "Yb:KGW and yb:KYW are among the best materials for high power disk lasers",
-      "Thin (100-150μm) (100-150μm) yb:KGW and yb:KYW crystals are used as lasing sources to generate ultrashort (hundreds of femtoseconds) high- power pulses (>22 w). standard pumping is 981nm, output: 1023-1060nm."
+      "Yb: KGW and Yb: KYW can be used as an ultrashort pulse amplifier.",
+      "Yb: KGW and Yb: KYW are among the best materials for high power disk lasers",
+      "Thin (100-150μm) (100-150μm) Yb: KGW and Yb: KYW crystals are used as lasing sources to generate ultrashort (hundreds of femtoseconds) high- power pulses (>22 W). standard pumping is 981nm, output: 1023-1060nm."
     ]
   }
 ]
@@ -769,7 +764,7 @@ const UZ_PRODUCTS = [
     specifications: {
       absor: {
         title: "Absorbtsiya yo'qotishlari",
-        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
+        array: ["1/cm, at 0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
         title: "Pufakchalar, qo'shimchalar va boshqalar.",
@@ -806,7 +801,7 @@ const UZ_PRODUCTS = [
         {
           title: "Yassilik",
           Optional: "λ/10",
-          sub: "/at λ=0,633 μm",
+          sub: "at λ=0,633 μm",
           standard: "λ/6"
         },
         {
@@ -834,7 +829,7 @@ const UZ_PRODUCTS = [
     ]
   },
   {
-    title: "Beta-Barium Borate (β-BaB₂O₄ or BBO)",
+    title: "Beta-Barium Borate (β -BaB₂O₄ or BBO)",
     advantages: ["Keng fazaga mos keladigan SHG diapazoni 410nm dan 3500nm gacha", "190nm dan 3500nm gacha bo'lgan keng uzatish hududi", "Katta samarali ikkinchi garmonik avlod (SHG) koeffitsienti, d₁₁(BBO)=5,8xd₃₆(KDP)", "Yuqori shikastlanish chegarasi (1064nm da 10ns impuls kengligi uchun > 5 gvt/sm²)", "Yuqori ixtiyoriy bir xillik Δn 1/10⁶sm", "Keng harorat o'tkazuvchanligi taxminan 55C (i SHG 1064nm uchun)", "Yaxshi mexanik va fizik xususiyatlar"],
     images: {
       w: 349,
@@ -845,7 +840,7 @@ const UZ_PRODUCTS = [
     specifications: {
       absor: {
         title: "Absorbtsiya yo'qotishlari",
-        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
+        array: ["1/cm, at 0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
         title: "Pufakchalar, qo'shimchalar va boshqalar.",
@@ -882,7 +877,7 @@ const UZ_PRODUCTS = [
         {
           title: "Yassilik",
           Optional: "λ/10",
-          sub: "/at λ=0,633 μm",
+          sub: "at λ=0,633 μm",
           standard: "λ/6"
         },
         {
@@ -920,7 +915,7 @@ const UZ_PRODUCTS = [
     specifications: {
       absor: {
         title: "Absorbtsiya yo'qotishlari",
-        array: ["1/cm, at", "0,20μm<λ<2,0μm", " < 0,005"]
+        array: ["1/cm, at 0,20μm<λ<2,0μm", " < 0,005"]
       },
       bubble: {
         title: "Pufakchalar, qo'shimchalar va boshqalar.",
@@ -957,7 +952,7 @@ const UZ_PRODUCTS = [
         {
           title: "Yassilik",
           Optional: "λ/10",
-          sub: "/at λ=0,633 μm",
+          sub: "at λ=0,633 μm",
           standard: "λ/6"
         },
         {
@@ -985,8 +980,8 @@ const UZ_PRODUCTS = [
     ]
   },
   {
-    title: "Potassium-Gadolinium Tungstate (Yb:KGW)",
-    title2: "Potassium-Yttrium Tungstate (Yb:KYW)",
+    title: "Potassium-Gadolinium Tungstate (Yb: KGW)",
+    title2: "Potassium-Yttrium Tungstate (Yb: KYW)",
     subtitle: "Itriy Yb Bilan qo'shilgan",
     advantages: ["981nm da yuqori absorbans", "Yuqori simulyatsiya qilingan nurlanish kesimi", "Lazer nurlari shikastlanishining yuqori chegarasi", "Juda kam kvant λnasos/λse", "1023-1060nm da keng polarizatsiyali chiqish", "Diodli nasos bilan yuqori egilish samaradorligi (~ 60%)", "Yb dopingning yuqori konsentratsiyasi"],
     images: {
@@ -1026,7 +1021,7 @@ const UZ_PRODUCTS = [
         {
           title: "Yassilik",
           Optional: "λ/10",
-          sub: "/at λ=0,633 μm",
+          sub: "at λ=0,633 μm",
           standard: "λ/6"
         },
         {
@@ -1044,9 +1039,9 @@ const UZ_PRODUCTS = [
       ]
     },
     applications: [
-      "Yb: KGW va yb: KYW ultra qisqa puls kuchaytirgich sifatida ishlatilishi mumkin.",
-      "Yb: KGW va yb KYW yuqori quvvatli disk lazerlari uchun eng yaxshi materiallardan biridir",
-      "Yupqa (100-150μm) yb:KGW va ybkyw kristallari ultra qisqa (yuzlab femtosekundlar) yuqori quvvatli impulslarni (>22 vt) hosil qilish uchun lazer manbalari sifatida ishlatiladi. standart nasos 981nm, chiqishi: 1023-1060nm."
+      "Yb: KGW va Yb: KYW ultra qisqa puls kuchaytirgich sifatida ishlatilishi mumkin.",
+      "Yb: KGW va Yb: KYW yuqori quvvatli disk lazerlari uchun eng yaxshi materiallardan biridir",
+      "Yupqa (100-150μm) Yb: KGW va Yb: KYW kristallari ultra qisqa (yuzlab femtosekundlar) yuqori quvvatli impulslarni (>22 W) hosil qilish uchun lazer manbalari sifatida ishlatiladi. standart nasos 981nm, chiqishi: 1023-1060nm."
     ]
   }
 ]

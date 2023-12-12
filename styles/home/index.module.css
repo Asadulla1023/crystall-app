@@ -87,6 +87,8 @@
 
 .info > p {
   text-transform: capitalize;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
 }
 
 .content:nth-child(1) {
@@ -243,7 +245,6 @@
 }
 
 .infoTop > h2 {
-  text-transform: capitalize !important;
   font-size: 2.5rem;
   color: #fff;
   width: 100% !important;

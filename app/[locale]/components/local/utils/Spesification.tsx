@@ -88,7 +88,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 }}>
                                     <input type="text" disabled />
                                 </div>
-                                <div className={styles.values}><h3><b>{path === "/uz" ? "Buyurtmachining ": "Example "}</b>{path === "/uz" ? "To'ldirishga Misol" : "Of Filling Out The Customer’s Specification"}</h3></div>
+                                <div className={styles.values}><h3><b>{path === "/uz" ? "Buyurtmachining " : "Example "}</b>{path === "/uz" ? "To'ldirishga Misol" : "Of Filling Out The Customer’s Specification"}</h3></div>
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>№</div>
@@ -163,9 +163,10 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.values}>
                                     <input type="text" disabled />
                                 </div>
-                                <div className={styles.values}>AR/AR@ 1320+1064
-                                    @1064  R{"<"}1%
-                                    @1320  R{"<"}0,15</div>
+                                <div className={styles.values}>AR/AR @1320+1064 nm
+                                    @1064 nm R{"<"}1%
+                                    @1320 nm R{"<"}0,15
+                                    </div>
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>7. ⁂</div>
@@ -191,7 +192,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>9.</div>
-                                <div className={styles.options}>{t("flatness")}</div>
+                                <div className={styles.options}>“{t("flatness")}”</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef8} placeholder="Type value" required name='flatness' />
                                 </div>
@@ -246,13 +247,37 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <h3 style={{
                                 marginTop: 8
-                            }}>⁂ - {path === "/uz" ? "Majburiy To'ldirish" :"Mandatory Filling"}</h3>
+                            }}>⁂ - {path === "/uz" ? "Majburiy To'ldirish" : "Mandatory Filling"}</h3>
                             <div className={styles.additional}>
                                 <h3>{t("subtitle")}</h3>
                                 <textarea ref={valueRef13} placeholder={t("additional")} required name='additional' />
                                 <h3>{t("email")}</h3>
                                 <input type="email" ref={valueRef14} name='email' required placeholder='example@mail.com' />
-                                <button>{path == "/uz" ? "Jo'natish" : "Submit"}</button>
+                                <div style={{
+                                    display: "flex",
+                                    gap: 8
+                                }} className={styles.submits}>
+                                    <button>{path == "/uz" ? "Jo'natish" : "Submit"}</button>
+                                    <button onClick={(e) => {
+                                        e.preventDefault()
+                                        valueRef.current.value = ""
+                                        valueRef1.current.value = ""
+                                        valueRef2.current.value = ""
+                                        valueRef3.current.value = ""
+                                        valueRef4.current.value = ""
+                                        valueRef5.current.value = ""
+                                        valueRef6.current.value = ""
+                                        valueRef7.current.value = ""
+                                        valueRef8.current.value = ""
+                                        valueRef9.current.value = ""
+                                        valueRef10.current.value = ""
+                                        valueRef11.current.value = ""
+                                        valueRef12.current.value = ""
+                                        valueRef13.current.value = ""
+                                        valueRef14.current.value = ""
+                                        setIsOpen(false)
+                                    }} >{path == "/uz" ? "Ortga qaytish" : "Go back"}</button>
+                                </div>
                             </div>
                         </form>
                     </div>

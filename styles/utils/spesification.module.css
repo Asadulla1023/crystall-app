@@ -191,7 +191,7 @@
   border: 1px solid #000;
 }
 
-.additional > button {
+.additional > .submits > button {
   padding: 0.5rem 3rem;
   border: none;
   outline: none;
@@ -207,11 +207,11 @@
   box-shadow: #ffffff59 0px 5px 15px;
 }
 
-.additional > button:active {
+.additional > .submits > button:active {
   scale: 0.97;
 }
 
-.additional > button:hover {
+.additional > .submits > button:hover {
   background: #56e6ff;
   color: #000;
 }
