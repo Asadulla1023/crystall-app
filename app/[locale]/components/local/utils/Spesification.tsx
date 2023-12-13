@@ -163,8 +163,8 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.values}>
                                     <input type="text" disabled />
                                 </div>
-                                <div className={styles.values}>AR/AR @1320+1064 nm
-                                    @1064 nm R{"<"}1%
+                                <div className={styles.values}>AR/AR @1320+1064 nm <br />
+                                    @1064 nm R{"<"}1% <br/>
                                     @1320 nm R{"<"}0,15 
                                 </div>
                             </div>
