@@ -165,8 +165,8 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 </div>
                                 <div className={styles.values}>AR/AR @1320+1064 nm
                                     @1064 nm R{"<"}1%
-                                    @1320 nm R{"<"}0,15
-                                    </div>
+                                    @1320 nm R{"<"}0,15 
+                                </div>
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>7. ⁂</div>
