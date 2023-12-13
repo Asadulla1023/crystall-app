@@ -192,7 +192,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <div className={styles.information}>
                                 <div className={styles.queue}>9.</div>
-                                <div className={styles.options}>“{t("flatness")}”</div>
+                                <div className={styles.options}>{t("flatness")}</div>
                                 <div className={styles.values}>
                                     <input type="text" ref={valueRef8} placeholder="Type value" required name='flatness' />
                                 </div>

@@ -34,7 +34,7 @@
         "quantity": "Quantity, pcs.",
         "tolerance": "Dimensional Tolerance (Aperture), mm",
         "tolerance2":"Dimensional Tolerance (Length), mm",
-        "flatness": "Flatness (at =633nm)",
+        "flatness": "Flatness (at λ=633nm)",
         "parall": "Parallelism, arcsec",
         "perpen": "Perpendicularity, arcmin",
         "size": "The Size Of The Chamfers Along The Aperture And On The Side Surfaces",

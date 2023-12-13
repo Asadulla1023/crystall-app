@@ -34,7 +34,7 @@
         "quantity": "Miqdori, dona.",
         "tolerance": "O'lchovli Bardoshlik (Diafragma), mm",
         "tolerance2":"O'lchovli Bardoshlik (Uzunlik), mm",
-        "flatness": "Yassilik (=633nm da)",
+        "flatness": "Yassilik (λ=633nm da)",
         "parall": "Parallellik, arcsec",
         "perpen": "Perpendikulyarlik, arcmin",
         "size": "Diafragma Bo'ylab Va Yon Yuzalardagi Chamferlarning O'lchami",

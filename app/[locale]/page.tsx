@@ -687,7 +687,7 @@ const products = [
   {
     title: `Potassium-gadolinium tungstate (Yb: KGW)`,
     title2: "Potassium-yttrium tungstate (Yb: KYW)",
-    subtitle: "Doped With Yttrium Yb",
+    subtitle: "Doped with ytterbium yb",
     advantages: ["High absorbance at 981nm", "High simulated radiation cross section", "High threshold of laser beam damage", "Very low quantum defect λpump/λse", "Wide polarized output at 1023-1060nm", "High tilt efficiency with diode pumping (~60%)", "High concentration of Yb doping"],
     images: {
       w: 403,
@@ -980,9 +980,9 @@ const UZ_PRODUCTS = [
     ]
   },
   {
-    title: "Potassium-Gadolinium Tungstate (Yb: KGW)",
-    title2: "Potassium-Yttrium Tungstate (Yb: KYW)",
-    subtitle: "Itriy Yb Bilan qo'shilgan",
+    title: "Potassium-gadolinium tungstate (Yb: KGW)",
+    title2: "Potassium-ytterbium tungstate (Yb: KYW)",
+    subtitle: "Itriy Yb bilan qo'shilgan",
     advantages: ["981nm da yuqori absorbans", "Yuqori simulyatsiya qilingan nurlanish kesimi", "Lazer nurlari shikastlanishining yuqori chegarasi", "Juda kam kvant λnasos/λse", "1023-1060nm da keng polarizatsiyali chiqish", "Diodli nasos bilan yuqori egilish samaradorligi (~ 60%)", "Yb dopingning yuqori konsentratsiyasi"],
     images: {
       w: 403,
