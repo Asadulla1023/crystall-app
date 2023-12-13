@@ -18,7 +18,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.madeWith}>
                     <h4>Uzbekistan, Tashkent city, Katartal street 60</h4>
-                    <h4>Website creation and development - studio <Link href={"https://www.empire-soft.net/"}>Empire-soft.net</Link></h4>
+                    <h4>Website creation and development - studio <Link target='_blank' href={"https://www.empire-soft.net/"}>Empire-soft.net</Link></h4>
                 </div>
             </div>
         </footer>
