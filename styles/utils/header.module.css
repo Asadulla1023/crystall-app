@@ -48,7 +48,7 @@
 }
 
 .logo {
-  background: #fff;
+  background: #22d8f8;
   width: 80px;
   height: 80px;
   border-radius: 100px;
@@ -58,7 +58,7 @@
 }
 
 .logo > img {
-  width: 40px;
+  width: 50px;
   height: auto;
 }
 

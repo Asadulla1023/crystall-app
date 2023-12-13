@@ -116,7 +116,7 @@ const Header = () => {
                         e.preventDefault()
                         push("#home")
                     }} className={styles.logo}>
-                        <Image src={"/icons/logo.svg"} width={20} height={20} alt='logo' />
+                        <Image src={"/icons/logo.svg"} width={30} height={30} alt='logo' />
                     </Link>
                     <nav className={styles.navigator}>
                         <ul className={styles.navigatorList}>
