@@ -99,7 +99,7 @@ export default function Index() {
                       <Link href="#ktp">KTP</Link>
                     </li>
                     <li>
-                      <Link href="#KGW">KGW/KYW</Link>
+                      <Link href="#kgw">KGW/KYW</Link>
                     </li>
                     <li>
                       <Link href="#other_pr">{entrance("others")}</Link>
@@ -694,7 +694,7 @@ const products = [
       h: 363,
       file:"/images/kgw.jpg"
     },
-    route: "KGW",
+    route: "kgw",
     specifications: {
       capabe: {
         title: "PRODUCTIONS CAPABILITIES",
