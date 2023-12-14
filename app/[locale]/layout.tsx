@@ -7,7 +7,7 @@ import { NextIntlClientProvider } from 'next-intl';import { unstable_setRequestL
 ;
 
 export const metadata: Metadata = {
-  title: 'Crystal shop',
+  title: 'Sun Simurg Crystals',
   description: 'Sun Simurg Crystals, LLC. supplies nonlinear optical crystals for laser optics and helps you purchase crystal products to complete your laser system',
   icons: "/icons/logo.svg",
   openGraph: {
