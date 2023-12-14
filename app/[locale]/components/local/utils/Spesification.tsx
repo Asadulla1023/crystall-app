@@ -103,7 +103,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>1. ⁂</div>
                                 <div className={styles.options}>{t("nonlinear")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef} placeholder="Type value" required name='ktp' />
+                                    <input type="text" ref={valueRef} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='ktp' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -114,7 +114,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>2. ⁂</div>
                                 <div className={styles.options}>{t("dimension")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef1} placeholder="Type value" required name='dimension' />
+                                    <input type="text" ref={valueRef1} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='dimension' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -125,7 +125,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>3.</div>
                                 <div className={styles.options}>{t("orient")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef2} placeholder="Type value" required name='orient' />
+                                    <input type="text" ref={valueRef2} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='orient' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -136,7 +136,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>4.</div>
                                 <div className={styles.options}>{t("phase")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef3} placeholder="Type value" required name='phase' />
+                                    <input type="text" ref={valueRef3} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='phase' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -147,7 +147,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>5. ⁂</div>
                                 <div className={styles.options}>{t("wave")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef4} placeholder="Type value" required name='wavelength' />
+                                    <input type="text" ref={valueRef4} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='wavelength' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -158,7 +158,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>6. ⁂</div>
                                 <div className={styles.options}>{t("coating")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef5} placeholder="Type value" required name='coating' />
+                                    <input type="text" ref={valueRef5} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='coating' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -172,7 +172,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>7. ⁂</div>
                                 <div className={styles.options}>{t("quantity")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef6} placeholder="Type value" required name='quantity' />
+                                    <input type="text" ref={valueRef6} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='quantity' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -183,7 +183,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>8.</div>
                                 <div className={styles.options}>{t("tolerance")}<br />{t("tolerance2")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef7} placeholder="Type value" required name='tolerance' />
+                                    <input type="text" ref={valueRef7} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='tolerance' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -194,9 +194,9 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>9.</div>
                                 <div className={styles.options}>{t("flatness")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef8} placeholder="Type value" required name='flatness' />
+                                    <input type="text" ref={valueRef8} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='flatness' />
                                 </div>
-                                <div className={styles.values}>
+                                <div className={styles.values}> 
                                     <input type="text" disabled />
                                 </div>
                                 <div className={styles.values}>λ/6</div>
@@ -205,7 +205,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>10.</div>
                                 <div className={styles.options}>{t("parall")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef9} placeholder="Type value" required name='arcsec' />
+                                    <input type="text" ref={valueRef9} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='arcsec' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -216,7 +216,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>11.</div>
                                 <div className={styles.options}>{t("perpen")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef10} placeholder="Type value" required name='arcmin' />
+                                    <input type="text" ref={valueRef10} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='arcmin' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -227,7 +227,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>12.</div>
                                 <div className={styles.options}>{t("size")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef11} placeholder="Type value" required name='chamfers' />
+                                    <input type="text" ref={valueRef11} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='chamfers' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -238,7 +238,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                                 <div className={styles.queue}>13.</div>
                                 <div className={styles.options}>{t("surface")}</div>
                                 <div className={styles.values}>
-                                    <input type="text" ref={valueRef12} placeholder="Type value" required name='scratch' />
+                                    <input type="text" ref={valueRef12} placeholder={path === "/uz" ? "To'ldiring" :"Type value"} required name='scratch' />
                                 </div>
                                 <div className={styles.values}>
                                     <input type="text" disabled />
@@ -247,7 +247,7 @@ const Spesification = ({ isOpen, setIsOpen }: Specifics) => {
                             </div>
                             <h3 style={{
                                 marginTop: 8
-                            }}>⁂ - {path === "/uz" ? "Majburiy To'ldirish" : "Mandatory Filling"}</h3>
+                            }}>⁂ - {path === "/uz" ? "Majburiy to'ldirish" : "Mandatory filling"}</h3>
                             <div className={styles.additional}>
                                 <h3>{t("subtitle")}</h3>
                                 <textarea ref={valueRef13} placeholder={t("additional")} required name='additional' />

@@ -11,7 +11,7 @@
     },
     "Company": {
         "title": "ABOUT US",
-        "description": "Sun simurg crystals, LLC. is the first commercial company in the market of the Republic of Uzbekistan, supplying nonlinear optical crystals for laser optics. our company has reliable partnerships with crystal growth production facilities of other companies, and also helps to purchase crystal products for completing laser systems in other countries. nonlinear optical elements supplied by our company undergo standardized testing for compliance with the specifications agreed with the customer."
+        "description": "Sun simurg crystals, LLC. is the first commercial company in the market of the Republic of Uzbekistan, supplying nonlinear optical crystals for laser optics. Our company has reliable partnerships with crystal growth production facilities of other companies, and also helps to purchase crystal products for completing laser systems in other countries. Nonlinear optical elements supplied by our company undergo standardized testing for compliance with the specifications agreed with the customer."
     },
     "Contacts": {
         "title": "CONSULTATION SPECIALISTS",
@@ -20,25 +20,25 @@
         "button": "Submit"
     },
     "Spesifications": {
-        "title": "Customer’s Specification",
+        "title": "Customer’s specification",
         "subtitle": "COMMENTS AND ADDITIONAL REQUIREMENTS OF THE CUSTOMER",
-        "email": "Your Email",
-        "additional": "Additional Requirements",
+        "email": "Your email",
+        "additional": "Additional requirements",
         "opt": "Options",
-        "nonlinear": "Nonlinear Optical Crystal",
-        "dimension": "Dimensions Of The Optical Element, mm³ (* - Crystal Length)",
+        "nonlinear": "Nonlinear optical crystal",
+        "dimension": "Dimensions of the optical element, mm³ (* - crystal length)",
         "orient": "Orientation",
-        "phase": "Type Phase Matching",
-        "wave":"Lasing Wavelength, nm",
-        "coating": "Type Of Coating (Specify Wavelengths Of Antireflection And Reflection Coefficients)",
+        "phase": "Type phase matching",
+        "wave":"Lasing wavelength, nm",
+        "coating": "Type of coating (specify wavelengths of antireflection and reflection coefficients)",
         "quantity": "Quantity, pcs.",
-        "tolerance": "Dimensional Tolerance (Aperture), mm",
-        "tolerance2":"Dimensional Tolerance (Length), mm",
+        "tolerance": "Dimensional tolerance (aperture), mm",
+        "tolerance2":"Dimensional tolerance (length), mm",
         "flatness": "Flatness (at λ=633nm)",
         "parall": "Parallelism, arcsec",
         "perpen": "Perpendicularity, arcmin",
-        "size": "The Size Of The Chamfers Along The Aperture And On The Side Surfaces",
-        "surface": "Optical Surface Quality, scratch/dig",
+        "size": "The size of the chamfers along the aperture and on the side surfaces",
+        "surface": "Optical surface quality, scratch/dig",
         "val": "Values "
     },
     "Modal": {

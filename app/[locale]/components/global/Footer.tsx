@@ -15,9 +15,9 @@ const Footer = () => {
                     </Link>
                     <Link className={styles.contacts} href={"tel: +998 91 554 80 31"}>+998 91 554 80 31</Link>
                     <Link href={"mailto:SUNSIMURGCRYSTALS@gmail.com"}>SUNSIMURGCRYSTALS@gmail.com</Link>
+                    <h4>Uzbekistan, Tashkent city, Katartal street 60</h4>
                 </div>
                 <div className={styles.madeWith}>
-                    <h4>Uzbekistan, Tashkent city, Katartal street 60</h4>
                     <h4>Website creation and development - studio <Link target='_blank' href={"https://www.empire-soft.net/"}>Empire-soft.net</Link></h4>
                 </div>
             </div>

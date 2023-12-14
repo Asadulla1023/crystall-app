@@ -11,7 +11,7 @@
     },
     "Company": {
         "title": "KOMPANIYA HAQIDA",
-        "description": "Sun simurg crystals mchj lazer optikasi uchun chiziqli bo'lmagan optik kristallarni yetkazib beruvchi O'zbekiston Respublikasi bozoridagi birinchi tijorat kompaniyasidir. bizning kompaniyamiz boshqa kompaniyalarning kristall ishlab chiqarish zavodlari bilan ishonchli hamkorlikka ega, shuningdek, boshqa mamlakatlarda lazer tizimlarini to'ldirish uchun kristall mahsulotlarini sotib olishga yordam beradi. kompaniyamiz tomonidan yetkazib beriladigan chiziqli bo'lmagan optik elementlar buyurtmachi bilan kelishilgan texnik shartlarga muvofiqligi uchun standartlashtirilgan sinovdan o'tadi."
+        "description": "Sun simurg crystals mchj lazer optikasi uchun chiziqli bo'lmagan optik kristallarni yetkazib beruvchi O'zbekiston Respublikasi bozoridagi birinchi tijorat kompaniyasidir. Bizning kompaniyamiz boshqa kompaniyalarning kristall ishlab chiqarish zavodlari bilan ishonchli hamkorlikka ega, shuningdek, boshqa mamlakatlarda lazer tizimlarini to'ldirish uchun kristall mahsulotlarini sotib olishga yordam beradi. Kompaniyamiz tomonidan yetkazib beriladigan chiziqli bo'lmagan optik elementlar buyurtmachi bilan kelishilgan texnik shartlarga muvofiqligi uchun standartlashtirilgan sinovdan o'tadi."
     },
     "Contacts": {
         "title": "MUTAXASSISLAR BILAN BOG'LANISH",
@@ -20,25 +20,25 @@
         "button": "Jo'natish"
     },
     "Spesifications": {
-        "title": "Buyurtmachi Spetsifikatsiyasi",
+        "title": "Buyurtmachi spetsifikatsiyasi",
         "subtitle": "MIJOCHNING IJROLARI VA QO‘SHIMCHA TALABLARI",
-        "email": "Sizning Elektron Manzilingiz",
-        "additional": "Qo'shimcha Talablar",
+        "email": "Sizning elektron manzilingiz",
+        "additional": "Qo'shimcha talablar",
         "opt": "Variantlar",
-        "nonlinear": "Chiziqli Bo'lmagan Optik Kristal",
-        "dimension": "Optik Elementning O'lchamlari, mm³ (* - Kristall Uzunligi)",
+        "nonlinear": "Chiziqli bo'lmagan optik kristal",
+        "dimension": "Optik elementning o'lchamlari, mm³ (* - kristall uzunligi)",
         "orient": "Orientatsiya",
-        "phase": "Tur Fazalarini Moslashtirish",
-        "wave":"Lasing To'lqin Uzunligi, nm",
-        "coating": "Qoplama Turi (Aks Ettirishga Qarshi To'lqin Uzunliklarini Va Ko'zgu Koeffitsientlarini Belgilang)",
+        "phase": "Tur fazalarini moslashtirish",
+        "wave":"Lasing to'lqin uzunligi, nm",
+        "coating": "Qoplama turi (aks ettirishga qarshi to'lqin uzunliklarini va ko'zgu koeffitsientlarini belgilang)",
         "quantity": "Miqdori, dona.",
-        "tolerance": "O'lchovli Bardoshlik (Diafragma), mm",
-        "tolerance2":"O'lchovli Bardoshlik (Uzunlik), mm",
+        "tolerance": "O'lchovli bardoshlik (diafragma), mm",
+        "tolerance2":"O'lchovli bardoshlik (uzunlik), mm",
         "flatness": "Yassilik (λ=633nm da)",
         "parall": "Parallellik, arcsec",
         "perpen": "Perpendikulyarlik, arcmin",
-        "size": "Diafragma Bo'ylab Va Yon Yuzalardagi Chamferlarning O'lchami",
-        "surface": "Optik Sirt Sifati, chizish/o'yish",
+        "size": "Diafragma bo'ylab va yon yuzalardagi chamferlarning o'lchami",
+        "surface": "Optik sirt sifati, chizish/o'yish",
         "val": "Qiymatlar"
     },
     "OtherPr": {
