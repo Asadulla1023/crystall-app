@@ -32,14 +32,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0099b6;
+    background: #22d8f8;
     width: 80px;
     border-radius: 100px;
     height: 80px;
 }
 
 .logo > img {
-    width: 40px;
+    width: 65px;
     height: auto;
 }
 .navList {
